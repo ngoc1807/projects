@@ -1,0 +1,174 @@
+@use "./../base/font.scss";
+@use "./../base/typography.scss";
+@use "./../base/color-theming.scss";
+@use "./../base/global.scss";
+
+.NewsDetailWeb {
+  min-width: 1230px;
+  background-color: color-theming.$bgTertiary;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .ContentItem {
+    width: 1200px;
+    margin-bottom: 32px;
+    display: flex;
+    justify-content: space-between;
+
+    .MainBlog {
+      background-color: color-theming.$bgPrimary;
+      width: 894px;
+      border-radius: 8px;
+      overflow: hidden;
+      display: flex;
+      flex-wrap: wrap;
+      &__image {
+        width: 894px;
+        height: 447px;
+        img {
+          width: 894px;
+          height: 447px;
+          object-fit: cover;
+        }
+      }
+
+      &__header {
+        padding: 24px;
+        overflow: hidden;
+        &-title {
+          @extend %displayMedium;
+          color: color-theming.$contentPrimary;
+        }
+        &-option {
+          display: flex;
+          color: color-theming.$contentSecondary;
+          height: 16px;
+          margin-top: 12px;
+          @extend %bodySmall;
+          align-items: center;
+          flex-wrap: nowrap;
+          overflow: hidden;
+          div span {
+            padding-left: 5px;
+            padding-right: 13px;
+          }
+        }
+      }
+
+      &__content {
+        padding: 0 24px 24px 24px;
+        overflow: hidden;
+      }
+    }
+
+    .rightBlog {
+      width: 282px;
+      &__search {
+        margin-bottom: 16px;
+        background-color: color-theming.$bgPrimary;
+        width: 282px;
+        height: 48px;
+        border-radius: 8px 0 0 8px;
+
+        display: flex;
+        .icon {
+          width: 68px;
+          height: 48px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        input.form-control {
+          @extend %bodyMedium;
+          height: 48px;
+          vertical-align: middle;
+          border: none;
+        }
+        button.btn {
+          background-color: color-theming.$ducvietComputer;
+          border-radius: 0 8px 8px 0;
+          height: 48px;
+          width: 48px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          svg path {
+            fill: color-theming.$bgPrimary;
+          }
+        }
+      }
+
+      &__list {
+        background-color: color-theming.$bgPrimary;
+        width: 282px;
+        border-radius: 8px;
+        .title {
+          @extend %headingLarge;
+          height: 48px;
+          padding: 10px 12px;
+          color: color-theming.$contentPrimary;
+          border-bottom: 1px solid color-theming.$linePrimary;
+        }
+        ul.list {
+          list-style: none;
+          width: 282px;
+          padding-top: 16px;
+          padding-bottom: 16px;
+          // position: relative;
+
+          .list__item:not(:last-child) {
+            margin-bottom: 32px;
+          }
+
+          .list__item {
+            width: 282px;
+            padding: 0 12px;
+            height: 48px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            &-image {
+              width: 96px;
+              height: 48px;
+              border-radius: 4px;
+              img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 4px;
+              }
+            }
+            &-text {
+              @extend %headingSmall;
+              overflow: hidden;
+              word-break: break-all;
+              color: color-theming.$contentPrimary;
+              width: 150px;
+              height: 40px;
+            }
+          }
+        }
+      }
+
+      &__image {
+        width: 282px;
+        img {
+          width: 282px;
+          height: 184px;
+          border-radius: 4px;
+          object-fit: cover;
+          margin-bottom: 16px;
+        }
+      }
+    }
+  }
+
+  .CommentBlog {
+    width: 1200px;
+    margin-bottom: 32px;
+  }
+  .boxBlog {
+    margin-bottom: 32px;
+  }
+}

@@ -1,0 +1,173 @@
+$colorMain: #ffa801;
+
+.configFooter {
+	background-color: #1e272e;
+
+	.Box {
+		padding: 8vh 0 0 0;
+		// border-bottom: 1px solid #5a646b;
+		.BoxAddress {
+			display: flex;
+			color: white;
+			padding: 0 0 4vh 0;
+			border-bottom: 1px solid #5a646b;
+
+			.Address,
+			.Email,
+			.PhoneNumber {
+				width: 33.33%;
+				display: flex;
+				.icon {
+					width: 80px;
+					height: 80px;
+					background-color: #ffa801;
+					border-radius: 100%;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					i {
+						font-size: 2rem;
+					}
+				}
+				.content {
+					padding: 0 5%;
+					h3 {
+						color: #fff;
+					}
+					p {
+						font-size: 1rem;
+						color: #5a646b;
+					}
+				}
+			}
+		}
+		.BoxContact {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+
+			padding: 5vh 0;
+			.Title {
+				padding-bottom: 2vh;
+				i {
+					font-size: 3rem;
+					color: #fff;
+				}
+				span {
+					padding-left: 10px;
+					font-size: 2.5rem;
+					color: #fff;
+					font-weight: bold;
+				}
+			}
+			.Contact {
+				display: flex;
+				justify-content: center;
+
+				i {
+					// background-color: #ffa801   ;
+					color: #fff;
+					font-size: 1.5rem;
+					margin: 0 30%;
+				}
+			}
+		}
+	}
+	.AuthorDev {
+		color: #5a646b;
+		display: flex;
+		justify-content: center;
+	}
+}
+
+@media screen and (max-width: 736px) {
+	.configFooter {
+		background-color: #1e272e;
+
+		.Box {
+			padding: 3vh 0 0 0;
+			.BoxAddress {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
+				color: white;
+				padding: 0 0 1vh 0;
+				border-bottom: 1px solid #5a646b;
+
+				.Address,
+				.Email,
+				.PhoneNumber {
+					width: 100%;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					.icon {
+						width: 60px;
+						height: 60px;
+						background-color: #ffa801;
+						border-radius: 100%;
+						i {
+							font-size: 2rem;
+						}
+					}
+					.content {
+						width: 60%;
+						padding: 0 0 0 5%;
+						display: flex;
+						justify-content: center;
+						flex-direction: column;
+						// align-items: center;
+						text-align: center;
+						p {
+							font-size: 0.8rem;
+							color: #5a646b;
+						}
+						h3 {
+							font-size: 1.2rem;
+						}
+					}
+				}
+			}
+			.BoxContact {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				flex-direction: column;
+
+				padding: 2vh 0;
+				.Title {
+					padding-bottom: 2vh;
+					i {
+						font-size: 2rem;
+						color: #fff;
+					}
+					span {
+						padding-left: 10px;
+						font-size: 1.5rem;
+						color: #fff;
+						font-weight: bold;
+					}
+				}
+				.Contact {
+					display: flex;
+					justify-content: center;
+
+					i {
+						// background-color: #ffa801   ;
+						color: #fff;
+						font-size: 1rem;
+						margin: 0 30%;
+					}
+				}
+			}
+		}
+		.AuthorDev {
+			color: #5a646b;
+			display: flex;
+			justify-content: center;
+			align-content: center;
+			font-size: 0.8rem;
+		}
+	}
+}

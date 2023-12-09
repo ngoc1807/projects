@@ -1,0 +1,376 @@
+.configDetailAlbum {
+	position: relative;
+	.Box {
+		position: relative;
+
+		padding: 0;
+		margin: 4% 8%;
+		box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 20px 0px;
+		border-radius: 32px;
+
+		display: flex;
+		flex-wrap: wrap;
+		.ImgBox {
+			width: 100%;
+			padding: 0 2%;
+
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 80vh;
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: contain;
+				// object-position: top;
+
+				border-radius: 32px 0 0 32px;
+			}
+		}
+
+		div.BoxRight {
+			display: flex;
+			flex-direction: column;
+
+			.BoxDesc {
+				display: flex;
+				justify-content: center;
+				flex-direction: column;
+				padding: 3%;
+
+				.Name {
+					font-size: 2rem;
+				}
+
+				.Desc {
+					font-size: 1rem;
+					padding: 3% 1% 0 0;
+				}
+
+				.Author {
+					padding: 0 0 3% 0;
+				}
+				.Icon {
+					i {
+						font-size: 1.5rem;
+						padding-right: 10px;
+					}
+
+					img {
+						width: 35px;
+						padding: 5px 10px 5px 0;
+					}
+				}
+			}
+		}
+		.BoxFooter {
+			flex: 1;
+			display: flex;
+			flex-direction: column;
+
+			.BoxTag {
+				flex: 1;
+				ul {
+					list-style: none;
+					display: flex;
+					flex-wrap: wrap;
+					li {
+						display: inline;
+						padding: 5px 10px;
+						margin: 5px;
+						background-color: #ebebeb;
+						border-radius: 5px;
+
+						transition: all 0.3s ease-in-out 0s;
+
+						cursor: pointer;
+						a {
+							text-decoration: none;
+							color: #555;
+						}
+						&:hover {
+							a {
+								color: #fff;
+							}
+							background-color: #ffa801;
+						}
+					}
+				}
+			}
+			.Fun {
+				display: flex;
+				justify-content: space-around;
+				padding: 5% 0;
+				span {
+					font-size: 1.2rem;
+				}
+				a {
+					text-decoration: none;
+					color: rgba(0, 0, 0, 0.6);
+					&:hover {
+						color: #ffa801;
+					}
+					i {
+						font-size: 1.3rem;
+					}
+				}
+			}
+		}
+	}
+
+	.ListBox {
+		margin: 4% 8%;
+		position: relative;
+		.ListBox-item {
+			position: relative;
+			height: 33vh;
+			padding: 0;
+			cursor: pointer;
+
+			div {
+				position: relative;
+				height: 30vh;
+				overflow: hidden;
+				border-radius: 0px;
+				box-shadow: 0 0.25rem 0.4rem rgba(0, 0, 0, 0.5);
+				img {
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+					object-position: top;
+					transition: all 0.5s ease-in-out 0s;
+					border-radius: 0px;
+				}
+				span {
+					left: 0;
+					right: 0;
+					top: 0;
+					bottom: 0;
+					position: absolute;
+					color: #ffffff;
+				}
+				.linkBox {
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					background: rgba(255, 255, 255, 0.5);
+					content: "";
+					transition: transform 0.6s;
+
+					transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg)
+						translate3d(0, -130%, 0);
+				}
+
+				&:hover {
+					.linkBox {
+						transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg)
+							translate3d(0, 100%, 0);
+					}
+					img {
+						transform: scale(1.1);
+						opacity: 1;
+					}
+				}
+			}
+		}
+	}
+
+	.TitleBox {
+		p {
+			font-size: 2rem;
+			font-weight: 600;
+		}
+	}
+
+	.ConfigModal {
+		position: fixed;
+		top: 0px;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		background: rgba(0, 0, 0, 0.7);
+
+		opacity: 1;
+		z-index: 999;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		.ConfigModal-content {
+			width: auto;
+
+			display: flex;
+			justify-content: space-between;
+
+			animation: fadeRight 3s forwards;
+			animation-delay: 0.5s;
+
+			.ConfigModal-header {
+				// padding: 10px;
+				display: flex;
+				flex-direction: column;
+				button {
+					margin-top: 4vh;
+					padding: 10px;
+					color: #fff;
+					font-size: 2rem;
+					&:hover {
+						color: white;
+					}
+				}
+
+				border-bottom: none;
+			}
+
+			.ConfigModal-body {
+				padding: 20px;
+
+				display: flex;
+				justify-content: center;
+				// align-items: center;
+
+				height: auto;
+				width: auto;
+				// flex: 1;
+				img {
+					width: auto;
+					height: auto;
+					max-width: 1300px;
+					border-radius: 10px;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 736px) {
+	.configDetailAlbum {
+		position: relative;
+		.Box {
+			position: relative;
+
+			padding: 0;
+			margin: 2% 4%;
+			box-shadow: none;
+			border-radius: 32px;
+
+			display: flex;
+			flex-wrap: wrap;
+			.ImgBox {
+				width: 100%;
+				padding: 0 2%;
+
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				height: 35vh;
+				img {
+					width: 100%;
+					height: 100%;
+					object-fit: contain;
+					// object-position: top;
+
+					border-radius: 32px 0 0 32px;
+				}
+			}
+
+			div.BoxRight {
+				display: flex;
+				flex-direction: column;
+
+				.BoxDesc {
+					display: flex;
+					justify-content: center;
+					flex-direction: column;
+					padding: 0 3%;
+
+					.Name {
+						font-size: 1.5rem;
+					}
+
+					.Desc {
+						font-size: 0.8rem;
+						padding: 0 0 0 0;
+					}
+
+					.Author {
+						padding: 0 0 3% 0;
+						font-size: 0.8rem;
+					}
+					.Icon {
+						i {
+							font-size: 1rem;
+							padding-right: 10px;
+						}
+
+						img {
+							width: 30px;
+							padding: 5px 10px 5px 0;
+						}
+					}
+				}
+			}
+			.BoxFooter {
+				flex: 1;
+				display: flex;
+				flex-direction: column;
+
+				.BoxTag {
+					flex: 1;
+					ul {
+						list-style: none;
+						display: flex;
+						flex-wrap: wrap;
+						li {
+							display: inline;
+							padding: 2px 5px;
+							margin: 5px;
+							background-color: #ebebeb;
+							border-radius: 5px;
+
+							transition: all 0.3s ease-in-out 0s;
+
+							cursor: pointer;
+							a {
+								font-size: 0.8rem;
+								text-decoration: none;
+								color: #555;
+							}
+							&:hover {
+								a {
+									color: #fff;
+								}
+								background-color: #ffa801;
+							}
+						}
+					}
+				}
+				.Fun {
+					display: flex;
+					justify-content: space-around;
+					padding: 0 0 5% 0;
+					span {
+						font-size: 0.8rem;
+					}
+					a {
+						text-decoration: none;
+						color: rgba(0, 0, 0, 0.6);
+						&:hover {
+							color: #ffa801;
+						}
+						i {
+							font-size: 1.3rem;
+						}
+					}
+				}
+			}
+		}
+
+		.ConfigModal {
+			display: none;
+		}
+	}
+}

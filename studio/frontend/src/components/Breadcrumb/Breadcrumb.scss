@@ -1,0 +1,17 @@
+.configBreadcrumb {
+	background-color: #e9ecef;
+	.breadcrumb {
+		li a {
+			text-decoration: none;
+
+			text-decoration: none;
+			color: rgba(0, 0, 0, 0.8);
+			font-size: 16px;
+			font-weight: 600;
+			&:hover {
+				color: #ffa801;
+				opacity: 1;
+			}
+		}
+	}
+}

@@ -1,0 +1,39 @@
+@use "./../../style/base/typography.scss";
+@use "./../../style/base/color-theming.scss";
+
+.PaginationCustom {
+  padding: 16px 24px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  &__total {
+    @extend %headingSmall;
+    color: color-theming.$contentPrimary;
+  }
+  &__list {
+    margin-bottom: 0;
+    display: flex;
+    list-style: none;
+
+    button.btn {
+      @extend %bodyLarge;
+      margin-left: 8px;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 8px;
+      //   color: color-theming.$contentAccent;
+      color: color-theming.$contentPrimary;
+      border: 1px solid color-theming.$linePrimary;
+
+      width: 32px;
+      height: 32px;
+      &.active {
+        color: color-theming.$contentAccent;
+        border: 1px solid color-theming.$contentAccent;
+      }
+    }
+  }
+}

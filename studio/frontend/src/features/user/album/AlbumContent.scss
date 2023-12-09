@@ -1,0 +1,164 @@
+.OrderAdmin .AlbumLeft {
+	padding: 0 1%;
+	.title {
+		display: flex;
+		align-items: center;
+		padding: 3vh 0 0 1%;
+
+		div {
+			width: 100%;
+			padding: 0 0 0 2%;
+			font-size: 1.5rem;
+			border-left: 5px solid #ffa801;
+			display: inline;
+		}
+	}
+
+	.Box {
+		box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.25);
+
+		margin: 3vh 0;
+		overflow: hidden;
+		border-radius: 5px;
+		.imgBox {
+			position: relative;
+			overflow: hidden;
+			height: 220px;
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				object-position: top;
+				transition: all 0.5s ease-in-out 0s;
+			}
+			a {
+				left: 0;
+				right: 0;
+				top: 0;
+				bottom: 0;
+				position: absolute;
+				color: #ffffff;
+			}
+			.linkBox {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background: rgba(255, 255, 255, 0.5);
+				content: "";
+				transition: transform 0.6s;
+
+				transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg)
+					translate3d(0, -130%, 0);
+			}
+
+			&:hover {
+				.linkBox {
+					transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg)
+						translate3d(0, 100%, 0);
+				}
+				img {
+					transform: scale(1.1);
+					opacity: 1;
+				}
+			}
+		}
+
+		.descBox {
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+			padding: 2% 0;
+
+			.name span {
+				font-size: 1rem;
+				font-weight: 600;
+				&:last-child {
+					font-size: 0.8rem;
+					// padding-bottom: 10px;
+				}
+			}
+
+			.icon {
+				a {
+					color: rgba(1, 1, 1, 0.7);
+					text-decoration: none;
+					padding: 0 7px;
+					&:hover {
+						color: #ffa801;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 736px) {
+	.AlbumLeft {
+		padding: 0 4%;
+		.title {
+			display: flex;
+			align-items: center;
+			// justify-content: center;
+			padding: 1vh 0 0 0;
+
+			div {
+				width: 100%;
+				padding: 0 0 0 2%;
+				font-size: 1.5rem;
+				border-left: 5px solid #ffa801;
+				display: inline;
+			}
+		}
+
+		.Box {
+			box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.25);
+			margin: 1.5vh 0;
+			.imgBox {
+				position: relative;
+				overflow: hidden;
+				height: 30vh;
+				img {
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+					object-position: top;
+					transition: all 0.5s ease-in-out 0s;
+				}
+				a {
+					left: 0;
+					right: 0;
+					top: 0;
+					bottom: 0;
+					position: absolute;
+					color: #ffffff;
+				}
+			}
+
+			.descBox {
+				display: flex;
+				justify-content: space-around;
+				align-items: center;
+				padding: 2% 0 2% 0;
+
+				.name span {
+					&:last-child {
+						font-size: 0.8rem;
+					}
+				}
+
+				.icon {
+					a {
+						color: rgba(1, 1, 1, 0.7);
+						text-decoration: none;
+						padding: 0 7px;
+						&:hover {
+							color: #ffa801;
+						}
+					}
+				}
+			}
+		}
+	}
+}

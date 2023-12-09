@@ -1,0 +1,149 @@
+@use "./../../../style/base/font.scss";
+@use "./../../../style/base/typography.scss";
+@use "./../../../style/base/color-theming.scss";
+@use "./../../../style/base/global.scss";
+
+.RightProductDetail {
+  width: 288px;
+
+  .boxOne {
+    width: 288px;
+    height: auto;
+    // padding: 0px 0px 12px;
+    background-color: color-theming.$bgPrimary;
+    border-radius: 4px;
+    margin-bottom: 16px;
+
+    &__title {
+      padding: 7px 12px;
+      border-bottom: 1px solid color-theming.$lineTertiary;
+
+      min-height: 40px;
+      vertical-align: middle;
+      span {
+        @extend %headingSmall;
+        color: color-theming.$contentPrimary;
+      }
+    }
+
+    &__list {
+      height: auto;
+      ul {
+        list-style: none;
+        padding-top: 12px;
+        margin-bottom: 0;
+        li {
+          padding-bottom: 10px;
+          display: flex;
+          .icon {
+            padding: 0 10px;
+          }
+          .content {
+            .text {
+              @extend %headingSmall;
+              font-weight: 400;
+              span {
+                @extend %headingSmall;
+                color: color-theming.$contentPrimary;
+              }
+            }
+            a.number {
+              @extend %headingSmall;
+              color: color-theming.$lineAccent;
+              text-decoration: none;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .boxTwo {
+    width: 288px;
+    min-height: 252px;
+    border-radius: 4px;
+    // padding: 0px 0px 12px;
+    background-color: color-theming.$bgPrimary;
+    margin-bottom: 16px;
+    &__title {
+      padding: 7px 12px;
+      border-bottom: 1px solid color-theming.$lineTertiary;
+
+      height: 40px;
+      vertical-align: middle;
+      span {
+        @extend %headingSmall;
+        color: color-theming.$contentPrimary;
+      }
+    }
+
+    &__list {
+      ul {
+        list-style: none;
+        padding-top: 12px;
+        margin-bottom: 0;
+        padding-bottom: 4px;
+        li {
+          margin-bottom: 8px;
+          display: flex;
+          align-items: center;
+          .icon {
+            padding: 0 10px;
+            svg path {
+              fill: color-theming.$contentPositive;
+            }
+          }
+          .content {
+            padding-right: 16px;
+            color: color-theming.$contentPrimary;
+            @extend %bodyMedium;
+          }
+        }
+      }
+    }
+  }
+
+  .boxThere {
+    width: 288px;
+    height: auto;
+    border-radius: 4px;
+
+    background-color: color-theming.$bgPrimary;
+    &__title {
+      padding: 7px 12px;
+      border-bottom: 1px solid color-theming.$lineTertiary;
+
+      min-height: 40px;
+      vertical-align: middle;
+      span {
+        @extend %headingSmall;
+        color: color-theming.$contentPrimary;
+      }
+    }
+
+    &__list {
+      ul {
+        list-style: none;
+        padding-top: 12px;
+        padding-bottom: 4px;
+        margin-bottom: 0;
+        li {
+          margin-bottom: 8px;
+          display: flex;
+          align-items: center;
+          .icon {
+            padding: 0 10px;
+            svg path {
+              fill: color-theming.$contentPositive;
+            }
+          }
+          .content {
+            padding-right: 16px;
+            color: color-theming.$contentPrimary;
+            @extend %bodyMedium;
+          }
+        }
+      }
+    }
+  }
+}

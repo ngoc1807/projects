@@ -1,0 +1,71 @@
+@use "font";
+
+// fw : font-weight
+// lh: line-height
+// ff : font-family
+// fz :font-size
+@mixin typography-common($fw, $fz, $lh) {
+  font-family: font.$font-main;
+  font-weight: $fw;
+  font-size: $fz;
+  line-height: $lh;
+}
+
+%displayXXLarge {
+  @include typography-common(bold, 48px, 48px);
+}
+
+%displayXLarge {
+  @include typography-common(bold, 40px, 44px);
+}
+
+%displayLarge {
+  @include typography-common(bold, 32px, 40px);
+}
+
+%displayMedium {
+  @include typography-common(bold, 28px, 36px);
+}
+
+%displaySmall {
+  @include typography-common(bold, 24px, 32px);
+}
+
+%headingXLarge {
+  @include typography-common(bold, 20px, 28px);
+}
+%headingLarge {
+  @include typography-common(bold, 18px, 28px);
+}
+
+// medium :500
+%headingMedium {
+  @include typography-common(500, 16px, 24px);
+}
+%headingSmall {
+  @include typography-common(500, 14px, 20px);
+}
+
+// regular = 400
+%bodyLarge {
+  @include typography-common(400, 16px, 24px);
+}
+
+%bodyMedium {
+  @include typography-common(400, 14px, 20px);
+}
+%bodySmall {
+  @include typography-common(400, 12px, 16px);
+}
+%bodyMedium-strikethrough {
+  @include typography-common(400, 14px, 20px);
+  text-decoration: line-through;
+}
+
+%shadow1 {
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s;
+  &:hover {
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15);
+  }
+}

@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`page-wrapper should render correctly 1`] = `
+<div
+  class="MuiBox-root css-1j3bsu2"
+>
+  <div
+    class="MuiBox-root css-19kzrtu"
+  />
+</div>
+`;

@@ -1,0 +1,85 @@
+@use "./../../style/base/font.scss";
+@use "./../../style/base/typography.scss";
+@use "./../../style/base/color-theming.scss";
+@use "./../../style/base/global.scss";
+
+.FooterCartMobile {
+  background-color: color-theming.$bgPrimary;
+  position: sticky;
+  animation: fadeDown 0.3s ease;
+  animation-delay: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1030;
+  box-shadow: 1px 2px 8px rgb(0 0 0 / 40%);
+  .box {
+    padding: 12px 16px;
+    &__price {
+      display: flex;
+      margin-top: 4px;
+      align-items: center;
+      // justify-content: space-between;
+      .new {
+        @extend %headingXLarge;
+        color: color-theming.$ducvietComputer;
+      }
+      .old {
+        color: color-theming.$contentSecondary;
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: normal;
+        text-decoration-line: line-through;
+        padding-left: 8px;
+      }
+
+      .note {
+        padding-left: 8px;
+        span {
+          @extend %bodySmall;
+          padding: 2px 4px;
+          background-color: color-theming.$contentInformative;
+          color: color-theming.$contentInversePrimary;
+          border-radius: 12px;
+        }
+      }
+    }
+    &__content {
+      display: flex;
+      margin-top: 8px;
+      &-buy {
+        flex: 1;
+        height: 48px;
+        background: linear-gradient(180deg, #f9534a 0%, #d72f26 100%);
+        box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .left {
+          svg path {
+            fill: color-theming.$contentInversePrimary;
+          }
+        }
+        .right {
+          color: color-theming.$contentInversePrimary;
+          margin-left: 5px;
+          .text1 {
+            @extend %headingLarge;
+            text-transform: uppercase;
+          }
+          .text2 {
+            @extend %bodySmall;
+            text-transform: uppercase;
+          }
+        }
+      }
+      &-add {
+        background-color: color-theming.$bgTertiary;
+        border: 1px solid color-theming.$lineSecondary;
+        width: 88px;
+        height: 48px;
+        margin-left: 8px;
+      }
+    }
+  }
+}

@@ -1,0 +1,248 @@
+@use "./../../../style/base/typography.scss";
+@use "./../../../style/base/color-theming.scss" as c;
+
+.InstallmentMobile .ContentItem .PaymentsInfo2 {
+  animation: fadeOpacity 0.3s ease;
+  padding-left: 16px;
+  padding-right: 16px;
+  .step-one {
+    .title {
+      @extend %headingSmall;
+      color: c.$contentPrimary;
+    }
+    .content {
+      padding-top: 12px;
+      .checked-group-text {
+        display: flex;
+        flex-wrap: wrap;
+        padding-bottom: 8px;
+        .item {
+          width: calc(33% - 8px);
+          padding: 0;
+          margin-right: 12px;
+          margin-bottom: 12px;
+          aspect-ratio: 2/1;
+          &-image {
+            width: 100%;
+            height: 100%;
+            padding: 6px 8px;
+          }
+        }
+        .item.no-left {
+          margin-right: 0px !important;
+        }
+      }
+    }
+  }
+  .step-two {
+    padding-bottom: 8px;
+    .title {
+      @extend %headingSmall;
+      color: c.$contentPrimary;
+    }
+    .content {
+      padding-top: 12px;
+      select {
+        width: 250px;
+        font-size: 14px;
+      }
+    }
+  }
+  .step-three {
+    padding-bottom: 8px;
+    padding-top: 16px;
+    .title {
+      @extend %headingSmall;
+      color: c.$contentPrimary;
+    }
+    .content {
+      margin-top: 12px;
+      border: 1px solid #dedfe2;
+      border-radius: 8px;
+      padding-bottom: 18px;
+      margin-bottom: 0;
+      overflow-x: scroll;
+      table {
+        width: 600px;
+      }
+
+      table,
+      th,
+      td {
+        border: 1px solid #dedfe2;
+      }
+      table {
+        border-radius: 8px;
+        overflow: hidden;
+        border: 1px solid #dedfe2;
+        tr th {
+          background-color: c.$bgCriticalSecondary;
+          @extend %bodyMedium;
+          //   text-align: left;
+          padding: 12px 24px;
+        }
+        tr.first td {
+          background-color: c.$bgTertiary;
+        }
+        tr td {
+          @extend %bodyMedium;
+          text-align: center;
+          vertical-align: middle;
+          padding: 18px 10px;
+          color: c.$contentPrimary;
+          &.red {
+            color: c.$ducvietComputer;
+          }
+          .btn {
+            padding: 6px 10px;
+            background-color: c.$ducvietComputer;
+            color: c.$lineInversePrimary;
+            @extend %headingSmall;
+            &:hover {
+              opacity: 0.8;
+            }
+          }
+        }
+
+        .select {
+          padding: 18px 10px;
+          .text {
+            padding-bottom: 8px;
+          }
+        }
+      }
+      .note {
+        padding-top: 12px;
+        @extend %bodyMedium;
+        color: c.$contentPrimary;
+        span {
+          color: c.$ducvietComputer;
+        }
+      }
+    }
+  }
+
+  .FormItem {
+    padding-top: 12px;
+    input {
+      font-size: 14px;
+    }
+    .title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .left {
+        @extend %headingLarge;
+
+        color: c.$contentPrimary;
+      }
+    }
+    .box-option {
+      display: flex;
+      align-items: center;
+      padding-top: 12px;
+      .RadioCustom {
+        @extend %bodyLarge;
+        color: c.$contentPrimary;
+        .checkmark {
+          top: 50%;
+          left: 0px;
+          transform: translateY(-11px);
+          height: 18px;
+          width: 18px;
+        }
+        .checkmark:after {
+          width: 10px;
+          height: 10px;
+        }
+      }
+    }
+
+    .box-option2 {
+      display: flex;
+      align-items: center;
+      padding-top: 12px;
+      .RadioCustom {
+        @extend %bodyLarge;
+        color: c.$contentPrimary;
+        padding: 10px 10px 10px 40px;
+        border-radius: 10px;
+        width: 100%;
+        border: 1px solid c.$linePrimary;
+        .checkmark {
+          top: 50%;
+          left: 10px;
+          transform: translateY(-10px);
+          height: 18px;
+          width: 18px;
+        }
+        .checkmark:after {
+          width: 10px;
+          height: 10px;
+        }
+        &.active {
+          border: 1px solid c.$ducvietComputer;
+        }
+      }
+    }
+    .box-one {
+      padding-top: 12px;
+
+      padding-bottom: 12px;
+      input {
+        margin-bottom: 12px;
+      }
+    }
+    .box-two {
+      padding-top: 12px;
+      .group1 {
+        display: flex;
+        padding: 4px 0px 10px 0;
+        .RadioCustom {
+          @extend %bodyLarge;
+          color: c.$contentPrimary;
+          .checkmark {
+            top: 50%;
+            left: 0px;
+            transform: translateY(-11px);
+            height: 18px;
+            width: 18px;
+          }
+          .checkmark:after {
+            width: 10px;
+            height: 10px;
+          }
+        }
+      }
+      .group {
+        select {
+          margin-bottom: 12px;
+          font-size: 14px;
+        }
+      }
+    }
+    .box-btn {
+      padding-top: 20px;
+      padding-bottom: 24px;
+      display: flex;
+      justify-content: center;
+      .btn {
+        padding: 8px 44px;
+
+        background: linear-gradient(180deg, #f9534a 0%, #d72f26 100%);
+        /* Shadown 1 */
+
+        box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        align-items: center;
+        @extend %headingSmall;
+
+        color: c.$lineInversePrimary;
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+}

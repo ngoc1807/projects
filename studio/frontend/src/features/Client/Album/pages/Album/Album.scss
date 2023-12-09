@@ -1,0 +1,20 @@
+.Album-content {
+	// height: 100vh;
+	margin: 2% 10%;
+
+	.right {
+		border: 1px solid rgba(0, 0, 0, 0.1);
+		border-radius: 20px;
+	}
+}
+
+@media screen and (max-width: 736px) {
+	.Album-content {
+		// height: 100vh;
+		margin: 4%;
+
+		.right {
+			border: none;
+		}
+	}
+}

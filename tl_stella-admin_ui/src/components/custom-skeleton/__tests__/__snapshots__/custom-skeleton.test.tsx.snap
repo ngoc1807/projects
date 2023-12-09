@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`custom-skeleton should render correctly when only required props are passed 1`] = `
+<span
+  class="MuiSkeleton-root MuiSkeleton-rectangular MuiSkeleton-pulse css-58ftfq-MuiSkeleton-root"
+  style="width: 100%; height: 64px;"
+/>
+`;
+
+exports[`custom-skeleton should render correctly when optional prop isInTable is passed as true 1`] = `
+<span
+  class="MuiSkeleton-root MuiSkeleton-rectangular MuiSkeleton-pulse css-th62h7-MuiSkeleton-root"
+  style="width: 100%; height: 64px;"
+/>
+`;

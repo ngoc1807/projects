@@ -1,0 +1,35 @@
+{
+  "env": {
+    "jest/globals": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:unicorn/recommended",
+    "next/core-web-vitals",
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
+  ],
+  "plugins": ["jest", "unicorn", "testing-library", "@typescript-eslint"],
+  "rules": {
+    "@typescript-eslint/no-unused-vars": "warn",
+    "unicorn/no-null": "off",
+    "unicorn/no-useless-undefined": ["warn", { "checkArguments": false }],
+    "unicorn/prevent-abbreviations": [
+      "error",
+      {
+        "replacements": {
+          "props": false
+        }
+      }
+    ],
+    "no-console": ["warn"]
+  },
+  "overrides": [
+    {
+      "files": ["src/pages/api/**"],
+      "rules": {
+        "unicorn/filename-case": "off"
+      }
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+@use "./../../style/base/font.scss";
+@use "./../../style/base/typography.scss";
+@use "./../../style/base/color-theming.scss";
+@use "./../../style/base/global.scss";
+.ListProductMobile {
+  background-color: #e5e5e5;
+  // min-height: 500vh;
+  a {
+    text-decoration: none;
+  }
+}

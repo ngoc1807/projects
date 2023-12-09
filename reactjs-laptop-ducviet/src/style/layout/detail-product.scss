@@ -1,0 +1,259 @@
+@use "./../base/font.scss";
+@use "./../base/typography.scss";
+@use "./../base/color-theming.scss";
+@use "./../base/global.scss";
+
+.DetailProductWeb {
+  min-width: 1230px;
+  background-color: color-theming.$bgTertiary;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .BundleProducts {
+    .box {
+      width: 1200px;
+      background-color: color-theming.$bgPrimary;
+      border-radius: 8px;
+      padding: 24px 24px 24px 24px;
+      &__title {
+        display: flex;
+        padding-bottom: 24px;
+        justify-content: space-between;
+        align-items: center;
+        &-left {
+          @extend %displayMedium;
+
+          vertical-align: middle;
+          color: color-theming.$contentPrimary;
+          padding-left: 24px;
+          border-left: 4px solid #d10101;
+          text-transform: uppercase;
+          flex: 1;
+          height: 36px;
+        }
+
+        &-right {
+          display: flex;
+
+          height: 40px;
+          button.btnCart {
+            @extend %headingMedium;
+            width: 360px;
+            height: 40px;
+            background-color: color-theming.$bgSecondary;
+            margin-right: 8px;
+            span {
+              transform: translateY(2px);
+              padding-left: 12px;
+            }
+
+            &.active {
+              background-color: color-theming.$ducvietComputer;
+              span {
+                color: color-theming.$bgPrimary;
+              }
+            }
+          }
+
+          .btnOption {
+            display: flex;
+            align-items: center;
+            height: 40px;
+            button.btn {
+              width: 32px;
+              height: 32px;
+              border: 1px solid color-theming.$lineTertiary;
+              box-sizing: border-box;
+              border-radius: 8px;
+              margin-left: 16px;
+              padding: 0;
+
+              &:hover,
+              &:focus,
+              &:active {
+                background-color: color-theming.$bgAccentPrimary;
+                svg path {
+                  fill: color-theming.$bgPrimary;
+                }
+              }
+            }
+          }
+        }
+      }
+      &__content {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+        &-item {
+          width: 218px;
+          height: 290px;
+          border-radius: 8px;
+          border: 1px solid color-theming.$lineTertiary;
+          .top {
+            width: 218px;
+            height: 186px;
+            position: relative;
+
+            .image {
+              padding: 8px 24px;
+              img {
+                width: 170px;
+                height: 170px;
+                object-fit: cover;
+              }
+            }
+
+            .checked {
+              position: absolute;
+              top: 18px;
+              right: 31px;
+            }
+          }
+
+          .desc {
+            width: 218px;
+            height: 104px;
+            padding: 12px;
+            border-top: 1px solid color-theming.$lineTertiary;
+            &__name {
+              @extend %headingSmall;
+              color: color-theming.$contentPrimary;
+              overflow: hidden;
+            }
+            &__price {
+              @extend %headingMedium;
+              color: color-theming.$ducvietComputer;
+              margin-top: 16px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .DescItem {
+    margin-top: 32px;
+    margin-bottom: 32px;
+    width: 1200px;
+
+    background-color: color-theming.$bgPrimary;
+    border-radius: 8px;
+    min-height: 700px;
+
+    padding: 24px;
+
+    display: flex;
+    flex-direction: column;
+    .ItemTitle {
+      @extend %displayMedium;
+
+      vertical-align: middle;
+      color: color-theming.$contentPrimary;
+      padding-left: 24px;
+      border-left: 4px solid #d10101;
+      text-transform: uppercase;
+    }
+    .content {
+      display: flex;
+      margin-top: 24px;
+      align-items: flex-start;
+      .ItemLeft {
+        width: 775px;
+        margin-right: 32px;
+        overflow-x: hidden;
+        .title {
+          @extend %headingMedium;
+          padding-bottom: 12px;
+          color: color-theming.$contentPrimary;
+        }
+        .text {
+          @extend %bodyMedium;
+          color: color-theming.$contentPrimary;
+          padding-bottom: 24px;
+        }
+        button.btn {
+          @extend %headingMedium;
+          background-color: color-theming.$ducvietComputer;
+          color: color-theming.$contentInversePrimary;
+          width: 209px;
+          height: 40px;
+        }
+      }
+
+      .ItemRight {
+        width: 365px;
+        border-radius: 4px;
+        background-color: color-theming.$bgPrimary;
+
+        .title {
+          @extend %headingLarge;
+          padding: 12px 10px;
+          color: color-theming.$bgPrimary;
+          width: 365px;
+          border-radius: 4px 4px 0 0;
+          background-color: color-theming.$bgAccentPrimary;
+        }
+
+        .list {
+          width: 365px;
+          border-radius: 0 0 4px 4px;
+          ul {
+            list-style: none;
+            margin-bottom: 0;
+            border: 1px solid color-theming.$lineSecondary;
+            border-radius: 0 0 4px 4px;
+            li {
+              display: flex;
+              align-items: center;
+
+              &.one {
+                background-color: color-theming.$bgPrimary;
+              }
+              &.two {
+                background-color: color-theming.$bgSecondary;
+              }
+
+              div.dot {
+                height: 8px;
+                width: 8px;
+                border-radius: 100%;
+                background-color: color-theming.$contentPrimary;
+                margin-right: 10px;
+              }
+
+              padding: 12px;
+              div.text {
+                @extend %bodyMedium;
+                flex: 1;
+
+                color: color-theming.$contentPrimary;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .QuestionProduct {
+    width: 1200px;
+    margin-bottom: 32px;
+  }
+
+  .CompareProduct {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 32px;
+    border-radius: 8px;
+    a {
+      text-decoration: none;
+    }
+  }
+
+  .ReviewAndComment {
+    width: 1200px;
+    margin-bottom: 32px;
+  }
+}

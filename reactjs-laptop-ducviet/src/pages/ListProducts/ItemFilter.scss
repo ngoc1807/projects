@@ -1,0 +1,390 @@
+@use "./../../style/base/font.scss";
+@use "./../../style/base/typography.scss";
+@use "./../../style/base/color-theming.scss";
+@use "./../../style/base/global.scss";
+
+.ItemFilter {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 32px;
+  border-radius: 8px;
+  a {
+    text-decoration: none;
+  }
+
+  .box {
+    width: 1200px;
+    background-color: color-theming.$bgPrimary;
+    border-radius: 8px;
+    padding: 24px 24px 0 24px;
+    .BoxOne {
+      display: flex;
+      &__label {
+        &-item {
+          position: relative;
+          &-btn#btnMenuFilterWeb {
+            background-color: color-theming.$bgAccentSecondary;
+            height: 48px;
+            border-radius: 4px;
+            svg path {
+              fill: color-theming.$contentPrimary;
+            }
+            span {
+              margin-left: 6px;
+              @extend %bodyLarge;
+              color: color-theming.$contentPrimary;
+            }
+
+            &::after {
+              display: none;
+            }
+          }
+
+          .menu {
+            animation: fadeUp 0.3s 0s;
+            transition: all 0.3s;
+            background-color: color-theming.$bgPrimary;
+            position: absolute;
+            top: 58px;
+            left: 0;
+            border: 1px solid color-theming.$linePrimary;
+            border-radius: 4px;
+            z-index: 10;
+            @extend %shadow1;
+            display: none;
+            width: 889px;
+            &-content {
+              padding: 16px 16px 0px 16px;
+
+              // &-item:not(:last-child) {
+              //   margin-bottom: 24px;
+              // }
+              &-item {
+                display: flex;
+
+                .label {
+                  @extend %headingMedium;
+                  width: 111px;
+                  margin-right: 8px;
+                  padding-top: 12px;
+                  color: color-theming.$contentPrimary;
+                }
+                .list {
+                  display: flex;
+                  flex-wrap: wrap;
+                  align-items: center;
+                  flex: 1;
+
+                  &-item {
+                    cursor: pointer;
+                    @extend %bodyLarge;
+                    margin-bottom: 12px;
+                    margin-right: 12px;
+                    border-radius: 4px;
+                    border: 1px solid #dedfe2;
+                    height: 48px;
+                    padding: 0 16px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: color-theming.$bgPrimary;
+                    color: color-theming.$contentPrimary;
+                    span.icon-active {
+                      display: none;
+                      margin-left: 6px;
+                      path {
+                        fill: color-theming.$contentAccent;
+                      }
+                    }
+                    &.active {
+                      background-color: color-theming.$bgAccentSecondary;
+                      color: color-theming.$contentAccent;
+                      span.icon-active {
+                        display: block;
+                      }
+                    }
+                    &:hover {
+                      background-color: color-theming.$bgAccentSecondary;
+                    }
+                  }
+
+                  .apple > svg path {
+                    fill: #00526b;
+                  }
+                  .ibm > svg path {
+                    fill: #3080ea;
+                  }
+                  .asus > svg path {
+                    fill: #18baff;
+                  }
+                  .intel > svg path {
+                    fill: #3080ea;
+                  }
+                  .dell > svg path {
+                    fill: #18baff;
+                  }
+                  .hp > svg path {
+                    fill: #18baff;
+                  }
+                  .lenovo > svg path {
+                    fill: #e94040;
+                  }
+                }
+              }
+            }
+            &-bottom {
+              display: flex;
+              padding: 0 16px 8px 16px;
+              height: 40px;
+              justify-content: flex-end;
+              .btn {
+                height: 32px;
+                @extend %headingSmall;
+              }
+              .remove {
+                background-color: color-theming.$bgSecondary;
+                color: color-theming.$contentPrimary;
+                margin-right: 12px;
+              }
+              .result {
+                background-color: color-theming.$bgAccentPrimary;
+                color: color-theming.$bgPrimary;
+              }
+            }
+          }
+        }
+      }
+
+      &__content {
+        display: flex;
+        flex-wrap: wrap;
+        flex: 1;
+        &-item {
+          position: relative;
+          margin-bottom: 24px;
+          margin-left: 12px;
+
+          &-btn {
+            background-color: color-theming.$bgPrimary;
+            height: 48px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            border: 1px solid color-theming.$linePrimary;
+            span {
+              margin-right: 6px;
+              @extend %bodyLarge;
+              color: color-theming.$contentPrimary;
+            }
+            &.active {
+              border: 1px solid #3080ea;
+            }
+            &:hover {
+              background-color: color-theming.$bgAccentSecondary;
+            }
+            &::after {
+              display: none;
+            }
+          }
+          .menu.active {
+            display: block;
+            animation: fadeUp 0.3s 0s;
+          }
+          .menu {
+            // transition: all 0.3s;
+            animation: fadeUp 0.3s 0s;
+            background-color: color-theming.$bgPrimary;
+            position: absolute;
+            top: 58px;
+            left: 0;
+            border: 1px solid color-theming.$linePrimary;
+            border-radius: 4px;
+            z-index: 10;
+            width: 550px;
+            @extend %shadow1;
+            display: none;
+            &-content {
+              padding: 16px 16px 0px 16px;
+
+              // &-item:not(:last-child) {
+              //   margin-bottom: 24px;
+              // }
+              &-item {
+                .list {
+                  overflow: hidden;
+                  display: flex;
+                  flex-wrap: wrap;
+                  align-items: center;
+                  // flex: 1;
+
+                  &-item {
+                    cursor: pointer;
+                    @extend %bodyLarge;
+                    margin-bottom: 12px;
+                    margin-right: 12px;
+                    border-radius: 4px;
+                    border: 1px solid #dedfe2;
+                    height: 48px;
+                    padding: 0 16px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: color-theming.$bgPrimary;
+                    color: color-theming.$contentPrimary;
+                    span.icon-active {
+                      display: none;
+                      margin-left: 6px;
+                      path {
+                        fill: color-theming.$contentAccent;
+                      }
+                    }
+                    &.active {
+                      background-color: color-theming.$bgAccentSecondary;
+                      color: color-theming.$contentAccent;
+                      span.icon-active {
+                        display: block;
+                      }
+                    }
+                    &:hover {
+                      background-color: color-theming.$bgAccentSecondary;
+                    }
+                  }
+
+                  .apple > svg path {
+                    fill: #00526b;
+                  }
+                  .ibm > svg path {
+                    fill: #3080ea;
+                  }
+                  .asus > svg path {
+                    fill: #18baff;
+                  }
+                  .intel > svg path {
+                    fill: #3080ea;
+                  }
+                  .dell > svg path {
+                    fill: #18baff;
+                  }
+                  .hp > svg path {
+                    fill: #18baff;
+                  }
+                  .lenovo > svg path {
+                    fill: #e94040;
+                  }
+                }
+              }
+            }
+            .dropdown-divider {
+              margin: 0;
+            }
+            &-bottom {
+              display: flex;
+              padding: 8px 16px 8px 16px;
+              height: 48px;
+              justify-content: flex-end;
+              .btn {
+                height: 32px;
+                @extend %headingSmall;
+              }
+              .remove {
+                background-color: color-theming.$bgSecondary;
+                color: color-theming.$contentPrimary;
+                margin-right: 12px;
+              }
+              .result {
+                background-color: color-theming.$bgAccentPrimary;
+                color: color-theming.$bgPrimary;
+              }
+            }
+          }
+        }
+      }
+    }
+    .BoxThree,
+    .BoxTwo {
+      // margin-top: 8px;
+      display: flex;
+
+      &-label {
+        padding-top: 13px;
+        width: 192px;
+        @extend %headingMedium;
+        color: color-theming.$contentPrimary;
+      }
+      &-content {
+        flex: 1;
+        .list {
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+
+          &-item {
+            cursor: pointer;
+            @extend %bodyLarge;
+            margin-bottom: 12px;
+            margin-right: 12px;
+            border-radius: 4px;
+            border: 1px solid #dedfe2;
+            height: 48px;
+            padding: 0 16px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: color-theming.$bgPrimary;
+            color: color-theming.$contentPrimary;
+            span.icon-active {
+              display: none;
+              margin-left: 6px;
+              path {
+                fill: color-theming.$contentAccent;
+              }
+            }
+            &.active {
+              background-color: color-theming.$bgAccentSecondary;
+              color: color-theming.$contentAccent;
+              span.icon-active {
+                display: block;
+              }
+            }
+            &:hover {
+              background-color: color-theming.$bgAccentSecondary;
+            }
+          }
+
+          .apple > svg path {
+            fill: #00526b;
+          }
+          .ibm > svg path {
+            fill: #3080ea;
+          }
+          .asus > svg path {
+            fill: #18baff;
+          }
+          .intel > svg path {
+            fill: #3080ea;
+          }
+          .dell > svg path {
+            fill: #18baff;
+          }
+          .hp > svg path {
+            fill: #18baff;
+          }
+          .lenovo > svg path {
+            fill: #e94040;
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes fadeUp {
+  0% {
+    opacity: 1;
+    transform: translateY(3rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

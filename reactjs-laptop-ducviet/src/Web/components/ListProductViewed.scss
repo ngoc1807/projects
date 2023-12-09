@@ -1,0 +1,211 @@
+@use "./../../style/base/font.scss";
+@use "./../../style/base/typography.scss";
+@use "./../../style/base/color-theming.scss";
+@use "./../../style/base/global.scss";
+.ListProductViewed {
+  position: relative;
+  width: 1200px;
+  background-color: color-theming.$contentInversePrimary;
+  border-radius: 8px;
+  padding: 24px 24px 0 24px;
+  .ListProductViewed__title {
+    display: flex;
+    // padding: 16px 0;
+    padding-bottom: 24px;
+    justify-content: space-between;
+    &-left {
+      position: relative;
+      @extend %displaySmall;
+      height: 56px;
+      vertical-align: middle;
+      flex: 1;
+      display: flex;
+      border-radius: 4px;
+      overflow: hidden;
+      .one {
+        position: relative;
+        padding: 0 8px;
+        display: flex;
+        align-items: center;
+        background-color: color-theming.$bgMain;
+        .text {
+          color: color-theming.$contentInversePrimary;
+          padding-left: 14px;
+          border-left: 4px solid #d10101;
+          text-transform: uppercase;
+        }
+        .two {
+          position: absolute;
+          top: 0;
+          right: -24px;
+          width: 0;
+          height: 0;
+          border-top: 28px solid transparent;
+          border-bottom: 28px solid transparent;
+          border-left: 24px solid color-theming.$bgMain;
+        }
+        .dot {
+          position: absolute;
+          top: calc(56 / 2 - 2);
+          right: -12px;
+          width: 10px;
+          height: 10px;
+          background-color: color-theming.$contentInversePrimary;
+          border-radius: 10px;
+        }
+      }
+
+      .three {
+        height: 56px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-left: 32px;
+        padding-right: 8px;
+        color: color-theming.$contentInversePrimary;
+        text-transform: uppercase;
+        background-color: color-theming.$ducvietComputer;
+        border-radius: 0 4px 4px 0px;
+      }
+    }
+
+    &-right {
+      display: flex;
+      align-items: center;
+      a {
+        text-decoration: none;
+      }
+      a.boxProductBlog__title-link {
+        text-decoration: none;
+        @extend %bodyLarge;
+        color: color-theming.$contentAccent;
+        text-transform: uppercase;
+        &.active {
+          color: color-theming.$contentAccent;
+        }
+        &:hover {
+          color: color-theming.$contentAccent;
+        }
+      }
+      button.btn {
+        width: 32px;
+        height: 32px;
+        border: 1px solid color-theming.$lineTertiary;
+        box-sizing: border-box;
+        border-radius: 8px;
+        margin-left: 16px;
+        padding: 0;
+
+        &:hover,
+        &:focus,
+        &:active {
+          background-color: color-theming.$bgAccentPrimary;
+          svg path {
+            fill: color-theming.$bgPrimary;
+          }
+        }
+      }
+    }
+  }
+
+  .ListProductViewed__content {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: hidden;
+  }
+  // component item Product
+  a.ListProductViewed__content-item {
+    width: 276px;
+    height: 140px;
+    border: 1px solid color-theming.$lineTertiary;
+    border-radius: 8px;
+    // overflow: hidden;
+    margin-right: 16px;
+    display: flex;
+    text-decoration: none;
+    color: unset;
+    padding: 8px 12px;
+    margin-bottom: 24px;
+    &:hover {
+      box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15);
+      border: 1px solid color-theming.$lineAccent;
+    }
+
+    .image {
+      width: 80px;
+      height: 92px;
+      padding-bottom: 12px;
+      img {
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+      }
+    }
+
+    .desc {
+      width: 172px;
+      padding-left: 14px;
+      display: flex;
+      flex-direction: column;
+      .title {
+        height: 40px;
+        span {
+          @extend %headingSmall;
+          color: color-theming.$contentPrimary;
+          height: 156px;
+          height: 40px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 2;
+        }
+      }
+
+      .price {
+        display: flex;
+        .left {
+          flex: 1;
+        }
+        .right {
+          @extend %headingSmall;
+          width: 36px;
+          height: 36px;
+          border-radius: 36px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: color-theming.$contentInversePrimary;
+          background-color: color-theming.$ducvietComputer;
+        }
+      }
+
+      .price-new {
+        margin-top: 4px;
+        @extend %headingMedium;
+        color: color-theming.$ducvietComputer;
+        height: 24px;
+      }
+      .price-old {
+        height: 20px;
+        font-size: 14px;
+        line-height: 20px;
+        text-decoration: line-through;
+        color: color-theming.$contentSecondary;
+      }
+      .compare {
+        button {
+          width: 83px;
+          height: 32px;
+          background-color: color-theming.$bgSecondary;
+          color: color-theming.$contentAccent;
+          @extend %headingSmall;
+          &:hover {
+            background-color: color-theming.$ducvietComputer;
+            color: color-theming.$contentInversePrimary;
+          }
+        }
+      }
+    }
+  }
+}

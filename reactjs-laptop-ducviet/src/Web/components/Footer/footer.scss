@@ -1,0 +1,310 @@
+@use "./../../../style/base/font.scss";
+@use "./../../../style/base/typography.scss";
+@use "./../../../style/base/color-theming.scss";
+@use "./../../../style/base/global.scss";
+
+.Footer {
+  min-width: 1230px;
+  position: relative;
+
+  .box-one {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    background-color: color-theming.$bgMain;
+  }
+
+  .box-one .FirstItem {
+    width: global.$width-global;
+    color: color-theming.$contentInversePrimary;
+    height: 480px;
+    display: flex;
+    .system {
+      padding-top: 40px;
+      .title-one {
+        @extend %headingMedium;
+        text-transform: uppercase;
+      }
+      .underlined {
+        width: 65px;
+        height: 2px;
+        background-color: color-theming.$ducvietComputer;
+        margin: 12px 0;
+      }
+
+      .title-two {
+        @extend %headingMedium;
+
+        width: 274px;
+        height: 32px;
+        padding: 4px 12px;
+        background-color: color-theming.$ducvietComputer;
+        color: color-theming.$contentInversePrimary;
+        border-radius: 4px;
+      }
+
+      ul.item {
+        width: 274px;
+        padding-top: 16px;
+        list-style: none;
+        li.item-info {
+          display: flex;
+          align-items: baseline;
+          min-height: 20px;
+          margin-bottom: 8px;
+          span.icon {
+            padding-right: 10px;
+            path {
+              fill: color-theming.$contentInversePrimary;
+            }
+          }
+          span.text {
+            @extend %bodyMedium;
+            color: color-theming.$contentInversePrimary;
+          }
+
+          a.item-link {
+            @extend %bodyMedium;
+            text-decoration: none;
+            color: color-theming.$contentAccent;
+
+            span.icon {
+              padding-right: 10px;
+              path {
+                fill: color-theming.$contentAccent;
+              }
+            }
+            span.text {
+              @extend %bodyMedium;
+              color: color-theming.$contentAccent;
+            }
+          }
+        }
+      }
+    }
+
+    .introduce {
+      margin-left: 137px;
+      width: 378px;
+      padding-top: 40px;
+      .title-one {
+        @extend %headingMedium;
+        text-transform: uppercase;
+      }
+      .underlined {
+        width: 65px;
+        height: 2px;
+        background-color: color-theming.$ducvietComputer;
+        margin: 12px 0;
+      }
+      ul.item {
+        list-style: none;
+        padding-bottom: 4px;
+
+        li.item-info {
+          margin-bottom: 4px;
+          a {
+            @extend %bodyMedium;
+            text-decoration: none;
+            width: 376px;
+            height: 20px;
+            color: color-theming.$contentInversePrimary;
+          }
+        }
+      }
+    }
+    .pay {
+      margin-left: 32px;
+      width: 379px;
+      padding-top: 40px;
+      .title-one {
+        @extend %headingMedium;
+        text-transform: uppercase;
+      }
+      .underlined {
+        width: 65px;
+        height: 2px;
+        background-color: color-theming.$ducvietComputer;
+        margin: 12px 0;
+      }
+      ul.item {
+        width: 379px;
+        list-style: none;
+        display: flex;
+
+        li.item-info {
+          margin-right: 16px;
+          a {
+            text-decoration: none;
+            width: 64px;
+            height: 64px;
+            border-radius: 4px;
+            img {
+              width: 64px;
+              height: 64px;
+              border-radius: 4px;
+              object-fit: cover;
+            }
+          }
+        }
+      }
+
+      .info-bank {
+        .name {
+          @extend %bodyMedium;
+          text-transform: uppercase;
+          color: color-theming.$contentInversePrimary;
+          padding-bottom: 2px;
+        }
+        ul {
+          padding-left: 20px;
+          li {
+            @extend %bodyMedium;
+            color: color-theming.$contentInversePrimary;
+          }
+        }
+      }
+      .search .SearchFooter {
+        width: 379px;
+        height: 48px;
+
+        display: flex;
+        align-items: center;
+
+        form {
+          display: flex;
+        }
+
+        //
+        &__input {
+          width: 255px;
+          height: 48px;
+          &.form-control {
+            border-radius: 4px 0 0px 4px;
+            border-color: color-theming.$contentInversePrimary;
+            outline: none;
+            background-clip: unset;
+            @extend %headingSmall;
+          }
+        }
+
+        &__btn {
+          width: 124px;
+          height: 48px;
+          background-color: color-theming.$ducvietComputer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          // text-align: center;
+          // vertical-align: middle;
+          border-radius: 0px 4px 4px 0px;
+          padding: 0;
+          margin: 0;
+          &-icon {
+            svg path {
+              fill: color-theming.$contentInversePrimary;
+            }
+          }
+          &-text {
+            @extend %headingSmall;
+
+            transform: translateY(2px);
+            vertical-align: middle;
+            padding-left: 4px;
+
+            color: color-theming.$contentInversePrimary;
+          }
+        }
+      }
+    }
+  }
+
+  .box-two {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    background-color: color-theming.$bgInversePrimary;
+  }
+
+  .box-two .SecondItem {
+    width: global.$width-global;
+    color: color-theming.$contentInversePrimary;
+    height: 204px;
+    display: flex;
+    .introduce {
+      padding-top: 24px;
+      width: 545px;
+      .title {
+        @extend %headingMedium;
+        text-transform: uppercase;
+        padding-bottom: 16px;
+      }
+      .info {
+        display: flex;
+        justify-content: space-between;
+        &__left {
+          width: 213px;
+          ul {
+            list-style: none;
+            li {
+              @extend %bodyMedium;
+              color: color-theming.$contentTertiary;
+              margin-bottom: 8px;
+            }
+          }
+        }
+        &__right {
+          width: 283px;
+          ul {
+            list-style: none;
+            li {
+              @extend %bodyMedium;
+              color: color-theming.$contentTertiary;
+              margin-bottom: 8px;
+            }
+          }
+        }
+      }
+    }
+    .contact {
+      margin-left: 71px;
+      padding-top: 24px;
+      width: 208px;
+      .title {
+        @extend %headingMedium;
+        text-transform: uppercase;
+        padding-bottom: 16px;
+      }
+
+      ul.list-icon {
+        list-style: none;
+        display: flex;
+        // width: 40px;
+        height: 40px;
+
+        li {
+          width: 40px;
+          height: 40px;
+          background-color: color-theming.$contentInversePrimary;
+          border-radius: 40px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-right: 12px;
+          a {
+            text-decoration: none;
+          }
+        }
+      }
+    }
+    .image {
+      padding-top: 24px;
+      margin-left: 145px;
+      width: 231px;
+      img {
+        width: 149px;
+        height: 56px;
+      }
+    }
+  }
+}

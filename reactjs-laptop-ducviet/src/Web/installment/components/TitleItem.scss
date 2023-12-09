@@ -1,0 +1,61 @@
+@use "./../../../style/base/typography.scss";
+@use "./../../../style/base/color-theming.scss" as c;
+
+.InstallmentWeb .ContentItem .TitleItem {
+  .text {
+    @extend %displayMedium;
+    height: 36px;
+    vertical-align: middle;
+    color: c.$contentPrimary;
+    padding-left: 24px;
+    border-left: 4px solid #d10101;
+    text-transform: uppercase;
+  }
+  .box {
+    margin-top: 24px;
+    border: 1px solid #dedfe2;
+    box-sizing: border-box;
+    border-radius: 8px;
+    padding: 16px 24px;
+    display: flex;
+    &-image {
+      width: 80px;
+      height: 80px;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+    &-content {
+      margin-left: 16px;
+      &-title {
+        @extend %displaySmall;
+        color: c.$contentPrimary;
+      }
+      &-price {
+        margin-top: 2px;
+        display: flex;
+        .new {
+          @extend %bodyLarge;
+          color: c.$contentSecondary;
+          span {
+            @extend %headingMedium;
+            color: c.$ducvietComputer;
+          }
+        }
+        .old {
+          margin-left: 10px;
+          @extend %bodyMedium;
+          color: c.$contentSecondary;
+          text-decoration: line-through;
+        }
+      }
+      &-more {
+        margin-top: 2px;
+        @extend %headingMedium;
+        color: c.$contentAccent;
+      }
+    }
+  }
+}

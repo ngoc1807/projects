@@ -1,0 +1,101 @@
+@use "./../../style/base/font.scss";
+@use "./../../style/base/typography.scss";
+@use "./../../style/base/color-theming.scss";
+@use "./../../style/base/global.scss";
+.CompareProductHome {
+  z-index: 2;
+  position: fixed;
+  bottom: 76px;
+  // background-color: white;
+  left: 0;
+  right: 0;
+  width: 100%;
+  max-height: 84px;
+  height: auto;
+  animation: fadeOpacity ease-in-out 0.3s;
+  animation-delay: 0s;
+  // padding: 12px 8px;
+  display: flex;
+
+  .box {
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15);
+    margin-left: 12px;
+    margin-right: 12px;
+    // width: calc(100%-24px);
+    width: auto;
+    background-color: white;
+    display: flex;
+    border-radius: 12px;
+  }
+
+  .list {
+    flex: 1;
+    display: flex;
+    padding: 12px 8px;
+  }
+  .itemCompare:first-child {
+    margin-right: 8px;
+  }
+  .itemCompare {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    border-radius: 8px;
+    border: 1px solid #dedfe2;
+    align-items: center;
+    .close1 {
+      width: 20px;
+      height: 20px;
+      overflow: hidden;
+      padding: 0;
+      // margin: 0;
+      //   background-color: aqua;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      // border: 1px solid #dedfe2;
+      margin-right: 6px;
+      font-size: 20px;
+    }
+
+    .box-text {
+      flex: 1;
+      margin-left: 4px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3;
+      max-height: 56px;
+      @extend %bodySmall;
+      color: color-theming.$contentPrimary;
+    }
+  }
+  .btnCompare {
+    width: 80px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-right: 8px;
+    display: flex;
+    flex-direction: column;
+
+    .compare {
+      @extend %bodySmall;
+      background-color: color-theming.$contentAccent;
+      color: white;
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+    .cancel {
+      @extend %bodySmall;
+      margin-top: 4px;
+      background-color: color-theming.$bgSecondary;
+      color: color-theming.$contentPrimary;
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+}

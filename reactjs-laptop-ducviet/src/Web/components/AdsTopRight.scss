@@ -1,0 +1,32 @@
+@use "./../../style/base/font.scss";
+@use "./../../style/base/typography.scss";
+@use "./../../style/base/color-theming.scss";
+@use "./../../style/base/global.scss";
+
+.AdsTopRight {
+  position: fixed;
+  z-index: 10;
+  right: 0;
+  top: 205px;
+  ul.box {
+    margin-bottom: 0;
+    list-style: none;
+    width: 88px;
+    border-radius: 8px 0 0 8px;
+    overflow: hidden;
+    li.item:not(:last-child) {
+      border-bottom: 1px solid #fff;
+    }
+    li.item {
+      background-color: color-theming.$bgNegativePrimary;
+      padding: 14px 10px;
+      text-align: center;
+
+      a {
+        @extend %bodyMedium;
+        color: color-theming.$contentInversePrimary;
+        // text-decoration: none;
+      }
+    }
+  }
+}

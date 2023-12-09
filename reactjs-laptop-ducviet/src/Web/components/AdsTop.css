@@ -1,0 +1,21 @@
+@use "./../../style/base/font.scss";
+@use "./../../style/base/typography.scss";
+@use "./../../style/base/color-theming.scss";
+@use "./../../style/base/global.scss";
+.AdsTop {
+  height: 40px;
+  background-color: black;
+  overflow: hidden;
+  min-width: 1230px;
+}
+
+.AdsTop .banner {
+  width: 1200px;
+}
+
+.AdsTop img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+/*# sourceMappingURL=AdsTop.css.map */

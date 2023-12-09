@@ -1,0 +1,113 @@
+@use "./../../style/base/font.scss";
+@use "./../../style/base/typography.scss";
+@use "./../../style/base/color-theming.scss";
+@use "./../../style/base/global.scss";
+
+.ViewedProductsItem {
+  border-radius: 4px;
+  //   margin-bottom: 8px;
+  padding-bottom: 12px;
+  .Viewed {
+    background-color: color-theming.$bgPrimary;
+    padding: 0 0;
+    &__title {
+      @extend %headingLarge;
+      border-bottom: 1px solid color-theming.$lineTertiary;
+      height: 48px;
+      padding: 10px 16px;
+    }
+
+    &__list {
+      margin-top: 12px;
+      margin-bottom: 12px;
+
+      padding: 12px 16px;
+      display: flex;
+      flex-wrap: nowrap;
+      overflow-y: scroll;
+      a {
+        text-decoration: none;
+        color: unset;
+      }
+      &-item:not(:last-child) {
+        margin-right: 12px;
+      }
+      &-item {
+        width: 244px;
+
+        border-radius: 8px;
+        padding: 8px;
+        border: 1px solid color-theming.$lineTertiary;
+
+        .image {
+          width: 154px;
+          aspect-ratio: 154 /122;
+          background-color: white;
+          overflow: hidden;
+          img {
+            width: 154px;
+            aspect-ratio: 154 /122;
+            object-fit: contain;
+          }
+        }
+        .desc {
+          width: 156px;
+          margin-left: 8px;
+          &__title {
+            @extend %headingSmall;
+            color: color-theming.$contentPrimary;
+            height: 40px;
+
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            margin-bottom: 2px;
+          }
+          .price {
+            display: flex;
+            align-items: center;
+            &_left {
+              flex: 1;
+              .price_new {
+                @extend %headingMedium;
+                height: 24px;
+                color: color-theming.$ducvietComputer;
+              }
+              .price_old {
+                @extend %bodyMedium-strikethrough;
+                height: 20px;
+                color: color-theming.$contentSecondary;
+              }
+            }
+
+            &_right {
+              width: 32px;
+              height: 32px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              border-radius: 32px;
+              background-color: color-theming.$ducvietComputer;
+              color: color-theming.$contentInversePrimary;
+              font-style: normal;
+              font-weight: bold;
+              font-size: 12px;
+              line-height: 16px;
+            }
+          }
+          .compare {
+            margin-top: 4px;
+            .btn {
+              @extend %headingSmall;
+              background-color: color-theming.$bgSecondary;
+              padding: 6px 16px;
+              color: color-theming.$contentAccent;
+            }
+          }
+        }
+      }
+    }
+  }
+}

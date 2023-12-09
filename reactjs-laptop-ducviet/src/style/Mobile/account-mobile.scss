@@ -1,0 +1,104 @@
+@use "../base/font.scss";
+@use "../base/typography.scss";
+@use "../base/color-theming.scss";
+@use "../base/global.scss";
+.AccountMobile {
+  background-color: #e5e5e5;
+
+  .ContentItem {
+    background-color: #e5e5e5;
+    position: relative;
+    padding-bottom: 12px;
+    .BoxTwo,
+    .BoxThree,
+    .BoxOne {
+      width: 100%;
+      padding: 12px 0 0 0;
+      &__title {
+        @extend %bodyMedium;
+        color: $contentSecondary;
+        padding: 0 16px 8px 16px;
+        text-transform: uppercase;
+      }
+      &__list {
+        width: 100%;
+        background: $bgPrimary;
+        padding: 0 16px;
+        a {
+          text-decoration: none;
+        }
+        .item {
+          display: flex;
+          align-items: center;
+          height: 40px;
+          border-bottom: 1px solid $lineTertiary;
+          .text {
+            @extend %headingSmall;
+            color: $contentPrimary;
+            margin-left: 10px;
+            flex: 1;
+            transform: translateY(1px);
+          }
+          .icon-first.phone {
+            svg path {
+              fill: $contentInformative;
+            }
+          }
+          .icon-first.facebook {
+            svg path {
+              fill: #1890ff;
+            }
+          }
+
+          .icon-first.card {
+            svg path {
+              fill: $contentPositive;
+            }
+          }
+          .icon-first.bag {
+            svg path {
+              fill: $contentCritical;
+            }
+          }
+          .icon-two {
+            svg path {
+              fill: $contentPrimary;
+            }
+          }
+        }
+      }
+    }
+
+    .BoxOne {
+      &__modal {
+        .modal-header {
+          width: 100%;
+          border-bottom: unset;
+          padding-bottom: 0;
+          .title {
+            color: $contentPrimary;
+            @extend %headingMedium;
+          }
+        }
+        .modal-body {
+          width: 100%;
+          input.form-control {
+            height: 48px;
+          }
+          padding-top: 12px;
+          padding-bottom: 12px;
+        }
+        .modal-footer {
+          padding-top: 0;
+          border-top: unset;
+          width: 100%;
+          button {
+            background-color: $ducvietComputer;
+            color: #ffff;
+            @extend %headingMedium;
+          }
+        }
+      }
+    }
+  }
+}

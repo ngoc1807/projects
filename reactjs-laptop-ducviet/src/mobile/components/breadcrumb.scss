@@ -1,0 +1,26 @@
+@use "./../../style/base/font.scss";
+@use "./../../style/base/typography.scss";
+@use "./../../style/base/color-theming.scss";
+@use "./../../style/base/global.scss";
+
+.BreadcrumbMobile {
+  padding: 4px 8px;
+
+  .box {
+    display: flex;
+    align-items: baseline;
+
+    &__text a {
+      @extend %bodySmall;
+      color: color-theming.$contentSecondary;
+      text-decoration: none;
+    }
+    &__text.active a {
+      color: color-theming.$contentPrimary;
+      text-decoration: none;
+    }
+    &__icon {
+      padding: 0 4px;
+    }
+  }
+}

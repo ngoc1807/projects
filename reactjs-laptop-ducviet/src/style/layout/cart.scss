@@ -1,0 +1,372 @@
+@use "./../base/font.scss";
+@use "./../base/typography.scss";
+@use "./../base/color-theming.scss";
+@use "./../base/global.scss";
+.CartWeb {
+  min-width: 1230px;
+  background-color: color-theming.$bgTertiary;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .TableCart {
+    width: 1200px;
+    background-color: color-theming.$bgPrimary;
+    border-radius: 8px;
+    padding: 24px 24px 0 24px;
+    &__title {
+      @extend %displayMedium;
+      height: 36px;
+      vertical-align: middle;
+      color: color-theming.$contentPrimary;
+      padding-left: 24px;
+      border-left: 4px solid #d10101;
+      text-transform: uppercase;
+    }
+
+    &__content {
+      padding-top: 32px;
+
+      .table thead th {
+        @extend %headingMedium;
+        border-top: unset;
+        // border-bottom: 1px solid color-theming.$lineTertiary;
+        border: none;
+      }
+
+      .table thead tr {
+        .header {
+          &__checked {
+            @extend %headingMedium;
+            color: color-theming.$contentPrimary;
+          }
+          &__amount,
+          &__price,
+          &__option {
+            @extend %headingMedium;
+            color: color-theming.$contentSecondary;
+          }
+        }
+      }
+
+      .table tbody tr {
+        .body {
+          &__info {
+            display: flex;
+            height: 112px;
+            align-items: center;
+            width: 700px;
+            margin-right: 0;
+            width: 100%;
+            &-image {
+              width: 80px;
+              height: 80px;
+              border-radius: 4px;
+              align-items: center;
+              display: flex;
+              justify-content: center;
+              border: 1px solid color-theming.$linePrimary;
+              margin-right: 16px;
+              img {
+                width: 70px;
+                height: 70px;
+                object-fit: cover;
+                border-radius: 4px;
+              }
+            }
+            &-desc {
+              .title {
+                @extend %headingSmall;
+                color: color-theming.$contentPrimary;
+              }
+              .text {
+                @extend %bodySmall;
+                color: color-theming.$contentSecondary;
+              }
+            }
+          }
+
+          &__amount {
+            height: 40px;
+            vertical-align: middle;
+            input.form-control {
+              @extend %headingMedium;
+              width: 72px;
+              height: 40px;
+
+              color: color-theming.$contentPrimary;
+            }
+          }
+
+          &__price {
+            width: 140px;
+            height: 40px;
+            vertical-align: middle;
+
+            &-old {
+              @extend %headingLarge;
+              color: color-theming.$contentPrimary;
+            }
+            &-new {
+              @extend %bodyMedium-strikethrough;
+              color: color-theming.$contentSecondary;
+            }
+          }
+
+          &__option {
+            width: 100px;
+            > div {
+              display: flex;
+            }
+            vertical-align: middle;
+
+            padding-left: 20px;
+            &-detail {
+              width: 32px;
+              height: 32px;
+              border-radius: 4px;
+              margin-right: 16px;
+              border: 1px solid color-theming.$linePrimary;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              padding: 0;
+            }
+            &-trash {
+              padding: 0;
+              margin: 0;
+              width: 32px;
+              height: 32px;
+              border-radius: 4px;
+              border: 1px solid color-theming.$linePrimary;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            }
+          }
+        }
+      }
+    }
+  }
+  .FormCartItem {
+    width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    margin: 32px 0;
+    .right {
+      background-color: color-theming.$bgPrimary;
+
+      border-radius: 8px;
+      padding: 24px 24px 24px 24px;
+      width: 888px;
+      min-height: 548px;
+
+      &__title {
+        @extend %displayMedium;
+        height: 36px;
+        vertical-align: middle;
+        color: color-theming.$contentPrimary;
+        padding-left: 24px;
+        border-left: 4px solid #d10101;
+        text-transform: uppercase;
+      }
+
+      .box {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        &__right {
+          width: 412px;
+          &-title {
+            @extend %headingLarge;
+            margin-top: 24px;
+            margin-bottom: 12px;
+            height: 28px;
+
+            color: color-theming.$contentPrimary;
+          }
+        }
+        .input-group.select {
+          align-items: flex-start;
+          .name {
+            padding-top: 10px;
+          }
+        }
+        .input-group {
+          display: flex;
+          align-items: center;
+
+          .name {
+            width: 112px;
+            @extend %bodyMedium;
+            color: color-theming.$contentPrimary;
+          }
+          input.form-control {
+            margin-left: 12px;
+            height: 40px;
+            width: 288px;
+            @extend %bodyMedium;
+            color: color-theming.$contentPrimary;
+          }
+          .notify {
+            @extend %bodySmall;
+            margin-left: 124px;
+            margin-bottom: 16px;
+            color: color-theming.$contentNegative;
+          }
+
+          .select-group {
+            margin-left: 12px;
+
+            select.form-control:not(:nth-child(3)) {
+              @extend %bodyMedium;
+              width: 288px;
+              height: 40px;
+
+              color: color-theming.$contentPrimary;
+            }
+            select.form-control:not(:nth-child(3)) {
+              margin-bottom: 12px;
+            }
+            .notify {
+              @extend %bodySmall;
+              margin-left: 0;
+              margin-bottom: 12px;
+              color: color-theming.$contentNegative;
+            }
+          }
+
+          textarea.form-control {
+            width: 288px;
+            margin-left: 12px;
+            @extend %bodyMedium;
+
+            color: color-theming.$contentPrimary;
+          }
+        }
+        &__left {
+          width: 396px;
+          padding: 24px;
+          border: 1px solid color-theming.$linePrimary;
+          min-height: 360px;
+          border-radius: 12px;
+          &-title {
+            @extend %headingLarge;
+            margin-bottom: 16px;
+            height: 28px;
+
+            color: color-theming.$contentPrimary;
+          }
+
+          .radio-group {
+            .RadioBoxCustom {
+              label {
+                @extend %bodyLarge;
+                color: color-theming.$contentPrimary;
+                span.note1 {
+                  @extend %bodyLarge;
+                  color: color-theming.$bgPositivePrimary;
+                }
+                span.note2 {
+                  @extend %bodyLarge;
+                  color: color-theming.$bgInformativePrimary;
+                }
+              }
+            }
+          }
+          .underlined {
+            margin-top: 8px;
+            margin-bottom: 24px;
+            border: 1px solid color-theming.$linePrimary;
+          }
+        }
+      }
+    }
+
+    .left {
+      width: 288px;
+      min-height: 548px;
+      background-color: color-theming.$bgPrimary;
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      &__title {
+        width: 288px;
+        height: 48px;
+        padding: 10px 15px;
+        border-bottom: 1px solid color-theming.$linePrimary;
+        span {
+          @extend %headingLarge;
+
+          height: 48px;
+
+          vertical-align: middle;
+
+          color: color-theming.$contentPrimary;
+
+          text-transform: uppercase;
+        }
+      }
+
+      &__content {
+        padding: 16px 16px 0 16px;
+        flex: 1;
+        .notify {
+          @extend %bodySmall;
+          margin-bottom: 16px;
+          color: color-theming.$contentNegative;
+        }
+        .group-input {
+          .title {
+            @extend %bodyMedium;
+            color: color-theming.$contentPrimary;
+          }
+          input.form-control {
+            height: 40px;
+          }
+
+          button.btn {
+            background-color: color-theming.$bgAccentPrimary;
+            color: color-theming.$lineInversePrimary;
+          }
+        }
+
+        .item {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 16px;
+          .title {
+            @extend %bodyMedium;
+            color: color-theming.$contentSecondary;
+          }
+          .text.trans,
+          .text.money {
+            @extend %headingSmall;
+            color: color-theming.$contentPrimary;
+          }
+
+          .text.sale {
+            @extend %headingSmall;
+            color: color-theming.$contentPositive;
+          }
+          .text.total {
+            @extend %headingXLarge;
+            color: color-theming.$contentAccent;
+          }
+        }
+      }
+
+      &__btn {
+        padding: 16px;
+        button.btn {
+          @extend %headingMedium;
+          width: 256px;
+          height: 48px;
+          background: color-theming.$ducvietComputer;
+          color: color-theming.$lineInversePrimary;
+        }
+      }
+    }
+  }
+}

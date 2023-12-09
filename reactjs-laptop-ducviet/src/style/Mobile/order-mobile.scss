@@ -1,0 +1,285 @@
+@use "../base/font.scss";
+@use "../base/typography.scss";
+@use "../base/color-theming.scss";
+@use "../base/global.scss";
+
+.OrderMobile {
+  background-color: #e5e5e5;
+  min-height: 100vh;
+
+  .FormOrderItem {
+    .box {
+      background-color: #e5e5e5;
+      padding: 0;
+      .boxOne {
+        padding: 12px 16px;
+        background-color: $bgPrimary;
+        &-title {
+          @extend %headingLarge;
+          color: $contentPrimary;
+          padding-bottom: 12px;
+        }
+        .input-group.select {
+          align-items: flex-start;
+          .name {
+            transform: translateY(0);
+            padding-top: 12px;
+          }
+        }
+
+        .input-group {
+          display: flex;
+          align-items: center;
+
+          .name {
+            width: 92px;
+            @extend %bodyMedium;
+            color: color-theming.$contentPrimary;
+            transform: translateY(-5px);
+          }
+          input.form-control {
+            height: 40px;
+            width: calc(100% - 92px);
+            @extend %bodyMedium;
+            color: color-theming.$contentPrimary;
+            border-radius: 4px;
+            margin-bottom: 12px;
+          }
+
+          .select-group {
+            width: calc(100% - 92px);
+
+            input.form-control {
+              height: 40px;
+              width: 100%;
+              @extend %bodyMedium;
+              color: color-theming.$contentPrimary;
+              border-radius: 4px;
+            }
+
+            select.form-control:not(:nth-child(3)) {
+              @extend %bodyMedium;
+              margin-bottom: 12px;
+              height: 40px;
+
+              color: color-theming.$contentPrimary;
+            }
+          }
+
+          textarea.form-control {
+            width: calc(100% - 92px);
+            @extend %bodyMedium;
+            border-radius: 4px;
+
+            color: color-theming.$contentPrimary;
+          }
+        }
+      }
+
+      .boxTwo {
+        margin-top: 12px;
+        margin-bottom: 12px;
+        padding: 12px 16px;
+        background-color: $bgPrimary;
+
+        &-title {
+          @extend %headingLarge;
+          margin-bottom: 12px;
+          height: 28px;
+
+          color: color-theming.$contentPrimary;
+        }
+
+        .radio-group {
+          .RadioBoxCustom {
+            label {
+              @extend %bodyLarge;
+              color: color-theming.$contentPrimary;
+              span.note1 {
+                @extend %bodyLarge;
+                color: color-theming.$bgPositivePrimary;
+              }
+              span.note2 {
+                @extend %bodyLarge;
+                color: color-theming.$bgInformativePrimary;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .FooterItem {
+    box-shadow: 0px -2px 8px rgba(0, 0, 0, 0.1);
+    background-color: #e5e5e5;
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    z-index: 1030;
+
+    .box {
+      background-color: $bgPrimary;
+      padding: 12px 16px;
+      &__first {
+        height: 20px;
+        align-items: center;
+        justify-content: space-between;
+        display: flex;
+        .text {
+          @extend %bodyMedium;
+          color: $contentSecondary;
+        }
+        .price {
+          @extend %headingLarge;
+          color: $ducvietComputer;
+        }
+      }
+      &__btn {
+        padding-top: 12px;
+        button.btn {
+          @extend %headingMedium;
+          width: 100%;
+          height: 48px;
+          background-color: $ducvietComputer;
+          color: $contentInversePrimary;
+          border-radius: 4px;
+        }
+      }
+    }
+  }
+}
+.OrderVoucherMobile {
+  background-color: #e5e5e5;
+
+  .FormOrderVoucherItem {
+    .box {
+      padding: 12px 16px;
+      min-height: 100vh;
+      background-color: $bgPrimary;
+      &__content {
+        flex: 1;
+        .notify {
+          @extend %bodySmall;
+          margin-bottom: 16px;
+          color: color-theming.$contentNegative;
+        }
+        .group-input {
+          .title {
+            padding-bottom: 12px;
+            @extend %bodyMedium;
+            color: color-theming.$contentPrimary;
+          }
+          input.form-control {
+            height: 40px;
+          }
+
+          button.btn {
+            background-color: color-theming.$bgAccentPrimary;
+            color: color-theming.$lineInversePrimary;
+          }
+        }
+
+        .item {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 16px;
+          .title {
+            @extend %bodyMedium;
+            color: color-theming.$contentSecondary;
+          }
+          .text.trans,
+          .text.money {
+            @extend %headingSmall;
+            color: color-theming.$contentPrimary;
+          }
+
+          .text.sale {
+            @extend %headingSmall;
+            color: color-theming.$contentPositive;
+          }
+          .text.total {
+            @extend %headingXLarge;
+            color: color-theming.$ducvietComputer;
+          }
+        }
+      }
+    }
+  }
+
+  .FooterItem {
+    box-shadow: 0px -2px 8px rgba(0, 0, 0, 0.1);
+    background-color: #e5e5e5;
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    z-index: 1030;
+
+    .box {
+      background-color: $bgPrimary;
+      padding: 12px 16px;
+
+      &__btn {
+        button.btn {
+          @extend %headingMedium;
+          width: 100%;
+          height: 48px;
+          background-color: $ducvietComputer;
+          color: $contentInversePrimary;
+          border-radius: 4px;
+        }
+      }
+    }
+  }
+}
+
+.OrderSuccessMobile .contentItem {
+  background-color: $bgPrimary;
+
+  .box {
+    padding-top: 120px;
+    padding-right: 16px;
+    padding-left: 16px;
+    &__content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      &-image {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 12px;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      &-title {
+        @extend %displaySmall;
+        color: color-theming.$contentPrimary;
+        margin-bottom: 4px;
+        width: 100%;
+        text-align: center;
+      }
+      &-note {
+        @extend %bodyMedium;
+        color: color-theming.$contentSecondary;
+        margin-bottom: 24px;
+        width: 100%;
+        text-align: center;
+      }
+      &-btn {
+        button.btn {
+          @extend %headingMedium;
+          width: 198px;
+          height: 48px;
+          background: color-theming.$ducvietComputer;
+          color: color-theming.$lineInversePrimary;
+        }
+      }
+    }
+  }
+}

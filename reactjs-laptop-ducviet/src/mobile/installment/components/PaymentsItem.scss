@@ -1,0 +1,82 @@
+@use "./../../../style/base/typography.scss";
+@use "./../../../style/base/color-theming.scss" as c;
+
+.InstallmentMobile .ContentItem .PaymentsItem {
+  padding-bottom: 8px;
+  // padding-top: 12px;
+
+  padding-left: 16px;
+  padding-right: 16px;
+  .BoxOne {
+    .title {
+      @extend %headingLarge;
+      color: c.$contentPrimary;
+      padding-bottom: 12px;
+    }
+
+    .content {
+      // display: flex;
+      // justify-content: space-between;
+      padding-bottom: 12px;
+      .RadioCustom {
+        width: 100%;
+        border: 1px solid #dedfe2;
+        border-radius: 8px;
+        padding: 12px 30px 12px 50px;
+
+        margin-bottom: 16px;
+
+        @extend %bodySmall;
+        color: c.$contentPrimary;
+        &:hover {
+          border: 1px solid c.$ducvietComputer;
+        }
+        &.active {
+          .body {
+            .text {
+              @extend %headingLarge;
+
+              font-weight: bold;
+            }
+          }
+          border: 1px solid c.$ducvietComputer;
+        }
+
+        .checkmark {
+          top: 50%;
+          left: 18px;
+          transform: translateY(-11px);
+          height: 18px;
+          width: 18px;
+        }
+        .checkmark:after {
+          width: 10px;
+          height: 10px;
+        }
+
+        .body {
+          align-items: center;
+          justify-content: space-between;
+
+          .text {
+            @extend %headingLarge;
+            font-weight: normal;
+            color: c.$contentPrimary;
+          }
+          .image {
+            margin-top: 4px;
+            display: flex;
+            img {
+              margin-right: 12px;
+              width: 44px;
+              height: 44px;
+              object-fit: contain;
+              border: 1px solid #dedfe2;
+              border-radius: 8px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

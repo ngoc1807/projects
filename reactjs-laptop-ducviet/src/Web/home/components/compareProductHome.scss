@@ -1,0 +1,100 @@
+@use "./../../../style/base/font.scss";
+@use "./../../../style/base/typography.scss";
+@use "./../../../style/base/color-theming.scss";
+@use "./../../../style/base/global.scss";
+.CompareProductHome {
+  z-index: 2;
+  position: fixed;
+  bottom: 20px;
+  background-color: white;
+  left: calc(50% - 358px);
+  max-width: 716px;
+  max-height: 104px;
+  height: auto;
+  animation: fadeOpacity ease-in-out 0.3s;
+  animation-delay: 0s;
+  padding: 12px 24px;
+  display: flex;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+  .list {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    width: 568px;
+  }
+  .itemCompare {
+    width: 260px !important;
+    position: relative;
+
+    margin-right: 24px;
+    display: flex;
+    border-radius: 8px;
+    border: 1px solid #dedfe2;
+    align-items: center;
+    .close1 {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 20px;
+      height: 20px;
+      overflow: hidden;
+      //   padding: 0;
+      margin: 0;
+      //   background-color: aqua;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .box-img {
+      margin-left: 12px;
+      width: 64px;
+      height: 64px;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        background-color: black;
+      }
+    }
+    .box-text {
+      margin-right: 8px;
+      flex: 1;
+      margin-left: 8px;
+      margin-top: 2px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      max-height: 40px;
+      @extend %headingSmall;
+      color: color-theming.$contentPrimary;
+    }
+  }
+  .btnCompare {
+    width: 100px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    display: flex;
+    flex-direction: column;
+
+    .compare {
+      @extend %headingSmall;
+      background-color: color-theming.$contentAccent;
+      color: white;
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+    .cancel {
+      @extend %headingSmall;
+      margin-top: 8px;
+      background-color: color-theming.$bgSecondary;
+      color: color-theming.$contentPrimary;
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+}

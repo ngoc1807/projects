@@ -1,0 +1,71 @@
+.DashboardAdmin {
+	$divided: rgb(253, 253, 253, 0.3);
+	$color: rgb(253, 253, 253, 0.9);
+
+	.box.image {
+		background-color: rgb(27, 61, 159);
+	}
+	.box.album {
+		background-color: rgb(1, 101, 185);
+	}
+	.box.blog {
+		background-color: rgb(2, 175, 174);
+	}
+	.box.booking {
+		background-color: rgb(0, 168, 86);
+	}
+	.box.order {
+		background-color: rgb(86, 194, 34);
+	}
+	.box.comment {
+		background-color: #fea200;
+	}
+	.box {
+		background-color: rgba(0, 0, 0, 0.452);
+		border-radius: 10px;
+		height: 20vh;
+		padding: 2vh;
+		display: flex;
+		flex-direction: column;
+		&__content {
+			display: flex;
+			align-items: center;
+			flex: 1;
+			justify-content: space-between;
+			border-bottom: 1px solid rgb(253, 253, 253, 0.3);
+
+			&-title p {
+				font-size: 30px;
+				color: $color;
+				font-weight: 500;
+				margin-bottom: 0;
+				padding-bottom: 0;
+			}
+			&-title h1 {
+				font-size: 42px;
+				line-height: 50px;
+				font-weight: 600;
+				color: $color;
+			}
+			&-image {
+				color: $color;
+				font-size: 45px;
+				padding-right: 2vh;
+			}
+		}
+		&__footer {
+			padding-top: 1vh;
+			display: flex;
+			justify-content: space-between;
+			&-link {
+				font-size: 18px;
+				font-weight: 500;
+				color: $color;
+			}
+			i {
+				color: $color;
+				padding-right: 2vh;
+			}
+		}
+	}
+}

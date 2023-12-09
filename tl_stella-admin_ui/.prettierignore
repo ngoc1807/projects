@@ -1,0 +1,15 @@
+.yarn
+yarn.lock
+.pnp.*
+
+.vscode
+
+coverage
+.next
+out
+build
+public
+*.d.ts
+
+**/generated.ts
+**/__snapshots__/**

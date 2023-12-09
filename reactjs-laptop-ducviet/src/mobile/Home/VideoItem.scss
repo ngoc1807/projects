@@ -1,0 +1,160 @@
+@use "./../../style/base/font.scss";
+@use "./../../style/base/typography.scss";
+@use "./../../style/base/color-theming.scss";
+@use "./../../style/base/global.scss";
+
+.VideoItem {
+  margin-top: 8px;
+  &__two {
+    padding: 0;
+    .item {
+      background-color: color-theming.$bgPrimary;
+      position: relative;
+
+      &__title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid color-theming.$lineTertiary;
+        padding: 10px 16px;
+
+        .left {
+          @extend %headingLarge;
+          height: 28px;
+          color: color-theming.$contentPrimary;
+          text-transform: uppercase;
+        }
+        .right {
+          @extend %headingMedium;
+        }
+      }
+      &__typeOne {
+        padding: 12px 16px;
+
+        a.typeOne {
+          text-decoration: none;
+
+          overflow: hidden;
+
+          .image {
+            position: relative;
+            margin-bottom: 16px;
+
+            border-radius: 4px;
+            padding: 0;
+            width: calc(100%);
+
+            &::after {
+              display: block;
+              content: "";
+              padding-bottom: 50%;
+            }
+            img {
+              position: absolute;
+              left: 0;
+              top: 0;
+              right: 0;
+              border-radius: 4px;
+              width: calc(100%);
+              height: 100%;
+              object-fit: cover;
+              overflow: hidden;
+            }
+          }
+
+          .desc {
+            &__title {
+              @extend %headingLarge;
+              margin-top: 16px;
+              margin-bottom: 8px;
+              color: color-theming.$contentPrimary;
+              height: 84px;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              display: -webkit-box;
+              -webkit-box-orient: vertical;
+              -webkit-line-clamp: 3;
+            }
+            &__option {
+              display: flex;
+              color: color-theming.$contentSecondary;
+              height: 16px;
+              @extend %bodySmall;
+              align-items: center;
+              flex-wrap: nowrap;
+              overflow: hidden;
+              div {
+                svg path {
+                  fill: color-theming.$contentSecondary;
+                }
+
+                span {
+                  padding-left: 5px;
+                  padding-right: 13px;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      &__typeTwo {
+        padding: 0 16px 0 16px;
+        a.typeTwo {
+          text-decoration: none;
+          padding-top: 12px;
+          padding-bottom: 12px;
+
+          height: 108px;
+          display: flex;
+          justify-content: space-between;
+          border-top: 1px solid color-theming.$linePrimary;
+          .image {
+            width: 96px;
+            height: 48px;
+            border-radius: 4px;
+            img {
+              width: 100%;
+              height: 100%;
+              border-radius: 4px;
+              object-fit: cover;
+            }
+          }
+        }
+        .desc {
+          margin-left: 12px;
+          flex: 1;
+          height: 80px;
+          &__title {
+            @extend %headingSmall;
+
+            color: color-theming.$contentPrimary;
+            height: 60px;
+            overflow: hidden;
+          }
+          &__option {
+            margin-top: 4px;
+            display: flex;
+            color: color-theming.$contentSecondary;
+            height: 16px;
+
+            @extend %bodySmall;
+            align-items: center;
+            flex-wrap: nowrap;
+            overflow: hidden;
+            div {
+              svg path {
+                fill: color-theming.$contentSecondary;
+              }
+
+              span {
+                padding-left: 3px;
+                padding-right: 6px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

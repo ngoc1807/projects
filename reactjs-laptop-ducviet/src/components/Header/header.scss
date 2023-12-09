@@ -1,0 +1,287 @@
+@use "./../../style/base/font.scss";
+@use "./../../style/base/typography.scss";
+@use "./../../style/base/color-theming.scss";
+@use "./../../style/base/global.scss";
+
+.Header.sticky {
+  transition: all 0.6s;
+  animation: fadeDown 0.4s;
+  width: 100%;
+  margin-top: 0;
+  position: fixed;
+  z-index: 1041;
+}
+.Header.sticky .box-one,
+.Header.sticky .box-there {
+  display: none;
+}
+
+.Header.sticky .box-two {
+  min-width: 1200px;
+}
+
+.Header {
+  min-width: 1230px;
+  position: relative;
+  transition: all 0.6s;
+  //   display: flex;
+  //   justify-content: center;
+  .box-one {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    background-color: color-theming.$bgInversePrimary;
+  }
+  .box-one .ItemFirst {
+    width: global.$width-global;
+
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__one {
+      @extend %bodyMedium;
+
+      // text-transform: uppercase;
+      // color: color-theming.$contentInversePrimary;
+      display: flex;
+      height: 40px;
+      &-item:nth-child(1) {
+        margin-right: 24px;
+      }
+      &-item {
+        display: flex;
+        height: 40px;
+        align-items: center;
+
+        .image {
+          margin-right: 8px;
+          position: relative;
+          width: 24px;
+          height: 24px;
+          background-color: color-theming.$ducvietComputer;
+          border-radius: 24px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          svg path {
+            fill: color-theming.$bgPrimary;
+          }
+
+          &__two {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 8px;
+            height: 8px;
+            background-color: color-theming.$bgPrimary;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 8px;
+            .count {
+              font-weight: 500;
+              font-size: 8px;
+              line-height: 12px;
+              color: color-theming.$ducvietComputer;
+            }
+          }
+        }
+        .text {
+          @extend %bodyMedium;
+
+          text-transform: uppercase;
+          color: color-theming.$contentInversePrimary;
+        }
+      }
+
+      display: flex;
+    }
+
+    &__list {
+      color: color-theming.$contentInversePrimary;
+
+      ul {
+        margin-bottom: 0;
+        list-style: none;
+        display: flex;
+        align-items: center;
+        li {
+          @extend %bodyMedium;
+          padding-left: 24px;
+          .item__link .item__link-icon {
+            margin-right: 8px;
+          }
+        }
+        li a {
+          text-decoration: none;
+          color: unset;
+        }
+        li.item:hover {
+          .item {
+            cursor: pointer;
+            &__link {
+              &-icon {
+                svg path {
+                  fill: color-theming.$ducvietComputer;
+                }
+              }
+
+              &-text {
+                color: color-theming.$ducvietComputer;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .box-two {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    background-color: color-theming.$bgMain;
+  }
+  .box-two .ItemSecond {
+    width: global.$width-global;
+    height: 96px;
+
+    display: flex;
+    // justify-content: space-between;
+    align-items: center;
+
+    &__logo {
+      width: 128px;
+      height: 54px;
+      img {
+        width: 128px;
+        height: 54px;
+        object-fit: cover;
+      }
+    }
+
+    &__option {
+      margin-left: 24px;
+      height: 96px;
+      display: flex;
+      align-items: center;
+
+      ul.box {
+        margin-bottom: 0;
+        height: 68px;
+        width: 506px;
+        list-style: none;
+        display: flex;
+        align-items: center;
+        li.item:not(:last-child) {
+          margin-right: 8px;
+        }
+        li.item {
+          .item__link {
+            &-icon {
+              display: flex;
+              justify-content: center;
+            }
+
+            &-text {
+              padding: 0px 5.4px;
+              margin-top: 4px;
+              height: 16px;
+              left: 0px;
+              font-weight: 500;
+              font-size: 12px;
+              line-height: 16px;
+              color: color-theming.$contentInversePrimary;
+            }
+          }
+        }
+        li.item:hover {
+          .item {
+            cursor: pointer;
+            &__link {
+              &-icon {
+                svg path {
+                  fill: color-theming.$ducvietComputer;
+                }
+              }
+
+              &-text {
+                color: color-theming.$ducvietComputer;
+              }
+            }
+          }
+        }
+        li a {
+          text-decoration: none;
+          color: unset;
+        }
+      }
+
+      .box__cart {
+        margin-left: 16px;
+        .cart {
+          flex: 1;
+          display: flex;
+          justify-content: flex-end;
+          position: relative;
+
+          &__icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 48px;
+            height: 48px;
+            background-color: color-theming.$ducvietComputer;
+            border-radius: 48px;
+          }
+
+          &__number {
+            @extend %bodySmall;
+            width: 16px;
+            height: 16px;
+            border-radius: 16px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            color: color-theming.$ducvietComputer;
+            background-color: color-theming.$bgPrimary;
+          }
+        }
+      }
+    }
+  }
+
+  .box-four {
+    #ModalLogin {
+      .modal-dialog .modal-content {
+        width: 600px;
+        height: 612px;
+        .modal-header {
+          width: 600px;
+          height: 80px;
+          background-color: color-theming.$bgMain;
+          .modal-title {
+            color: color-theming.$contentInversePrimary;
+            padding: 20px 0 20px 32px;
+          }
+
+          button {
+            opacity: unset;
+            svg path {
+              fill: color-theming.$contentInversePrimary;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// @media only screen and (max-width: 1200px) {
+//   .Header {
+//     width: global.$width-global !important;
+//   }
+// }

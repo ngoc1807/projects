@@ -1,0 +1,281 @@
+@use "./../../style/base/font.scss";
+@use "./../../style/base/typography.scss";
+@use "./../../style/base/color-theming.scss";
+@use "./../../style/base/global.scss";
+.FooterItem {
+  margin-top: 8px;
+  position: relative;
+
+  .box-one {
+    background-color: color-theming.$bgMain;
+    padding: 16px;
+    .system {
+      .title-one {
+        color: color-theming.$contentInversePrimary;
+        @extend %headingMedium;
+        text-transform: uppercase;
+      }
+      .underlined {
+        width: 65px;
+        height: 2px;
+        background-color: color-theming.$ducvietComputer;
+        margin: 12px 0;
+      }
+
+      .title-two {
+        @extend %headingMedium;
+
+        height: 32px;
+        padding: 4px 12px;
+        background-color: color-theming.$ducvietComputer;
+        color: color-theming.$contentInversePrimary;
+        border-radius: 4px;
+      }
+
+      ul.item {
+        padding-top: 16px;
+        list-style: none;
+        li.item-info {
+          display: flex;
+          align-items: baseline;
+          min-height: 20px;
+          margin-bottom: 8px;
+          span.icon {
+            padding-right: 10px;
+            path {
+              fill: color-theming.$contentInversePrimary;
+            }
+          }
+          span.text {
+            @extend %bodyMedium;
+            color: color-theming.$contentInversePrimary;
+          }
+
+          a.item-link {
+            @extend %bodyMedium;
+            text-decoration: none;
+            color: color-theming.$contentAccent;
+
+            span.icon {
+              padding-right: 10px;
+              path {
+                fill: color-theming.$contentAccent;
+              }
+            }
+            span.text {
+              @extend %bodyMedium;
+              color: color-theming.$contentAccent;
+            }
+          }
+        }
+      }
+    }
+
+    .introduce {
+      .title-one {
+        @extend %headingMedium;
+        text-transform: uppercase;
+        color: color-theming.$contentInversePrimary;
+      }
+      .underlined {
+        width: 65px;
+        height: 2px;
+        background-color: color-theming.$ducvietComputer;
+        margin: 12px 0;
+      }
+      ul.item {
+        list-style: none;
+        padding-bottom: 4px;
+
+        li.item-info {
+          margin-bottom: 4px;
+          a {
+            @extend %bodyMedium;
+            text-decoration: none;
+
+            height: 20px;
+            color: color-theming.$contentInversePrimary;
+          }
+        }
+      }
+    }
+
+    .pay {
+      .title-one {
+        @extend %headingMedium;
+        text-transform: uppercase;
+        color: color-theming.$contentInversePrimary;
+      }
+      .underlined-full {
+        width: 100%;
+        height: 2px;
+        background-color: color-theming.$ducvietComputer;
+        margin: 12px 0;
+      }
+      .underlined {
+        width: 65px;
+        height: 2px;
+        background-color: color-theming.$ducvietComputer;
+        margin: 12px 0;
+      }
+      ul.item {
+        list-style: none;
+        display: flex;
+
+        li.item-info {
+          margin-right: 16px;
+          a {
+            text-decoration: none;
+            width: 64px;
+            height: 64px;
+            border-radius: 4px;
+            img {
+              width: 64px;
+              height: 64px;
+              border-radius: 4px;
+              object-fit: cover;
+            }
+          }
+        }
+      }
+
+      .info-bank {
+        .name {
+          @extend %bodyMedium;
+          text-transform: uppercase;
+          color: color-theming.$contentInversePrimary;
+          padding-bottom: 2px;
+        }
+        ul {
+          padding-left: 20px;
+          li {
+            @extend %bodyMedium;
+            color: color-theming.$contentInversePrimary;
+          }
+        }
+      }
+      .search .SearchFooter {
+        width: 100%;
+        height: 48px;
+
+        display: flex;
+        align-items: center;
+
+        form {
+          display: flex;
+        }
+
+        //
+        &__input {
+          width: 255px;
+          height: 48px;
+          &.form-control {
+            border-radius: 4px 0 0px 4px;
+            border-color: color-theming.$contentInversePrimary;
+            outline: none;
+            background-clip: unset;
+            @extend %headingSmall;
+          }
+        }
+
+        &__btn {
+          width: 124px;
+          height: 48px;
+          background-color: color-theming.$ducvietComputer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          // text-align: center;
+          // vertical-align: middle;
+          border-radius: 0px 4px 4px 0px;
+          padding: 0;
+          margin: 0;
+          &-icon {
+            svg path {
+              fill: color-theming.$contentInversePrimary;
+            }
+          }
+          &-text {
+            @extend %headingSmall;
+
+            transform: translateY(2px);
+            vertical-align: middle;
+            padding-left: 4px;
+
+            color: color-theming.$contentInversePrimary;
+          }
+        }
+      }
+    }
+  }
+
+  .box-two {
+    background-color: color-theming.$bgInversePrimary;
+    padding: 16px;
+
+    .introduce {
+      .title {
+        @extend %headingMedium;
+        text-transform: uppercase;
+        padding-bottom: 16px;
+        color: color-theming.$contentInversePrimary;
+      }
+      .info {
+        &__left {
+          ul {
+            list-style: none;
+            li {
+              @extend %bodyMedium;
+              color: color-theming.$contentTertiary;
+              margin-bottom: 8px;
+            }
+          }
+        }
+        &__right {
+          ul {
+            list-style: none;
+            li {
+              @extend %bodyMedium;
+              color: color-theming.$contentTertiary;
+              margin-bottom: 8px;
+            }
+          }
+        }
+      }
+    }
+    .contact {
+      .title {
+        @extend %headingMedium;
+        text-transform: uppercase;
+        padding-bottom: 16px;
+        color: color-theming.$contentInversePrimary;
+      }
+
+      ul.list-icon {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 0;
+        li {
+          width: 40px;
+          height: 40px;
+          background-color: color-theming.$contentInversePrimary;
+          border-radius: 40px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-right: 12px;
+          a {
+            text-decoration: none;
+          }
+        }
+      }
+    }
+    .image {
+      margin-top: 12px;
+      img {
+        height: 40px;
+      }
+    }
+  }
+}

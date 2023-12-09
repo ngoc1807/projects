@@ -1,0 +1,236 @@
+$colorMain: #ffa801;
+.configStore {
+	position: relative;
+	margin-top: 20vh;
+	padding-bottom: 10vh;
+
+	background-color: #f5f6f7;
+	.title {
+		position: relative;
+		height: 25vh;
+		padding-top: 12vh;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+
+		p {
+			color: $colorMain;
+			font-weight: bold;
+			margin: 0;
+			font-size: 1.5rem;
+			padding-bottom: 1vh;
+		}
+
+		h3 {
+			font-weight: bolder;
+			font-size: 2.5rem;
+		}
+	}
+
+	.body {
+		// background-color: #fff;
+		position: relative;
+		padding: 0 3%;
+		.BoxTitle {
+			padding: 20px;
+			font-size: 1.5rem;
+			// text-align: center;
+			font-style: italic;
+		}
+
+		.DressBox {
+			height: 55vh;
+			// background-color: red;
+
+			.ImgBox {
+				position: relative;
+				.DetailBox {
+					position: absolute;
+					top: 0;
+					bottom: 0;
+					left: 0;
+					right: 0;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					background-color: rgba(1, 1, 1, 0.4);
+					opacity: 0;
+					transition: all 0.3s ease-in-out 0s;
+					a {
+						padding: 10px 30px;
+						background-color: #ffa801;
+						border-radius: 100px;
+						color: white;
+						text-decoration: none;
+					}
+				}
+				img {
+					width: 100%;
+					height: 40vh;
+					object-fit: cover;
+					// box-shadow: 0px 0px 15px 0px rgba(1, 1, 1, 0.6);
+					box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.4);
+				}
+
+				&:hover .DetailBox {
+					// display: block;
+					opacity: 1;
+					a {
+						animation: fadeDown 0.5s ease-in-out 0s;
+					}
+				}
+			}
+
+			.LineBox {
+				display: flex;
+				justify-content: center;
+				hr {
+					width: 80%;
+				}
+			}
+
+			.FooterBox {
+				.NameBox {
+					text-align: center;
+					padding-bottom: 5px;
+				}
+				.PriceBox {
+					// padding: 0 20px;
+					display: flex;
+					justify-content: space-around;
+					.PriceNewBox {
+						color: #e75768;
+						font-weight: 600;
+					}
+					.PriceOldBox {
+						color: rgba(1, 1, 1, 0.5);
+						text-decoration: line-through;
+						font-weight: 600;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 736px) {
+	.configStore {
+		position: relative;
+		margin-top: 5vh;
+
+		background-color: #f5f6f7;
+		.title {
+			position: relative;
+			height: 18vh;
+			padding-top: 5vh;
+			p {
+				color: $colorMain;
+				font-weight: bold;
+				margin: 0;
+				font-size: 0.8rem;
+			}
+
+			h3 {
+				font-weight: bold;
+				font-size: 1.8rem;
+				margin: 0;
+			}
+		}
+
+		.body {
+			// background-color: #fff;
+			position: relative;
+			padding: 0 3%;
+			.BoxTitle {
+				padding: 20px;
+				font-size: 1rem;
+				// text-align: center;
+				font-style: italic;
+			}
+
+			.DressBox {
+				height: 55vh;
+				// background-color: red;
+
+				.ImgBox {
+					position: relative;
+					.DetailBox {
+						position: absolute;
+						top: 0;
+						bottom: 0;
+						left: 0;
+						right: 0;
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						background-color: rgba(1, 1, 1, 0.4);
+						opacity: 0;
+						transition: all 0.3s ease-in-out 0s;
+						a {
+							padding: 10px 30px;
+							background-color: #ffa801;
+							border-radius: 10px;
+							color: white;
+							text-decoration: none;
+						}
+					}
+					img {
+						width: 100%;
+						height: 40vh;
+						object-fit: cover;
+						// box-shadow: 0px 0px 15px 0px rgba(1, 1, 1, 0.6);
+						box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.4);
+					}
+
+					&:hover .DetailBox {
+						// display: block;
+						opacity: 1;
+						a {
+							animation: fadeDown 0.5s ease-in-out 0s;
+						}
+					}
+				}
+
+				.LineBox {
+					display: flex;
+					justify-content: center;
+					hr {
+						width: 80%;
+					}
+				}
+
+				.FooterBox {
+					.NameBox {
+						text-align: center;
+						padding-bottom: 5px;
+					}
+					.PriceBox {
+						// padding: 0 20px;
+						display: flex;
+						justify-content: space-around;
+						.PriceNewBox {
+							color: red;
+						}
+						.PriceOldBox {
+							color: rgba(1, 1, 1, 0.5);
+							text-decoration: line-through;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@keyframes fadeDown {
+	0% {
+		opacity: 0;
+		transform: translateY(-4rem);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}

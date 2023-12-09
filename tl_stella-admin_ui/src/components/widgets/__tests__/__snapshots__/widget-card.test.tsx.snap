@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`widget-card should render correctly 1`] = `
+<div
+  class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation0 MuiCard-root css-1surxgo-MuiPaper-root-MuiCard-root"
+>
+  <div
+    class="MuiCardContent-root css-1ioqiuq-MuiCardContent-root"
+  >
+    <div>
+      Foo Div
+    </div>
+  </div>
+</div>
+`;

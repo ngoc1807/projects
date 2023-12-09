@@ -1,0 +1,19 @@
+@use "./../../style/base/font.scss";
+@use "./../../style/base/typography.scss";
+@use "./../../style/base/color-theming.scss";
+@use "./../../style/base/global.scss";
+
+.CompareProductWeb {
+  min-width: 1230px;
+  background-color: color-theming.$bgTertiary;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 32px;
+  .ContentItem {
+    width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 32px;
+  }
+}

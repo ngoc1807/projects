@@ -1,0 +1,125 @@
+query GetBookingBreakdownSummary(
+  $startOfToday: DateTime!
+  $endOfToday: DateTime!
+  $firstDayOfThisWeek: DateTime!
+  $firstDayOfThisMonth: DateTime!
+  $firstDayOfLastMonth: DateTime!
+  $tenantId: String
+) {
+  # today
+  totalToday: callSummary(
+    start_time: $startOfToday
+    end_time: $endOfToday
+    tenant_id: $tenantId
+    source: "external"
+  )
+  transferredToday: callSummary(
+    start_time: $startOfToday
+    end_time: $endOfToday
+    tenant_id: $tenantId
+    status: "transferred"
+    source: "external"
+  )
+  bookedToday: callSummary(
+    start_time: $startOfToday
+    end_time: $endOfToday
+    tenant_id: $tenantId
+    status: "success"
+    source: "external"
+  )
+  rescheduledToday: callSummary(
+    start_time: $startOfToday
+    end_time: $endOfToday
+    tenant_id: $tenantId
+    status: "rescheduled"
+    source: "external"
+  )
+
+  # this week
+  totalThisWeek: callSummary(
+    start_time: $firstDayOfThisWeek
+    end_time: $endOfToday
+    tenant_id: $tenantId
+    source: "external"
+  )
+  transferredThisWeek: callSummary(
+    start_time: $firstDayOfThisWeek
+    end_time: $endOfToday
+    tenant_id: $tenantId
+    status: "transferred"
+    source: "external"
+  )
+  bookedThisWeek: callSummary(
+    start_time: $firstDayOfThisWeek
+    end_time: $endOfToday
+    tenant_id: $tenantId
+    status: "success"
+    source: "external"
+  )
+  rescheduledThisWeek: callSummary(
+    start_time: $firstDayOfThisWeek
+    end_time: $endOfToday
+    tenant_id: $tenantId
+    status: "rescheduled"
+    source: "external"
+  )
+
+  # this month
+  totalThisMonth: callSummary(
+    start_time: $firstDayOfThisMonth
+    end_time: $endOfToday
+    tenant_id: $tenantId
+    source: "external"
+  )
+  transferredThisMonth: callSummary(
+    start_time: $firstDayOfThisMonth
+    end_time: $endOfToday
+    tenant_id: $tenantId
+    status: "transferred"
+    source: "external"
+  )
+  bookedThisMonth: callSummary(
+    start_time: $firstDayOfThisMonth
+    end_time: $endOfToday
+    tenant_id: $tenantId
+    status: "success"
+    source: "external"
+  )
+  rescheduledThisMonth: callSummary(
+    start_time: $firstDayOfThisMonth
+    end_time: $endOfToday
+    tenant_id: $tenantId
+    status: "rescheduled"
+    source: "external"
+  )
+
+  # last month
+  totalLastMonth: callSummary(
+    start_time: $firstDayOfLastMonth
+    end_time: $firstDayOfThisMonth
+    tenant_id: $tenantId
+    source: "external"
+  )
+  transferredLastMonth: callSummary(
+    start_time: $firstDayOfLastMonth
+    end_time: $firstDayOfThisMonth
+    tenant_id: $tenantId
+    status: "transferred"
+    source: "external"
+  )
+  bookedLastMonth: callSummary(
+    start_time: $firstDayOfLastMonth
+    end_time: $firstDayOfThisMonth
+    tenant_id: $tenantId
+    status: "success"
+    source: "external"
+  )
+
+  rescheduledLastMonth: callSummary(
+    start_time: $firstDayOfLastMonth
+    end_time: $firstDayOfThisMonth
+    tenant_id: $tenantId
+    status: "rescheduled"
+    source: "external"
+  )
+}

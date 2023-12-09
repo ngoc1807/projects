@@ -1,0 +1,53 @@
+@use "./../../style/base/typography.scss";
+@use "./../../style/base/color-theming.scss" as c;
+
+.OrderSuccessMobile .contentItem {
+  background-color: c.$bgPrimary;
+
+  .box {
+    padding-top: 120px;
+    padding-right: 16px;
+    padding-left: 16px;
+    &__content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      &-image {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 12px;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      &-title {
+        @extend %displaySmall;
+        color: c.$contentPrimary;
+        margin-bottom: 4px;
+        width: 100%;
+        text-align: center;
+      }
+      &-note {
+        @extend %bodyMedium;
+        color: c.$contentSecondary;
+        margin-bottom: 24px;
+        width: 100%;
+        text-align: center;
+      }
+      &-btn {
+        button.btn {
+          @extend %headingMedium;
+          width: 198px;
+          height: 48px;
+          background: c.$ducvietComputer;
+          color: c.$lineInversePrimary;
+        }
+      }
+    }
+  }
+}

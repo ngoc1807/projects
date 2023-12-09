@@ -1,0 +1,171 @@
+@use "./../../../style/base/font.scss";
+@use "./../../../style/base/typography.scss";
+@use "./../../../style/base/color-theming.scss";
+@use "./../../../style/base/global.scss";
+
+.LeftItemProductCompare {
+  .box__item {
+    padding: 0 16px;
+    width: 592px;
+    overflow: hidden;
+    background-color: color-theming.$bgPrimary;
+    border-radius: 8px;
+    &-image {
+      display: flex;
+      justify-content: center;
+      height: 400px;
+      img {
+        width: 400px;
+        object-fit: contain;
+      }
+    }
+    &-title {
+      @extend %displayMedium;
+      padding-top: 48px;
+      padding-bottom: 16px;
+      &-content {
+        @extend %bodyMedium;
+        color: color-theming.$contentPrimary;
+        margin-bottom: 16px;
+      }
+    }
+    &-desc3 {
+      margin-bottom: 16px;
+      border: 1px solid color-theming.$lineTertiary;
+      border-radius: 4px;
+      .title {
+        background: color-theming.$bgNegativeSecondary;
+        border: 1px solid #e9eaec;
+        padding: 10px 12px;
+        @extend %headingLarge;
+        color: color-theming.$ducvietComputer;
+      }
+      ul.box {
+        margin-bottom: 0;
+        list-style: none;
+        li {
+          display: flex;
+          padding: 12px;
+          .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 8px;
+            background-color: color-theming.$contentPrimary;
+            margin-right: 12px;
+          }
+          .text {
+            @extend %bodyMedium;
+            color: color-theming.$contentPrimary;
+          }
+        }
+        li.box-item {
+          background-color: color-theming.$bgPrimary;
+        }
+        li.box-item2 {
+          background-color: color-theming.$bgSecondary;
+        }
+      }
+    }
+
+    // &-desc1 {
+    //   padding-bottom: 16px;
+    //   span {
+    //     @extend %bodyMedium;
+    //     color: color-theming.$contentPrimary;
+    //   }
+    // }
+    .line {
+      width: 100%;
+      height: 1px;
+      background-color: #dedfe2;
+    }
+    // &-desc2 {
+    //   padding-top: 14px;
+    //   padding-bottom: 8px;
+    //   .item {
+    //     display: flex;
+    //     height: 32px;
+    //     &__label {
+    //       @extend %bodyMedium;
+    //       color: color-theming.$contentSecondary;
+    //     }
+    //     &__text {
+    //       @extend %bodyMedium;
+    //       color: color-theming.$contentPrimary;
+    //       padding-left: 5px;
+    //       flex: 1;
+    //     }
+    //   }
+    // }
+
+    &-bottom {
+      margin-top: 8px;
+      .price {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        &-new {
+          @extend %displayLarge;
+          color: color-theming.$contentAccent;
+        }
+        &-old {
+          margin-left: 8px;
+          font-family: Roboto;
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 28px;
+          letter-spacing: 0px;
+          text-decoration: line-through;
+          color: color-theming.$contentSecondary;
+        }
+        &-vat {
+          margin-left: 8px;
+          border-radius: 100px;
+          padding: 2px 4px;
+          background-color: color-theming.$contentInformative;
+          @extend %bodySmall;
+          color: color-theming.$contentInversePrimary;
+        }
+        &-sale {
+          margin-right: 8px;
+          border-radius: 100px;
+          padding: 2px 4px;
+          background-color: color-theming.$contentCritical;
+          @extend %bodySmall;
+          color: color-theming.$contentInversePrimary;
+        }
+        &-save {
+          @extend %headingMedium;
+          height: 32px;
+          // color: color-theming.$contentPositive;
+          color: color-theming.$contentCritical;
+          display: flex;
+          align-items: center;
+        }
+      }
+    }
+    &-btn {
+      display: flex;
+      .btn {
+        @extend %headingLarge;
+        width: 100%;
+        margin-top: 16px;
+        margin-bottom: 24px;
+        opacity: 1;
+        &:hover {
+          opacity: 0.7;
+        }
+      }
+      .detail {
+        background-color: color-theming.$ducvietComputer;
+        color: color-theming.$contentInversePrimary;
+        margin-right: 16px;
+      }
+      .change {
+        background-color: color-theming.$bgSecondary;
+        color: color-theming.$contentPrimary;
+      }
+    }
+  }
+}

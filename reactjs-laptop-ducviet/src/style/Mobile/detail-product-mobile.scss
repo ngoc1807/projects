@@ -1,0 +1,636 @@
+@use "../base/font.scss";
+@use "../base/typography.scss";
+@use "../base/color-theming.scss";
+@use "../base/global.scss";
+
+.DetailProductMobile {
+  background-color: #e5e5e5;
+  min-height: 100vh;
+  .ImageDetailItem {
+    background-color: #e5e5e5;
+    padding-top: 12px;
+    position: relative;
+    .box {
+      padding: 0;
+      &__image {
+        position: relative;
+        overflow: hidden;
+
+        margin: auto;
+        border-radius: 12px;
+        width: 100%;
+        &::after {
+          display: block;
+          content: "";
+          padding-bottom: 100%;
+        }
+        > img {
+          position: absolute;
+          left: 0;
+          top: 0;
+          right: 0;
+
+          border-radius: 12px;
+
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          overflow: hidden;
+          z-index: 1;
+        }
+
+        .total {
+          position: absolute;
+          bottom: 12px;
+          left: 0;
+          right: 0;
+          z-index: 2;
+          color: $contentSecondary;
+          @extend %headingMedium;
+          text-align: center;
+        }
+      }
+
+      &__list {
+        padding-top: 12px;
+
+        padding-bottom: 12px;
+        height: 72px;
+        display: flex;
+        overflow-x: scroll;
+        &-item.active img {
+          border: 2px solid $lineAccent;
+        }
+        &-item {
+          margin-left: 12px;
+          height: 48px;
+          width: 48px;
+          border-radius: 4px;
+
+          img {
+            border: 1px solid $lineTertiary;
+            height: 48px;
+            width: 48px;
+            border-radius: 4px;
+          }
+        }
+      }
+    }
+  }
+
+  .DetailProductItem {
+    background-color: #e5e5e5;
+
+    .boxOne {
+      background-color: $bgPrimary;
+
+      overflow: hidden;
+      padding: 12px 16px;
+      margin: 0;
+      &-title {
+        @extend %displaySmall;
+        color: $contentPrimary;
+      }
+
+      &-info-1 {
+        padding: 12px 0 12px 0;
+        display: flex;
+        align-items: center;
+        .code {
+          @extend %bodySmall;
+          color: $contentSecondary;
+          padding-right: 8px;
+        }
+
+        .rating {
+          display: flex;
+          align-items: center;
+          border-radius: 4px;
+          padding: 2px 6px;
+          background-color: $contentCritical;
+          margin-right: 8px;
+          &__number {
+            @extend %bodySmall;
+            color: $contentInversePrimary;
+            padding-right: 4px;
+          }
+          &__icon {
+            transform: translateY(-2px);
+            svg path {
+              fill: $contentInversePrimary;
+            }
+          }
+        }
+        .review {
+          margin-right: 14px;
+          @extend %bodySmall;
+          color: $contentSecondary;
+        }
+
+        .sold {
+          &__icon {
+            margin-right: 6px;
+          }
+
+          &__text {
+            @extend %bodySmall;
+            color: $contentPositive;
+          }
+        }
+      }
+
+      &-summary {
+        @extend %bodyMedium;
+        color: $contentPrimary;
+      }
+      &-title-2 {
+        margin: 12px 0 12px 0;
+        @extend %headingSmall;
+        color: $contentPrimary;
+      }
+      &-title-3 {
+        margin-bottom: 12px;
+        @extend %headingSmall;
+        color: $contentPrimary;
+      }
+
+      &-button-2 button.btn {
+        min-height: 44px;
+      }
+      &-button-1 button.btn {
+        min-height: 84px;
+      }
+
+      &-button-2,
+      &-button-1 {
+        //
+        display: flex;
+        flex-flow: row wrap;
+        box-sizing: border-box;
+        place-content: flex-start space-between;
+        flex-shrink: 0;
+        overflow: hidden;
+        //
+
+        button.btn {
+          overflow: hidden;
+          width: calc(33.33% - 10px);
+          margin-bottom: 12px;
+          border-radius: 8px;
+          min-width: 101px;
+
+          border: 1px solid $linePrimary;
+
+          position: relative;
+
+          margin-bottom: 12px;
+          border-radius: 4px;
+          //   &:hover {
+          //     background-color: $bgAccentSecondary;
+          //   }
+
+          &.active,
+          &:focus {
+            background-color: $bgPrimary;
+            border: 1px solid $lineAccent;
+            box-shadow: unset;
+
+            span.icon {
+              display: block;
+            }
+            span.triangle {
+              display: block;
+            }
+          }
+
+          .text {
+            @extend %bodyMedium;
+
+            color: $contentPrimary;
+            width: 120px;
+            height: 40px;
+          }
+          span.icon {
+            display: none;
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: 2;
+            svg {
+              position: absolute;
+              top: 0;
+              right: 0;
+              vertical-align: unset;
+              path {
+                fill: $contentInversePrimary;
+              }
+            }
+          }
+          span.triangle {
+            display: none;
+            border-top: 0px solid transparent;
+            border-right: 30px solid $lineAccent;
+            border-bottom: 30px solid transparent;
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: 1;
+          }
+        }
+      }
+    }
+
+    .boxTwo {
+      margin-top: 12px;
+      padding: 0;
+      background-color: $bgPrimary;
+      &__title {
+        // @extend %shadow1;
+        display: block;
+        background-color: $bgPrimary;
+        // height: 48px;
+
+        width: 100%;
+
+        overflow-x: scroll;
+        white-space: nowrap;
+
+        top: 72px;
+
+        ul {
+          margin-bottom: 0;
+          flex-wrap: nowrap;
+          height: 40px;
+          border-bottom: 1px solid $lineTertiary;
+        }
+
+        li.nav-item {
+          margin-right: 16px;
+        }
+        a {
+          @extend %headingSmall;
+          color: $contentSecondary;
+          height: 40px;
+          vertical-align: middle;
+          border: unset;
+          padding: 0 12px;
+          text-transform: uppercase;
+          padding-top: 13px;
+
+          background-color: unset;
+          border-radius: unset;
+          display: inline-flex;
+          &.active {
+            border-bottom: 2px solid $lineAccent;
+            color: $contentPrimary;
+          }
+        }
+        // }
+      }
+
+      .boxTwo__list-item1 {
+        padding: 16px 16px 10px 16px;
+        ul {
+          list-style: none;
+
+          margin-bottom: 0;
+          li {
+            padding-bottom: 10px;
+            display: flex;
+            .icon {
+              padding: 0 10px;
+            }
+            .content {
+              .text {
+                @extend %headingSmall;
+                font-weight: 400;
+                span {
+                  @extend %headingSmall;
+                  color: $contentPrimary;
+                }
+              }
+              a.number {
+                @extend %headingSmall;
+                color: $lineAccent;
+                text-decoration: none;
+              }
+            }
+          }
+        }
+      }
+      .boxTwo__list-item2 {
+        padding: 16px 16px 10px 16px;
+        ul {
+          list-style: none;
+          margin-bottom: 0;
+          li {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            height: 20px;
+            .icon {
+              padding: 0 10px;
+              svg path {
+                fill: color-theming.$contentPositive;
+              }
+            }
+            .content {
+              padding-right: 16px;
+              color: color-theming.$contentPrimary;
+              @extend %headingSmall;
+            }
+          }
+        }
+      }
+
+      .boxTwo__list-item3 {
+        padding: 16px 16px 10px 16px;
+
+        ul {
+          list-style: none;
+          margin-bottom: 0;
+          li {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            height: 20px;
+            .icon {
+              padding: 0 10px;
+              svg path {
+                fill: color-theming.$contentPositive;
+              }
+            }
+            .content {
+              padding-right: 16px;
+              color: color-theming.$contentPrimary;
+              @extend %headingSmall;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .CompareProduct {
+    margin-bottom: 12px;
+  }
+
+  .CompareProduct,
+  .BundleProducts {
+    margin-top: 12px;
+    background-color: #e5e5e5;
+
+    .box {
+      background-color: $bgPrimary;
+      padding: 0;
+      &__title {
+        display: flex;
+        padding: 12px 16px;
+        justify-content: space-between;
+        align-items: center;
+        &-left {
+          @extend %headingMedium;
+
+          vertical-align: middle;
+          color: $contentPrimary;
+
+          flex: 1;
+          height: 24px;
+        }
+      }
+      &__content {
+        width: 100%;
+        display: flex;
+        overflow-x: scroll;
+        padding: 0 0 12px 16px;
+        &-item {
+          margin-right: 12px;
+          width: 154px;
+          height: 194px;
+          border-radius: 8px;
+          border: 1px solid $lineTertiary;
+          .top {
+            width: 154px;
+            height: 122px;
+            position: relative;
+
+            .image {
+              position: relative;
+              margin-bottom: 8px;
+              border-radius: 8px;
+              padding: 0;
+              width: 154px;
+              height: 122px;
+
+              &::after {
+                display: block;
+                content: "";
+                padding-bottom: 40.55%;
+              }
+              img {
+                position: absolute;
+                left: 0;
+                top: 0;
+                right: 0;
+                margin: 8px 20px;
+
+                width: calc(100% - 40px);
+                height: calc(100% - 16px);
+                object-fit: cover;
+                overflow: hidden;
+              }
+            }
+
+            .checked {
+              position: absolute;
+              top: 14px;
+              right: -12px;
+              z-index: 2;
+            }
+          }
+
+          .desc {
+            width: 154px;
+            height: 72px;
+            padding: 8px;
+            border-top: 1px solid $lineTertiary;
+            &__name {
+              @extend %bodySmall;
+              color: $contentPrimary;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              display: -webkit-box;
+              -webkit-box-orient: vertical;
+              -webkit-line-clamp: 2;
+              width: 138px;
+            }
+            &__price {
+              @extend %headingSmall;
+              color: $ducvietComputer;
+              margin-top: 4px;
+            }
+          }
+        }
+      }
+
+      &__btn {
+        background-color: $bgPrimary;
+        padding: 0 16px 12px 16px;
+        button.btnCart {
+          @extend %headingMedium;
+          width: 100%;
+          height: 40px;
+          background-color: $bgSecondary;
+          margin-right: 8px;
+          span {
+            transform: translateY(2px);
+            padding-left: 12px;
+          }
+          svg path {
+            fill: $contentPrimary;
+          }
+          &.active {
+            background-color: $ducvietComputer;
+            span {
+              color: $bgPrimary;
+            }
+
+            svg path {
+              fill: $bgPrimary;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .InfoProductItem {
+    margin-top: 12px;
+    background-color: $bgPrimary;
+    .box {
+      padding: 12px 16px;
+      border-radius: 4px;
+      &__title {
+        @extend %headingMedium;
+        color: $contentPrimary;
+        padding-bottom: 12px;
+      }
+      &__content {
+        .title {
+          @extend %headingMedium;
+          padding: 6px 10px;
+          color: $bgPrimary;
+
+          border-radius: 4px 4px 0 0;
+          background-color: $bgAccentPrimary;
+        }
+        .list {
+          width: 100%;
+          border-radius: 0 0 4px 4px;
+          ul {
+            list-style: none;
+            margin-bottom: 0;
+            border: 1px solid $lineSecondary;
+            border-radius: 0 0 4px 4px;
+            li {
+              display: flex;
+              align-items: center;
+
+              &.one {
+                background-color: $bgPrimary;
+              }
+              &.two {
+                background-color: $bgSecondary;
+              }
+
+              div.dot {
+                height: 8px;
+                width: 8px;
+                border-radius: 100%;
+                background-color: $contentPrimary;
+                margin-right: 10px;
+              }
+
+              padding: 12px;
+              div.text {
+                @extend %bodyMedium;
+                flex: 1;
+
+                color: $contentPrimary;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .DescProductItem {
+    background-color: $bgPrimary;
+    .box {
+      padding: 12px 16px;
+      &__title {
+        @extend %headingMedium;
+        color: $contentPrimary;
+        padding-bottom: 12px;
+      }
+
+      &__text {
+        @extend %bodyMedium;
+      }
+    }
+  }
+  .QuestionItem {
+    margin-top: 12px;
+    background-color: $bgPrimary;
+    .box {
+      padding: 12px 16px;
+      &__title {
+        @extend %headingMedium;
+        color: $contentPrimary;
+        padding-bottom: 12px;
+      }
+      #accordion {
+        .card:not(:last-child) {
+          margin-bottom: 8px;
+        }
+        .card {
+          border: 1px solid color-theming.$linePrimary;
+          //   border-radius: 8px;
+          &-header {
+            background: color-theming.$bgTertiary;
+            border: none;
+            border-radius: 8px;
+            padding: 8px;
+            svg:nth-child(1) {
+              transform: translateY(-2px);
+              margin-right: 12px;
+              path {
+                fill: color-theming.$contentAccent;
+              }
+            }
+
+            > div button.btn {
+              @extend %bodyMedium;
+              color: color-theming.$contentPrimary;
+              display: flex;
+              align-items: center;
+              width: 100%;
+              text-align: left;
+              padding: 0;
+              height: auto;
+              span {
+                flex: 1;
+              }
+            }
+          }
+          &-body {
+            padding: 12px;
+            @extend %bodyMedium;
+            color: color-theming.$contentPrimary;
+          }
+        }
+      }
+    }
+  }
+}

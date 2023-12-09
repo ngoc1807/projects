@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`main-heading should render correctly 1`] = `
+<div
+  class="MuiBox-root css-0"
+>
+  <h1
+    class="MuiTypography-root MuiTypography-h5 css-1lyr4fm-MuiTypography-root"
+  >
+    test
+  </h1>
+  <hr
+    class="MuiDivider-root MuiDivider-fullWidth css-1e2tz01-MuiDivider-root"
+  />
+</div>
+`;

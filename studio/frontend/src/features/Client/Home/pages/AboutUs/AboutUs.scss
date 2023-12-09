@@ -1,0 +1,96 @@
+.configAboutUs {
+	$heightAboutUS: 95vh;
+	$colorMain: #ffa801;
+	position: relative;
+	//
+	// padding: 0;
+	// margin: 0;
+
+	// background: url(../../../../../assets/images/) no-repeat top;
+	background-size: cover;
+	background: no-repeat;
+	// width: 100%;
+	// height: $heightAboutUS;
+
+	.title {
+		height: 20vh;
+		padding-top: 15vh;
+		p {
+			color: $colorMain;
+			font-weight: bold;
+			margin: 0;
+			font-size: 1.5rem;
+			padding-bottom: 1vh;
+		}
+
+		h3 {
+			font-weight: bolder;
+			font-size: 2.5rem;
+		}
+	}
+
+	.body-content {
+		height: 75vh;
+		padding: 10vh 0 0 0;
+
+		top: 0;
+		width: 100%;
+
+		h4 {
+			font-weight: 500;
+			font-size: 2rem;
+		}
+
+		p {
+			padding-top: 2vh;
+			color: #5c5c5c;
+			font-size: 1rem;
+		}
+	}
+}
+
+@media screen and (max-width: 736px) {
+	.configAboutUs {
+		$colorMain: #ffa801;
+		position: relative;
+
+		// background: url(./../../../assets/images/about.jpg) no-repeat top;
+		background-size: cover;
+
+		.title {
+			height: 10vh;
+			padding-top: 5vh;
+			p {
+				color: $colorMain;
+				font-weight: bold;
+				margin: 0;
+				font-size: 0.8rem;
+			}
+
+			h3 {
+				font-weight: bold;
+				font-size: 1.8rem;
+			}
+		}
+
+		.body-content {
+			height: 60vh;
+			padding: 6vh 6% 0 6%;
+
+			top: 0;
+			width: 100%;
+
+			h4 {
+				// font-weight: 500;
+				font-size: 1.2rem;
+				font-weight: 600;
+			}
+
+			p {
+				padding-top: 1vh;
+				color: #5c5c5c;
+				font-size: 0.9rem;
+			}
+		}
+	}
+}

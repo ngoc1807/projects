@@ -1,0 +1,284 @@
+@use "../base/font.scss";
+@use "../base/typography.scss";
+@use "../base/color-theming.scss";
+@use "../base/global.scss";
+.IntroduceMobile {
+  min-height: calc(100vh - 48px);
+  background-color: #e5e5e5;
+  padding-bottom: 12px;
+  .MainBlog {
+    background-color: color-theming.$bgPrimary;
+    margin-top: 12px;
+
+    overflow: hidden;
+    padding: 12px 16px 12px 16px;
+    &__image {
+      position: relative;
+      // height: 133px;
+      margin-bottom: 12px;
+
+      border-radius: 4px;
+      padding: 0;
+      width: calc(100%);
+
+      &::after {
+        display: block;
+        content: "";
+        padding-bottom: 50%;
+      }
+      img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        border-radius: 4px;
+        width: calc(100%);
+        height: 100%;
+        object-fit: cover;
+        overflow: hidden;
+      }
+    }
+
+    &__header {
+      padding: 0;
+      overflow: hidden;
+      &-title {
+        @extend %headingLarge;
+        color: color-theming.$contentPrimary;
+      }
+      &-option {
+        display: flex;
+        color: color-theming.$contentSecondary;
+        height: 16px;
+        margin-top: 8px;
+        @extend %bodySmall;
+        align-items: center;
+        flex-wrap: nowrap;
+        overflow: hidden;
+        div span {
+          padding-left: 5px;
+          padding-right: 13px;
+        }
+      }
+    }
+
+    &__content {
+      @extend %bodyMedium;
+      color: $contentPrimary;
+      padding-top: 12px;
+      overflow: hidden;
+    }
+  }
+
+  .CommentCustomMobile {
+    margin-top: 8px;
+  }
+
+  .AdsImage {
+    padding: 0;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    position: relative;
+    // height: 133px;
+
+    width: calc(100%);
+
+    &::after {
+      display: block;
+      content: "";
+      padding-bottom: 50%;
+    }
+    img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      width: calc(100%);
+      height: 100%;
+      object-fit: cover;
+      overflow: hidden;
+    }
+  }
+}
+
+.InfoContactMobile {
+  min-height: calc(100vh - 48px);
+  background-color: #e5e5e5;
+  .ContentItem {
+    .MainBlog {
+      padding: 16px 16px 4px 16px;
+      background-color: color-theming.$bgPrimary;
+      margin-top: 12px;
+      &__title {
+        @extend %headingMedium;
+        color: $contentPrimary;
+        padding-bottom: 12px;
+      }
+      &__list {
+        .item {
+          @extend %bodyMedium;
+          padding-bottom: 12px;
+        }
+      }
+    }
+  }
+}
+
+.InfoPayMobile {
+  min-height: calc(100vh - 48px);
+  background-color: #e5e5e5;
+  .ContentItem {
+    .MainBlog {
+      padding: 16px 16px 4px 16px;
+      background-color: color-theming.$bgPrimary;
+      margin-top: 12px;
+      &__title {
+        @extend %headingMedium;
+        color: $contentPrimary;
+        padding-bottom: 12px;
+      }
+      &__list {
+        ul.items {
+          margin-bottom: 0;
+        }
+
+        .item {
+          @extend %bodyMedium;
+          margin-left: 20px;
+          padding-bottom: 12px;
+        }
+      }
+    }
+  }
+}
+
+.AddressSystemStoreMobile {
+  min-height: calc(100vh - 48px);
+  background-color: #e5e5e5;
+  .ContentItem {
+    background-color: #e5e5e5;
+    position: relative;
+    .BoxTwo,
+    .BoxOne {
+      border-radius: 8px;
+      display: block;
+      // margin: 12px 16px 0 16px;
+      padding-top: 12px;
+      padding-bottom: 4px;
+      width: 100%;
+
+      &__title {
+        border-radius: 8px 8px 0 0;
+        height: 40px;
+        padding: 0 12px;
+        display: flex;
+        align-items: center;
+        background-color: $ducvietComputer;
+        color: $bgPrimary;
+        @extend %headingMedium;
+      }
+      &__list {
+        background-color: $bgPrimary;
+        border-radius: 0 0 8px 8px;
+        .item {
+          display: flex;
+          padding: 0 16px;
+          height: 36px;
+          align-items: center;
+          .icon-first {
+            svg path {
+              fill: $contentPrimary;
+            }
+          }
+
+          .text {
+            @extend %bodyMedium;
+            margin-left: 12px;
+            color: $contentPrimary;
+          }
+        }
+
+        .item2 {
+          display: flex;
+          padding: 0 16px;
+          height: 36px;
+          align-items: center;
+          .icon-first {
+            svg path {
+              fill: $contentAccent;
+            }
+          }
+
+          .text {
+            @extend %bodyMedium;
+            margin-left: 12px;
+            color: $contentAccent;
+          }
+        }
+      }
+    }
+  }
+}
+
+.ContactSocialNetWorkMobile {
+  min-height: calc(100vh - 48px);
+  background-color: #e5e5e5;
+  .ContentItem {
+    background-color: #e5e5e5;
+    position: relative;
+    padding-bottom: 12px;
+    .BoxOne {
+      display: block;
+      width: 100%;
+      padding: 12px 0 0 0;
+
+      &__list {
+        width: 100%;
+        background: $bgPrimary;
+        padding: 0 16px;
+        a {
+          text-decoration: none;
+        }
+        .item {
+          display: flex;
+          align-items: center;
+          height: 40px;
+          border-bottom: 1px solid $lineTertiary;
+          .text {
+            @extend %headingSmall;
+            color: $contentPrimary;
+            margin-left: 10px;
+            flex: 1;
+            transform: translateY(1px);
+          }
+          .icon-first.phone {
+            svg path {
+              fill: $contentInformative;
+            }
+          }
+          .icon-first.facebook {
+            svg path {
+              fill: #1890ff;
+            }
+          }
+
+          .icon-first.card {
+            svg path {
+              fill: $contentPositive;
+            }
+          }
+          .icon-first.bag {
+            svg path {
+              fill: $contentCritical;
+            }
+          }
+          .icon-two {
+            svg path {
+              fill: $contentPrimary;
+            }
+          }
+        }
+      }
+    }
+  }
+}

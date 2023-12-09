@@ -1,0 +1,56 @@
+@use "./../../../style/base/typography.scss";
+@use "./../../../style/base/color-theming.scss" as c;
+
+.InstallmentWeb .ContentItem .PaymentsItem {
+  padding-bottom: 16px;
+  padding-top: 24px;
+  .BoxOne {
+    .title {
+      @extend %headingLarge;
+      font-weight: 500;
+      color: c.$contentPrimary;
+      padding-bottom: 12px;
+    }
+
+    .content {
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 12px;
+      .RadioCustom {
+        width: calc(1200px / 2 - 24px - 12px);
+        border: 1px solid #dedfe2;
+        border-radius: 8px;
+        padding: 18px 18px 18px 46px;
+        &:hover {
+          border: 1px solid c.$ducvietComputer;
+        }
+        &.active {
+          border: 1px solid c.$ducvietComputer;
+        }
+
+        .checkmark {
+          top: 50%;
+          left: 18px;
+          transform: translateY(-11px);
+        }
+
+        .body {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          .image {
+            display: flex;
+            img {
+              width: 44px;
+              height: 44px;
+              object-fit: contain;
+              border: 1px solid #dedfe2;
+              border-radius: 8px;
+              margin-left: 12px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

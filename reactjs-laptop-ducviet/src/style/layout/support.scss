@@ -1,0 +1,139 @@
+@use "./../base/font.scss";
+@use "./../base/typography.scss";
+@use "./../base/color-theming.scss";
+@use "./../base/global.scss";
+.SupportWeb {
+  min-width: 1230px;
+  background-color: color-theming.$bgTertiary;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .ContentItem {
+    width: 1200px;
+    margin-bottom: 32px;
+    > .box {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      width: 100%;
+      ul.nav-tabs {
+        display: flex;
+        flex-direction: column;
+        background-color: color-theming.$bgPrimary;
+        width: 288px;
+        min-height: 420px;
+        border: unset;
+        border-radius: 8px;
+        overflow: hidden;
+
+        li:nth-child(1) > div.category {
+          @extend %headingLarge;
+
+          width: 288px;
+          height: 60px;
+
+          flex-direction: row;
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          padding-left: 12px;
+          transform: translateY(2px);
+          border-bottom: 1px solid color-theming.$lineTertiary;
+          margin-bottom: 12px;
+        }
+
+        li a {
+          background-color: color-theming.$bgPrimary;
+          width: 288px;
+          height: 56px;
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-start;
+          align-items: center;
+          padding: 12px 12px;
+          color: color-theming.$contentPrimary;
+          margin-bottom: 0;
+          border: unset;
+          border-radius: unset;
+          span {
+            padding-left: 14px;
+            transform: translateY(2px);
+            border-radius: 8px 8px 0px 0px;
+          }
+          &:hover {
+            background-color: color-theming.$bgAccentSecondary;
+            border: unset;
+          }
+          &:active,
+          &.active {
+            background-color: color-theming.$contentAccent;
+            color: color-theming.$contentInversePrimary;
+
+            svg path {
+              fill: color-theming.$contentInversePrimary;
+            }
+          }
+        }
+      }
+
+      .tab-content {
+        width: 896px;
+        min-height: 420px;
+
+        background-color: color-theming.$bgPrimary;
+        border-radius: 8px;
+        padding: 0;
+        .tab-pane {
+          padding: 0;
+          width: 100%;
+          background-color: color-theming.$bgPrimary;
+
+          .box {
+            width: 100%;
+            padding: 24px 24px 24px 24px;
+            &__title {
+              @extend %displayMedium;
+              height: 36px;
+              vertical-align: middle;
+              color: color-theming.$contentPrimary;
+              padding-left: 24px;
+              border-left: 4px solid #d10101;
+              text-transform: uppercase;
+            }
+
+            &__content {
+              margin-top: 24px;
+              @extend %bodyMedium;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .ItemSecond {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 32px;
+
+    .box {
+      width: 1200px;
+      display: flex;
+      justify-content: space-between;
+      &__item {
+        width: 588px;
+        height: 240px;
+        border-radius: 8px;
+        img {
+          width: 588px;
+          height: 240px;
+          border-radius: 8px;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+  .ItemNews {
+    margin-bottom: 32px;
+  }
+}

@@ -1,0 +1,22 @@
+@use "./../../style/base/font.scss";
+@use "./../../style/base/typography.scss";
+@use "./../../style/base/color-theming.scss";
+@use "./../../style/base/global.scss";
+@use "./../../style/base/animation.scss";
+.CompareProduct {
+  background-color: #e5e5e5;
+  // min-height: 500vh;
+  a {
+    text-decoration: none;
+  }
+  .content {
+    padding: 10px 0 12px 0;
+
+    display: flex;
+    flex-flow: row wrap;
+    box-sizing: border-box;
+    place-content: flex-start space-between;
+    flex-shrink: 0;
+    overflow: hidden;
+  }
+}

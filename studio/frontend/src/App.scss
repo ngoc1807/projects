@@ -1,0 +1,61 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+	font-family: "Open Sans", sans-serif;
+	// font-size: 16px;
+}
+
+$colorPrice: #e75768;
+$colorMain: #ffa801;
+
+.loading {
+	text-align: center;
+	height: 100vh;
+	background: rgba(0, 0, 0, 0.05);
+	border-radius: 4px;
+	margin-bottom: 20px;
+	padding-top: 40%;
+}
+
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+		transform: translateY(-3rem);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes fadeUp {
+	0% {
+		transform: translateY(3rem);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes fadeLeft {
+	0% {
+		transform: translateX(3rem);
+	}
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@keyframes fadeRight {
+	0% {
+		transform: translateX(-3rem);
+	}
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}

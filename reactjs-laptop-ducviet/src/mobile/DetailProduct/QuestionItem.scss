@@ -1,0 +1,58 @@
+@use "./../../style/base/font.scss";
+@use "./../../style/base/typography.scss";
+@use "./../../style/base/color-theming.scss";
+@use "./../../style/base/global.scss";
+
+.QuestionItem {
+  margin-top: 12px;
+  background-color: color-theming.$bgPrimary;
+  .box {
+    padding: 12px 16px;
+    &__title {
+      @extend %headingMedium;
+      color: color-theming.$contentPrimary;
+      padding-bottom: 12px;
+    }
+    #accordion {
+      .card:not(:last-child) {
+        margin-bottom: 8px;
+      }
+      .card {
+        border: 1px solid color-theming.$linePrimary;
+        //   border-radius: 8px;
+        &-header {
+          background: color-theming.$bgTertiary;
+          border: none;
+          border-radius: 8px;
+          padding: 8px;
+          svg:nth-child(1) {
+            transform: translateY(-2px);
+            margin-right: 12px;
+            path {
+              fill: color-theming.$contentAccent;
+            }
+          }
+
+          > div button.btn {
+            @extend %bodyMedium;
+            color: color-theming.$contentPrimary;
+            display: flex;
+            align-items: center;
+            width: 100%;
+            text-align: left;
+            padding: 0;
+            height: auto;
+            span {
+              flex: 1;
+            }
+          }
+        }
+        &-body {
+          padding: 12px;
+          @extend %bodyMedium;
+          color: color-theming.$contentPrimary;
+        }
+      }
+    }
+  }
+}

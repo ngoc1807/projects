@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`custom-form-helper-text should render correctly when only required props are passed 1`] = `
+<p
+  class="MuiFormHelperText-root css-pxg7nu-MuiFormHelperText-root"
+>
+  <span
+    class="notranslate"
+  >
+    ​
+  </span>
+</p>
+`;
+
+exports[`custom-form-helper-text should render correctly when optional props are passed for error messaging 1`] = `
+<p
+  class="MuiFormHelperText-root Mui-error css-pxg7nu-MuiFormHelperText-root"
+>
+  Oh no there's an error!
+</p>
+`;
+
+exports[`custom-form-helper-text should render correctly when optional props are passed for informational messaging 1`] = `
+<p
+  class="MuiFormHelperText-root css-pxg7nu-MuiFormHelperText-root"
+>
+  Informational helper
+</p>
+`;
+
+exports[`custom-form-helper-text should render correctly when optional props are passed for success messaging 1`] = `
+<p
+  class="MuiFormHelperText-root css-f1s83x-MuiFormHelperText-root"
+>
+  Success!
+</p>
+`;

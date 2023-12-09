@@ -1,0 +1,11 @@
+overwrite: true
+schema: "https://api-gateway.stellaautomotive.com/reporting/graphql?name=sandbox2"
+documents: "./src/graphql/**/**.gql"
+generates:
+  src/services/platform/reporting/generated.ts:
+    plugins:
+      - "typescript"
+      - "typescript-operations"
+      - "typescript-rtk-query":
+          importBaseApiFrom: "src/services/platform/reporting"
+          exportHooks: true

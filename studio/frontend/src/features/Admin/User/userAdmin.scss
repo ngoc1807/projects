@@ -1,0 +1,32 @@
+.userEitAdmin {
+	.ant-form-item-label label {
+		font-size: 16px;
+		font-weight: 600;
+	}
+
+	// .ant-form-item-with-help {
+	// 	margin-bottom: 24px !important;
+	// }
+
+	.ant-image-mask {
+		margin-top: 1.5vh;
+	}
+
+	.imageMain {
+		margin-top: 1.5vh;
+		max-height: 30vh;
+		object-fit: contain;
+		width: auto;
+	}
+	.ant-form-item-explain.ant-form-item-explain-error {
+		text-align: start;
+	}
+}
+@media screen and (max-width: 1200px) {
+	.imageMain {
+		margin-top: 1.5vh;
+		width: auto;
+		max-height: 35vh;
+		object-fit: contain;
+	}
+}

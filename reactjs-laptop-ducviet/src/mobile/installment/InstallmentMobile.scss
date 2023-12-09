@@ -1,0 +1,13 @@
+@use "./../../style/base/typography.scss";
+@use "./../../style/base/color-theming.scss" as c;
+
+.InstallmentMobile {
+  background-color: #e5e5e5;
+  min-height: 100vh;
+
+  .ContentItem {
+    background-color: c.$bgPrimary;
+    // width: 1200px;
+    // padding: 24px;
+  }
+}

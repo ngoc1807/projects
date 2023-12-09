@@ -1,0 +1,118 @@
+@use "./../../style/base/font.scss";
+@use "./../../style/base/typography.scss";
+@use "./../../style/base/color-theming.scss";
+@use "./../../style/base/global.scss";
+
+.SimilarProductItem {
+  padding-top: 8px;
+  border-radius: 4px;
+
+  .Viewed {
+    background-color: color-theming.$bgPrimary;
+    padding: 0 0;
+    &__title {
+      @extend %headingLarge;
+      border-bottom: 1px solid color-theming.$lineTertiary;
+      height: 48px;
+      padding: 10px 16px;
+    }
+
+    &__list {
+      margin-top: 12px;
+      margin-bottom: 12px;
+      // height: 102px;
+      padding: 0 16px;
+      display: flex;
+      flex-wrap: nowrap;
+      overflow-y: scroll;
+      a {
+        text-decoration: none;
+        color: unset;
+      }
+      &-item:not(:last-child) {
+        margin-right: 12px;
+      }
+      &-item {
+        width: 154px;
+
+        border-radius: 8px;
+        border: 1px solid color-theming.$lineTertiary;
+        display: flex;
+        flex-direction: column;
+        .image {
+          width: 154px;
+          aspect-ratio: 154/122;
+          overflow: hidden;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-bottom: 1px solid color-theming.$lineTertiary;
+          img {
+            width: 106px;
+            aspect-ratio: 1/1;
+            object-fit: contain;
+          }
+        }
+        .desc {
+          padding: 8px;
+          width: 154px;
+
+          &__title {
+            @extend %headingSmall;
+            color: color-theming.$contentPrimary;
+            height: 40px;
+
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            margin-bottom: 2px;
+          }
+          .price {
+            display: flex;
+            &_left {
+              flex: 1;
+              .price_new {
+                @extend %headingSmall;
+                height: 24px;
+                color: color-theming.$ducvietComputer;
+              }
+              .price_old {
+                @extend %bodyMedium-strikethrough;
+                font-size: 12px;
+                line-height: 16px;
+                color: color-theming.$contentSecondary;
+              }
+            }
+
+            &_right {
+              width: 32px;
+              height: 32px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              border-radius: 32px;
+              background-color: color-theming.$ducvietComputer;
+              color: color-theming.$contentInversePrimary;
+              font-style: normal;
+              font-weight: bold;
+              font-size: 12px;
+              line-height: 16px;
+            }
+          }
+          .compare {
+            margin-top: 4px;
+            .btn {
+              width: 113px;
+              @extend %headingSmall;
+              background-color: color-theming.$bgSecondary;
+              padding: 6px 16px;
+              color: color-theming.$contentAccent;
+            }
+          }
+        }
+      }
+    }
+  }
+}

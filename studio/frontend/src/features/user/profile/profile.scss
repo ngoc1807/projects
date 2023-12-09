@@ -1,0 +1,66 @@
+.profileUser {
+	.left {
+		&__title {
+			font-weight: bold;
+		}
+
+		&__upload {
+			width: 100%;
+			display: flex;
+			justify-content: center;
+			&-image {
+				box-shadow: 1px 0.5px 0px 2px #e5e9f2;
+				border-radius: 200px;
+				padding: 4px 10px;
+				background-color: rgb(207, 100, 2);
+				color: #fff;
+				&:hover {
+					background-color: rgb(255, 124, 0);
+				}
+			}
+		}
+		.ant-image {
+			height: 200px;
+			width: 100%;
+			border-radius: 100%;
+			display: flex;
+			justify-content: center;
+			.ant-image-img {
+				width: 200px;
+				height: 200px;
+				object-fit: cover;
+				border-radius: 100%;
+			}
+			.ant-image-mask {
+				width: 200px;
+				height: 200px;
+				border-radius: 100%;
+				position: absolute;
+				margin: 0 auto;
+			}
+		}
+	}
+
+	.right {
+		&__one {
+			&-statistical {
+				background-color: rgba(21, 44, 129, 0.8);
+				border-radius: 4px;
+				box-shadow: 1px 0.5px 0px 2px #e5e9f2;
+				min-height: 80px;
+				display: flex;
+				align-items: center;
+				color: #fff;
+				flex-direction: column;
+
+				padding: 12px 0;
+				text-align: center;
+				font-size: 16px;
+				span {
+					font-size: 2rem;
+					font-weight: bold;
+				}
+			}
+		}
+	}
+}

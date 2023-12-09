@@ -1,0 +1,230 @@
+@use "../base/font.scss";
+@use "../base/typography.scss";
+@use "../base/color-theming.scss";
+@use "../base/global.scss";
+.CartMobile {
+  background-color: #e5e5e5;
+  min-height: 100vh;
+  .CartItem {
+    // background-color: $bgPrimary;
+    position: relative;
+    margin-bottom: 12px;
+    background-color: #e5e5e5;
+    min-height: 100vh;
+    .box {
+      background-color: $bgPrimary;
+      padding: 0;
+
+      &__title {
+        height: 40px;
+        display: flex;
+        padding: 0 12px;
+        align-items: center;
+        border-bottom: 1px solid $lineTertiary;
+      }
+
+      &__content {
+        &-item {
+          height: 155px;
+          padding: 12px;
+          display: flex;
+          border-bottom: 1px solid $lineTertiary;
+
+          .first {
+            margin-right: 12px;
+            width: 20px;
+            padding-top: 20px;
+          }
+          .second {
+            position: relative;
+            overflow: hidden;
+
+            border: 1px solid $lineTertiary;
+
+            width: 56px;
+            height: 56px;
+            &::after {
+              display: block;
+              content: "";
+              padding-bottom: 100%;
+            }
+            > img {
+              position: absolute;
+              left: 0;
+              top: 0;
+              right: 0;
+
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              overflow: hidden;
+              z-index: 1;
+            }
+          }
+
+          .three {
+            flex: 1;
+            margin-left: 12px;
+            &__title {
+              display: flex;
+              &-text {
+                flex: 1;
+                .text {
+                  @extend %headingSmall;
+                  height: 40px;
+                  overflow: hidden;
+                  text-overflow: ellipsis;
+                  display: -webkit-box;
+                  -webkit-box-orient: vertical;
+                  -webkit-line-clamp: 2;
+                  margin-bottom: 2px;
+                }
+                .summary {
+                  @extend %bodySmall;
+                  height: 32px;
+                  overflow: hidden;
+                  text-overflow: ellipsis;
+                  display: -webkit-box;
+                  -webkit-box-orient: vertical;
+                  -webkit-line-clamp: 2;
+                  margin-bottom: 2px;
+                  color: $contentSecondary;
+                }
+              }
+              &-delete {
+                height: 32px;
+                width: 32px;
+                border: 1px solid $lineTertiary;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 0;
+                margin-left: 8px;
+              }
+            }
+
+            &__price {
+              display: flex;
+              justify-content: space-between;
+              &-left {
+                margin-top: 8px;
+                .new {
+                  @extend %headingLarge;
+                  color: $contentAccent;
+                }
+                .old {
+                  @extend %bodyMedium-strikethrough;
+                  color: $contentSecondary;
+                }
+              }
+              &-right {
+                display: flex;
+                margin-top: 12px;
+                align-items: center;
+                height: 40px;
+                border-radius: 4px;
+                border: 1px solid $lineTertiary;
+                div.amount {
+                  @extend %headingMedium;
+                  margin: 0 12px;
+                }
+
+                button {
+                  padding: 0 5px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .FooterItem {
+    box-shadow: 0px -2px 8px rgba(0, 0, 0, 0.1);
+    background-color: #e5e5e5;
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    z-index: 1030;
+
+    .box {
+      background-color: $bgPrimary;
+      padding: 12px 16px;
+      &__first {
+        height: 20px;
+        align-items: center;
+        justify-content: space-between;
+        display: flex;
+        .text {
+          @extend %bodyMedium;
+          color: $contentSecondary;
+        }
+        .price {
+          @extend %headingLarge;
+          color: $ducvietComputer;
+        }
+      }
+      &__btn {
+        padding-top: 12px;
+        button.btn {
+          @extend %headingMedium;
+          width: 100%;
+          height: 48px;
+          background-color: $ducvietComputer;
+          color: $contentInversePrimary;
+          border-radius: 4px;
+        }
+      }
+    }
+  }
+}
+.CartEmpty {
+  background-color: $bgPrimary;
+
+  .box {
+    padding-top: 120px;
+    padding-right: 16px;
+    padding-left: 16px;
+    &__content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      &-image {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 12px;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      &-title {
+        @extend %displaySmall;
+        color: color-theming.$contentPrimary;
+        margin-bottom: 4px;
+        width: 100%;
+        text-align: center;
+      }
+      &-note {
+        @extend %bodyMedium;
+        color: color-theming.$contentSecondary;
+        margin-bottom: 24px;
+        width: 100%;
+        text-align: center;
+      }
+      &-btn {
+        button.btn {
+          @extend %headingMedium;
+          width: 198px;
+          height: 48px;
+          background: color-theming.$ducvietComputer;
+          color: color-theming.$lineInversePrimary;
+        }
+      }
+    }
+  }
+}

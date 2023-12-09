@@ -1,0 +1,218 @@
+@use "./../../base/font.scss";
+@use "./../../base/typography.scss";
+@use "./../../base/color-theming.scss";
+@use "./../../base/global.scss";
+
+.SearchHome {
+  width: 400;
+  height: 48px;
+  margin-left: 74px;
+  display: flex;
+  align-items: center;
+
+  &__dropdown {
+    width: 146px;
+
+    & button:hover,
+    & button:focus,
+    & button:active {
+      background-color: $ducvietComputer;
+      border: 1px solid $ducvietComputer;
+      color: $contentInversePrimary;
+      & .SearchHome__dropdown-icon svg path {
+        fill: $contentInversePrimary;
+      }
+
+      box-shadow: $bgSecondary;
+    }
+
+    button {
+      width: 100%;
+      height: 48px;
+      background-color: $bgPrimary;
+      border-radius: 4px 0px 0px 4px;
+      border-color: $contentInversePrimary;
+      color: $contentPrimary;
+
+      font-weight: unset;
+      // color: #212529;
+      text-align: center;
+      vertical-align: middle;
+
+      user-select: none;
+
+      padding: unset;
+      font-size: unset;
+      line-height: unset;
+
+      span:nth-child(1) {
+        @extend %headingSmall;
+      }
+    }
+
+    ul.menu__one {
+      @extend %shadow1;
+
+      animation: fadeOpacity ease-in-out 0.3s;
+      animation-delay: 0s;
+      width: 244px;
+      min-height: 400px;
+      // top: 92px !important;
+      border-radius: 4px 0 0px 4px;
+      border: unset;
+
+      & li.menu__one-item {
+        width: 244px;
+        height: 40px;
+        display: flex;
+
+        &:hover,
+        &:active,
+        &:focus {
+          background-color: $bgNegativeSecondary;
+
+          a .text,
+          a .icon-left,
+          a .icon-right {
+            color: $contentPrimary;
+            // svg path {
+            //   fill: $contentInversePrimary;
+            // }
+          }
+        }
+
+        &:hover {
+          ul.menu__two {
+            display: block;
+          }
+        }
+      }
+
+      li.menu__one-item > a {
+        width: 234px;
+        display: flex;
+        flex-wrap: wrap;
+        text-decoration: none;
+        color: $contentPrimary;
+        // width: 100%;
+        align-items: center;
+
+        .text {
+          @extend %bodySmall;
+          color: $contentPrimary;
+          flex: 1;
+          transform: translateY(1px);
+        }
+
+        & .icon-left {
+          padding: 0 8px;
+          transform: translateY(-1px);
+        }
+      }
+    }
+    ul.menu__two {
+      @extend %shadow1;
+
+      // animation: fadeRight 0.4s;
+      display: none;
+      list-style: none;
+      position: absolute;
+      left: 244px;
+      top: 0;
+      width: 216px;
+      min-height: 400px;
+      border-radius: 0;
+      background-color: $bgSecondary;
+      border-radius: 0px 4px 4px 0px;
+
+      padding: 0.5rem 0;
+
+      li.menu__two-item {
+        > a {
+          @extend %bodySmall;
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          width: 216px;
+          height: 40px;
+          word-break: break-all;
+          width: 216px;
+          // text-decoration: none;
+          color: $contentPrimary;
+          padding-left: 12px;
+        }
+
+        &:hover,
+        &:active,
+        &:focus {
+          background-color: $bgNegativeSecondary;
+          a {
+            text-decoration: none;
+          }
+          a .text,
+          a .icon-left,
+          a .icon-right {
+            color: $contentPrimary;
+            // svg path {
+            //   fill: $contentInversePrimary;
+            // }
+          }
+        }
+      }
+    }
+  }
+
+  form {
+    display: flex;
+  }
+
+  //
+  &__input {
+    width: 182px;
+    height: 48px;
+    &.form-control {
+      border-radius: 0;
+      border-color: $contentInversePrimary;
+      outline: none;
+      background-clip: unset;
+      @extend %bodyMedium;
+    }
+  }
+
+  &__btn {
+    width: 72px;
+    height: 48px;
+    background-color: $bgSecondary;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // text-align: center;
+    // vertical-align: middle;
+    border-radius: 0px 4px 4px 0px;
+    padding: 0;
+    margin: 0;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: $ducvietComputer;
+      border: 1px solid $ducvietComputer;
+      & .SearchHome__btn-text {
+        color: $contentInversePrimary;
+      }
+      & .SearchHome__btn-icon svg path {
+        fill: $contentInversePrimary;
+      }
+    }
+
+    &-text {
+      @extend %headingSmall;
+
+      transform: translateY(2px);
+      vertical-align: middle;
+      padding-left: 4px;
+
+      color: $contentPrimary;
+    }
+  }
+}

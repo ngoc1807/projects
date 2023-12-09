@@ -1,0 +1,29 @@
+@use "./../../style/base/font.scss";
+@use "./../../style/base/typography.scss";
+@use "./../../style/base/color-theming.scss";
+@use "./../../style/base/global.scss";
+
+.AdsBotLeft {
+  animation: fadeOpacity 0.3s ease;
+  animation-delay: 0s;
+  transition: all 0.3s ease;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 204px;
+  width: 400px;
+  z-index: 10;
+  button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    color: color-theming.$ducvietComputer;
+    background-color: color-theming.$lineInversePrimary;
+    font-weight: 700;
+  }
+
+  img {
+    height: 204px;
+    width: 400px;
+  }
+}

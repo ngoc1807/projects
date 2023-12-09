@@ -1,0 +1,182 @@
+@use "./../../style/base/typography.scss";
+@use "./../../style/base/color-theming.scss" as c;
+
+.CartWeb .FormCartItem {
+  width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  margin: 24px 0;
+  input {
+    @extend %bodyMedium;
+  }
+  .right {
+    background-color: c.$bgPrimary;
+
+    border-radius: 8px;
+    padding: 24px 24px 24px 24px;
+    width: 888px;
+    min-height: 548px;
+
+    &__title {
+      @extend %displayMedium;
+      height: 36px;
+      vertical-align: middle;
+      color: c.$contentPrimary;
+      padding-left: 24px;
+      border-left: 4px solid #d10101;
+      text-transform: uppercase;
+    }
+
+    .box {
+      &-title {
+        padding-top: 24px;
+        display: flex;
+        &-text {
+          flex: 1;
+          span {
+            @extend %headingLarge;
+            color: c.$contentPrimary;
+          }
+        }
+        &-option {
+          display: flex;
+          align-items: center;
+        }
+      }
+
+      &-formOne {
+        padding-top: 12px;
+        display: flex;
+        input {
+          @extend %bodyMedium;
+        }
+      }
+
+      &-formTwo {
+        padding-top: 12px;
+        .CheckBoxCustom ~ .content {
+          display: none;
+          // transition: all 0.3s ease;
+          // animation: fadeUp 0.3s ease;
+          height: 0;
+          transition: all 0.5s ease;
+        }
+        .CheckBoxCustom.active ~ .content {
+          display: block;
+          min-height: 100px;
+          transition: all 0.5s ease;
+          // transition: all 0.3s ease;
+          // animation: fadeDown 0.3s ease;
+        }
+        .content {
+          overflow: hidden;
+          transition: all 0.5s ease;
+          animation: fadeDown 0.5s ease;
+          position: relative;
+          margin-top: 10px;
+          background-color: c.$bgTertiary;
+          padding: 12px;
+          border-radius: 8px;
+          &-one {
+            display: flex;
+            margin-bottom: 0.8rem;
+          }
+          &-three {
+            display: flex;
+            margin-bottom: 12px;
+            justify-content: space-between;
+          }
+          &-four {
+            display: flex;
+            margin-bottom: 12px;
+          }
+        }
+      }
+    }
+  }
+  .left {
+    width: 288px;
+    min-height: 548px;
+    background-color: c.$bgPrimary;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    &__title {
+      width: 288px;
+      height: 48px;
+      padding: 10px 15px;
+      border-bottom: 1px solid c.$linePrimary;
+      span {
+        @extend %headingLarge;
+
+        height: 48px;
+
+        vertical-align: middle;
+
+        color: c.$contentPrimary;
+
+        text-transform: uppercase;
+      }
+    }
+
+    &__content {
+      padding: 16px 16px 0 16px;
+      flex: 1;
+      .notify {
+        @extend %bodySmall;
+        margin-bottom: 16px;
+        color: c.$contentNegative;
+      }
+      .group-input {
+        .title {
+          @extend %bodyMedium;
+          color: c.$contentPrimary;
+        }
+        input.form-control {
+          height: 40px;
+        }
+
+        button.btn {
+          background-color: c.$bgAccentPrimary;
+          color: c.$lineInversePrimary;
+        }
+      }
+
+      .item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 16px;
+        .title {
+          @extend %bodyMedium;
+          color: c.$contentSecondary;
+        }
+        .text.trans,
+        .text.money {
+          @extend %headingSmall;
+          color: c.$contentPrimary;
+        }
+
+        .text.sale {
+          @extend %headingSmall;
+          color: c.$contentPositive;
+        }
+        .text.total {
+          @extend %headingXLarge;
+          color: c.$contentAccent;
+        }
+      }
+    }
+
+    &__btn {
+      padding: 16px;
+      button.btn {
+        @extend %headingMedium;
+        width: 256px;
+        height: 48px;
+        background: c.$ducvietComputer;
+        color: c.$lineInversePrimary;
+      }
+    }
+  }
+}

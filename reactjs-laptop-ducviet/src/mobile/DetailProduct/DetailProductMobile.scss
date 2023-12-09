@@ -1,0 +1,8 @@
+@use "./../../style/base/font.scss";
+@use "./../../style/base/typography.scss";
+@use "./../../style/base/color-theming.scss";
+@use "./../../style/base/global.scss";
+.DetailProductMobile {
+  background-color: #e5e5e5;
+  min-height: 100vh;
+}

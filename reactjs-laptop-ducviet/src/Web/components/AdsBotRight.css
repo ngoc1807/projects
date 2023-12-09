@@ -1,0 +1,74 @@
+@use "./../../style/base/font.scss";
+@use "./../../style/base/typography.scss";
+@use "./../../style/base/color-theming.scss";
+@use "./../../style/base/global.scss";
+.AdsBotRight {
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  height: auto;
+  width: auto;
+  z-index: 10;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.AdsBotRight img {
+  height: 300px;
+  width: 300px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.AdsBotRight .btn__toggle {
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  background-color: #fff;
+  height: 40px;
+  width: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0;
+  border-radius: 4px 0 0 4px;
+}
+
+.AdsBotRight .btn__toggle .left {
+  display: none;
+}
+
+.AdsBotRight .btn__toggle .right {
+  display: block;
+}
+
+.AdsBotRight input#AdsBotRightCheckBox {
+  display: none;
+}
+
+.AdsBotRight input#AdsBotRightCheckBox:checked ~ label .left {
+  display: block;
+}
+
+.AdsBotRight input#AdsBotRightCheckBox:checked ~ label .right {
+  display: none;
+}
+
+.AdsBotRight input#AdsBotRightCheckBox:checked ~ label ~ img {
+  margin-right: -300px;
+}
+
+.AdsBotRight input#AdsBotRightCheckBox:checked ~ label ~ img {
+  margin-right: -300px;
+}
+/*# sourceMappingURL=AdsBotRight.css.map */

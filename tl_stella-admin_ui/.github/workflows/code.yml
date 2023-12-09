@@ -1,0 +1,14 @@
+name: Quality Check
+on: [pull_request]
+jobs:
+  Code:
+    runs-on: githubaction1
+    steps:
+      - uses: actions/checkout@v2
+      - run: yarn install --immutable
+      - run: yarn run audit
+      - run: yarn run format:check
+      - run: yarn run type
+      - run: yarn run lint
+      - run: yarn run test
+      - run: yarn run docker:build

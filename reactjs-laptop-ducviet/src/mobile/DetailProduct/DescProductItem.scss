@@ -1,0 +1,32 @@
+@use "./../../style/base/font.scss";
+@use "./../../style/base/typography.scss";
+@use "./../../style/base/color-theming.scss";
+@use "./../../style/base/global.scss";
+.DescProductItem {
+  background-color: color-theming.$bgPrimary;
+  .box {
+    padding: 4px 16px 10px 16px;
+    &__title {
+      @extend %headingMedium;
+      color: color-theming.$contentPrimary;
+      padding-bottom: 12px;
+    }
+
+    &__text {
+      @extend %bodyMedium;
+    }
+  }
+
+  .box1 {
+    margin-bottom: 12px;
+    background-color: color-theming.$bgPrimary;
+    span {
+      margin-left: 8px;
+      @extend %headingMedium;
+      color: color-theming.$contentAccent;
+    }
+    svg path {
+      fill: color-theming.$contentAccent;
+    }
+  }
+}

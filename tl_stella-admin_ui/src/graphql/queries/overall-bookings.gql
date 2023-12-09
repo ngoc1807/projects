@@ -1,0 +1,33 @@
+query GetOverallBookingSummary(
+  $startDate: DateTime!
+  $endDate: DateTime!
+  $tenantId: String
+) {
+  total: callSummary(
+    start_time: $startDate
+    end_time: $endDate
+    tenant_id: $tenantId
+    source: "external"
+  )
+  transferred: callSummary(
+    start_time: $startDate
+    end_time: $endDate
+    tenant_id: $tenantId
+    status: "transferred"
+    source: "external"
+  )
+  booked: callSummary(
+    start_time: $startDate
+    end_time: $endDate
+    tenant_id: $tenantId
+    status: "success"
+    source: "external"
+  )
+  rescheduled: callSummary(
+    start_time: $startDate
+    end_time: $endDate
+    tenant_id: $tenantId
+    status: "rescheduled"
+    source: "external"
+  )
+}

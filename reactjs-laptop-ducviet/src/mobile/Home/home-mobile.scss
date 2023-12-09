@@ -1,0 +1,211 @@
+@use "./../../style/base/font.scss";
+@use "./../../style/base/typography.scss";
+@use "./../../style/base/color-theming.scss";
+@use "./../../style/base/global.scss";
+@use "./../../style/base/animation.scss";
+.HomeMobile {
+  background-color: #e5e5e5;
+  // min-height: 500vh;
+  a {
+    text-decoration: none;
+  }
+
+  .LogoBanner {
+    .box {
+      overflow-x: scroll;
+      background-color: color-theming.$bgPrimary;
+      display: flex;
+      height: 64px;
+      align-items: center;
+      padding-left: 16px;
+      padding-right: 16px;
+      a.item {
+        margin-right: 12px;
+      }
+    }
+  }
+  .ProductItemBG {
+    margin-top: 8px;
+  }
+  .ProductItem {
+    margin-top: 8px;
+  }
+  .AdsItem {
+    overflow: hidden;
+    margin-bottom: 0px;
+    padding: 0 12px;
+    .box {
+      position: relative;
+      margin-bottom: 8px;
+      border-radius: 8px;
+      padding: 0;
+      width: calc(100% - 8px);
+
+      &::after {
+        display: block;
+        content: "";
+        padding-bottom: 40.55%;
+      }
+      img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        margin: 0 16px;
+        border-radius: 8px;
+
+        width: calc(100% - 32px);
+        height: 100%;
+        object-fit: cover;
+        overflow: hidden;
+      }
+    }
+  }
+
+  .ViewedProductsItem {
+    border-radius: 4px;
+
+    .Viewed {
+      background-color: color-theming.$bgPrimary;
+      padding: 0 0;
+      &__title {
+        @extend %headingLarge;
+        border-bottom: 1px solid color-theming.$lineTertiary;
+        height: 48px;
+        padding: 10px 16px;
+      }
+
+      &__list {
+        margin-top: 12px;
+        margin-bottom: 12px;
+        // height: 102px;
+        padding: 0 16px;
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-y: scroll;
+        a {
+          text-decoration: none;
+          color: unset;
+        }
+        &-item:not(:last-child) {
+          margin-right: 12px;
+        }
+        &-item {
+          width: 244px;
+
+          border-radius: 8px;
+          padding: 8px;
+          border: 1px solid color-theming.$lineTertiary;
+          display: flex;
+          .image {
+            width: 64px;
+            height: 64px;
+            overflow: hidden;
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: contain;
+            }
+          }
+          .desc {
+            width: 156px;
+            margin-left: 8px;
+            &__title {
+              @extend %headingSmall;
+              color: color-theming.$contentPrimary;
+              height: 40px;
+
+              overflow: hidden;
+              text-overflow: ellipsis;
+              display: -webkit-box;
+              -webkit-box-orient: vertical;
+              -webkit-line-clamp: 2;
+              margin-bottom: 2px;
+            }
+            .price {
+              display: flex;
+              &_left {
+                flex: 1;
+                .price_new {
+                  @extend %headingMedium;
+                  height: 24px;
+                  color: color-theming.$ducvietComputer;
+                }
+                .price_old {
+                  @extend %bodyMedium-strikethrough;
+                  height: 20px;
+                  color: color-theming.$contentSecondary;
+                }
+              }
+
+              &_right {
+                width: 32px;
+                height: 32px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 32px;
+                background-color: color-theming.$ducvietComputer;
+                color: color-theming.$contentInversePrimary;
+                font-style: normal;
+                font-weight: bold;
+                font-size: 12px;
+                line-height: 16px;
+              }
+            }
+            .compare {
+              margin-top: 4px;
+              .btn {
+                @extend %headingSmall;
+                background-color: color-theming.$bgSecondary;
+                padding: 6px 16px;
+                color: color-theming.$contentAccent;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .Highlight {
+    margin-top: 8px;
+    padding-top: 12px;
+    background-color: color-theming.$bgPrimary;
+    display: flex;
+    flex-wrap: wrap;
+
+    overflow: hidden;
+    .item.one,
+    .item.two {
+      padding-left: 12px;
+    }
+
+    .item {
+      overflow: hidden;
+      width: 50%;
+      min-height: 96px;
+      margin-bottom: 16px;
+      &__image {
+        width: 32px;
+        height: 32px;
+        svg {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      &__desc {
+        margin-top: 8px;
+        &-title {
+          @extend %headingSmall;
+          color: color-theming.$contentPrimary;
+        }
+        &-text {
+          @extend %bodySmall;
+          margin-top: 4px;
+          color: color-theming.$contentSecondary;
+        }
+      }
+    }
+  }
+}

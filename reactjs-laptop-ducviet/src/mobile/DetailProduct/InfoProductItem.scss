@@ -1,0 +1,63 @@
+@use "./../../style/base/font.scss";
+@use "./../../style/base/typography.scss";
+@use "./../../style/base/color-theming.scss";
+@use "./../../style/base/global.scss";
+.InfoProductItem {
+  .box {
+    background-color: color-theming.$bgPrimary;
+    padding: 12px 16px;
+    border-radius: 4px;
+    &__title {
+      @extend %headingMedium;
+      color: color-theming.$contentPrimary;
+      padding-bottom: 12px;
+    }
+    &__content {
+      .title {
+        @extend %headingMedium;
+        padding: 6px 10px;
+        color: color-theming.$bgPrimary;
+
+        border-radius: 4px 4px 0 0;
+        background-color: color-theming.$ducvietComputer;
+      }
+      .list {
+        width: 100%;
+        border-radius: 0 0 4px 4px;
+        ul {
+          list-style: none;
+          margin-bottom: 0;
+          border: 1px solid color-theming.$lineSecondary;
+          border-radius: 0 0 4px 4px;
+          li {
+            display: flex;
+            align-items: center;
+
+            &.one {
+              background-color: color-theming.$bgPrimary;
+            }
+            &.two {
+              background-color: color-theming.$bgSecondary;
+            }
+
+            div.dot {
+              height: 8px;
+              width: 8px;
+              border-radius: 100%;
+              background-color: color-theming.$contentPrimary;
+              margin-right: 10px;
+            }
+
+            padding: 12px;
+            div.text {
+              @extend %bodyMedium;
+              flex: 1;
+
+              color: color-theming.$contentPrimary;
+            }
+          }
+        }
+      }
+    }
+  }
+}

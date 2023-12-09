@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`reporting-error should render correctly 1`] = `
+<div
+  class="MuiBox-root css-70qvj9"
+>
+  <svg
+    aria-hidden="true"
+    class="MuiSvgIcon-root MuiSvgIcon-fontSizeLarge css-18ois63-MuiSvgIcon-root"
+    data-testid="ErrorIcon"
+    focusable="false"
+    viewBox="0 0 24 24"
+  >
+    <path
+      d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"
+    />
+  </svg>
+  <div
+    class="MuiBox-root css-0"
+  >
+    <h6
+      class="MuiTypography-root MuiTypography-h6 css-2ulfj5-MuiTypography-root"
+    >
+      There was an error loading the reporting numbers.
+    </h6>
+    <p
+      class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+    >
+      Please refresh the page and try again. If the issue persists, please contact support.
+    </p>
+  </div>
+</div>
+`;

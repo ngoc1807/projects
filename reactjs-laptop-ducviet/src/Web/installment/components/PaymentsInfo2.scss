@@ -1,0 +1,181 @@
+@use "./../../../style/base/typography.scss";
+@use "./../../../style/base/color-theming.scss" as c;
+
+.InstallmentWeb .ContentItem .PaymentsInfo2 {
+  animation: fadeOpacity 0.3s ease;
+  .step-one {
+    .title {
+      @extend %headingSmall;
+      color: c.$contentPrimary;
+    }
+    .content {
+      padding-top: 12px;
+      .checked-group-text {
+        display: flex;
+        flex-wrap: wrap;
+
+        .item {
+          padding: 0;
+          margin-right: 16px;
+          margin-bottom: 16px;
+          &-image {
+            width: 128px;
+            height: 64px;
+
+            padding: 12px 16px;
+          }
+        }
+        .item.no-left {
+          margin-right: 0px !important;
+        }
+      }
+    }
+  }
+  .step-two {
+    .title {
+      @extend %headingSmall;
+      color: c.$contentPrimary;
+    }
+    .content {
+      padding-top: 12px;
+      select {
+        width: 250px;
+        font-size: 14px;
+      }
+    }
+  }
+  .step-three {
+    padding-top: 16px;
+    .title {
+      @extend %headingSmall;
+      color: c.$contentPrimary;
+    }
+    .content {
+      margin-top: 12px;
+      overflow: hidden;
+      border: 1px solid #dedfe2;
+      border-radius: 8px;
+
+      table,
+      th,
+      td {
+        border: 1px solid #dedfe2;
+      }
+      table {
+        border-radius: 8px;
+        overflow: hidden;
+        border: 1px solid #dedfe2;
+        tr th {
+          background-color: c.$bgCriticalSecondary;
+          @extend %bodyMedium;
+          //   text-align: left;
+          padding: 12px 24px;
+        }
+        tr.first td {
+          background-color: c.$bgTertiary;
+        }
+        tr td {
+          @extend %bodyMedium;
+          text-align: center;
+          padding: 18px 5px;
+          color: c.$contentPrimary;
+          &.red {
+            color: c.$ducvietComputer;
+          }
+          .btn {
+            padding: 6px 28px;
+            background-color: c.$ducvietComputer;
+            color: c.$lineInversePrimary;
+            @extend %headingSmall;
+            &:hover {
+              opacity: 0.8;
+            }
+          }
+        }
+
+        .select {
+          padding: 18px 10px;
+          .text {
+            padding-bottom: 8px;
+          }
+        }
+      }
+      .note {
+        padding-top: 12px;
+        @extend %bodyMedium;
+        color: c.$contentPrimary;
+        span {
+          color: c.$ducvietComputer;
+        }
+      }
+    }
+  }
+
+  .FormItem {
+    padding-top: 24px;
+    input {
+      font-size: 14px;
+    }
+    .title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .right {
+        display: flex;
+        align-items: center;
+      }
+      .left {
+        @extend %headingLarge;
+
+        color: c.$contentPrimary;
+      }
+    }
+    .box-one {
+      padding-top: 12px;
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 24px;
+      input {
+        width: 1200 / 3 - 25px;
+      }
+    }
+    .box-two {
+      padding-top: 12px;
+      .group1 {
+        display: flex;
+        padding: 16px 0px;
+      }
+      .group {
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 12px;
+        select {
+          width: 1200 / 3 - 25px;
+          font-size: 14px;
+        }
+      }
+    }
+    .box-btn {
+      padding-top: 24px;
+      display: flex;
+      justify-content: center;
+      .btn {
+        padding: 14px 84px;
+
+        background: linear-gradient(180deg, #f9534a 0%, #d72f26 100%);
+        /* Shadown 1 */
+
+        box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        align-items: center;
+        @extend %headingLarge;
+
+        color: c.$lineInversePrimary;
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+}

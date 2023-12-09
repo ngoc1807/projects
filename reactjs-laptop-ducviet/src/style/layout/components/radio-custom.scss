@@ -1,0 +1,69 @@
+@use "./../../base/font.scss";
+@use "./../../base/typography.scss";
+@use "./../../base/color-theming.scss";
+@use "./../../base/global.scss";
+.RadioBoxCustom {
+  label.container {
+    display: block;
+    position: relative;
+    padding-left: 30px;
+
+    cursor: pointer;
+    margin-bottom: 0;
+    user-select: none;
+    margin-bottom: 16px;
+  }
+
+  /* Hide the browser's default radio button */
+  .container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  /* Create a custom radio button */
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #fff;
+    border-radius: 50%;
+    border: 2px solid color-theming.$contentSecondary;
+  }
+
+  /* On mouse-over, add a grey background color */
+  .container:hover input ~ .checkmark {
+    // background-color: color-theming.$bgAccentSecondary;
+  }
+
+  /* When the radio button is checked, add a blue background */
+  .container input:checked ~ .checkmark {
+    background-color: #fff;
+    border: 2px solid color-theming.$contentAccent;
+  }
+
+  /* Create the indicator (the dot/circle - hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+
+  /* Show the indicator (dot/circle) when checked */
+  .container input:checked ~ .checkmark:after {
+    display: block;
+  }
+
+  /* Style the indicator (dot/circle) */
+  .container .checkmark:after {
+    top: 3px;
+    left: 3px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: color-theming.$contentAccent;
+    border: 2px solid color-theming.$contentAccent;
+  }
+}

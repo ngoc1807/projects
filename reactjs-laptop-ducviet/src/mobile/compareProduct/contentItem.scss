@@ -1,0 +1,199 @@
+@use "./../../style/base/font.scss";
+@use "./../../style/base/typography.scss";
+@use "./../../style/base/color-theming.scss";
+@use "./../../style/base/global.scss";
+.ContentItem {
+  overflow: hidden;
+  width: calc(50%);
+  margin-bottom: 12px;
+  border-radius: 8px;
+
+  min-width: auto;
+  min-height: 296px;
+  border: 1px solid color-theming.$linePrimary;
+  border-radius: 8px;
+  background-color: white;
+
+  .box__item {
+    // padding: 0 16px;
+    width: 100%;
+    overflow: hidden;
+    background-color: color-theming.$bgPrimary;
+    border-radius: 8px;
+    &-image {
+      width: 100%;
+      aspect-ratio: 179/ 174;
+      display: flex;
+      justify-content: center;
+
+      align-items: center;
+      background-color: white;
+
+      img {
+        width: 100%;
+        aspect-ratio: 179/ 174;
+
+        object-fit: contain;
+      }
+    }
+    &-title {
+      @extend %headingMedium;
+      padding: 12px 12px 8px 12px;
+      color: color-theming.$contentPrimary;
+      &-content {
+        padding: 8px 12px;
+        @extend %bodySmall;
+        color: color-theming.$contentPrimary;
+      }
+    }
+    &-desc3 {
+      margin: 0 12px 0 12px;
+      border: 1px solid color-theming.$lineTertiary;
+      border-radius: 4px;
+      .title {
+        background: color-theming.$bgNegativeSecondary;
+        border: 1px solid #e9eaec;
+        padding: 5px 4px;
+        @extend %headingSmall;
+        color: color-theming.$ducvietComputer;
+      }
+      ul.box {
+        margin-bottom: 0;
+        list-style: none;
+        li {
+          display: flex;
+          padding: 8px;
+          min-height: 48px;
+          .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 8px;
+            background-color: color-theming.$contentPrimary;
+            margin-right: 8px;
+          }
+          .text {
+            flex: 1;
+            @extend %bodySmall;
+            color: color-theming.$contentPrimary;
+          }
+          &.active {
+            .text {
+              overflow: hidden;
+              text-overflow: ellipsis;
+              display: -webkit-box;
+              -webkit-box-orient: vertical;
+              -webkit-line-clamp: 2;
+              &.show {
+                overflow: unset;
+                display: unset;
+              }
+            }
+            .icon {
+              display: flex;
+              width: 16px;
+              justify-content: center;
+              align-items: center;
+            }
+            .text.show + .icon {
+              transform: rotate(180deg);
+            }
+          }
+
+          .icon {
+            cursor: pointer;
+            display: none;
+            width: 100%;
+            // display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: ease all 0.3s;
+          }
+        }
+        li.box-item {
+          background-color: color-theming.$bgPrimary;
+        }
+        li.box-item2 {
+          background-color: color-theming.$bgSecondary;
+        }
+      }
+    }
+    .box-line {
+      padding: 0 12px;
+      height: 1px;
+      width: 100%;
+      .line {
+        width: 100%;
+        height: 1px;
+        background-color: #dedfe2;
+      }
+    }
+    &-bottom {
+      .price {
+        padding: 12px 12px 8px 12px;
+        &-new {
+          @extend %headingXLarge;
+          color: color-theming.$ducvietComputer;
+        }
+        &-old {
+          font-family: Roboto;
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 28px;
+          letter-spacing: 0px;
+          text-decoration: line-through;
+          color: color-theming.$contentSecondary;
+        }
+        &-vat {
+          span {
+            border-radius: 100px;
+            padding: 2px 4px;
+            background-color: color-theming.$contentInformative;
+            @extend %bodySmall;
+            color: color-theming.$contentInversePrimary;
+          }
+        }
+        &-sale {
+          span {
+            border-radius: 100px;
+            padding: 2px 4px;
+            background-color: color-theming.$contentCritical;
+            @extend %bodySmall;
+            color: color-theming.$contentInversePrimary;
+          }
+        }
+        &-save {
+          @extend %bodySmall;
+          padding-top: 6px;
+          //   height: 32px;
+          // color: color-theming.$contentPositive;
+          color: color-theming.$contentPositive;
+          display: flex;
+          align-items: center;
+        }
+      }
+    }
+    &-btn {
+      display: flex;
+      padding: 0 12px;
+      .btn {
+        @extend %headingSmall;
+        width: 100%;
+        margin-top: 12px;
+        margin-bottom: 12px;
+        opacity: 1;
+        &:hover {
+          opacity: 0.7;
+        }
+      }
+      .detail {
+        background-color: color-theming.$ducvietComputer;
+        color: color-theming.$contentInversePrimary;
+      }
+      .change {
+        background-color: color-theming.$bgSecondary;
+        color: color-theming.$contentPrimary;
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+@use "./../../style/base/typography.scss";
+@use "./../../style/base/color-theming.scss" as c;
+
+.OrderCartScreen .ContentItem {
+  width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  //   margin-bottom: 32px;
+  min-height: 900px;
+  background-color: white;
+
+  justify-content: center;
+
+  .box {
+    width: 852px;
+    .imageBox {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .imageText {
+      @extend %displaySmall;
+      color: c.$contentPrimary;
+
+      padding-top: 4px;
+      padding-bottom: 12px;
+    }
+  }
+}

@@ -1,0 +1,139 @@
+.configDesc {
+	padding-top: 30px;
+	position: relative;
+	.boxTable {
+		// padding-bottom: 30px;
+		.title {
+			padding-top: 30px;
+			position: relative;
+			font-size: 1.3rem;
+
+			border-bottom: 0.5px solid rgba(1, 1, 1, 0.2);
+			p {
+				margin-bottom: 10px;
+			}
+
+			&::before {
+				content: "";
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				height: 2px;
+				width: 80px;
+				background-color: #45d8bb;
+			}
+		}
+
+		.table {
+			margin-top: 4%;
+			font-size: 1rem;
+			tbody tr {
+				td:nth-child(1) {
+					width: 30%;
+				}
+				td:nth-child(2) {
+					width: 70%;
+				}
+			}
+		}
+	}
+	.descDetailProduct {
+		.title {
+			padding-top: 30px;
+			position: relative;
+			font-size: 1.3rem;
+
+			border-bottom: 0.5px solid rgba(1, 1, 1, 0.2);
+			p {
+				margin-bottom: 10px;
+			}
+
+			&::before {
+				content: "";
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				height: 2px;
+				width: 80px;
+				background-color: #45d8bb;
+			}
+		}
+		.box {
+			margin-top: 4%;
+			p {
+				font-size: 1rem;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 736px) {
+	.configDesc {
+		padding-top: 0;
+		position: relative;
+		.boxTable {
+			// padding-bottom: 30px;
+			.title {
+				padding-top: 10px;
+				position: relative;
+				font-size: 1.3rem;
+
+				border-bottom: 0.5px solid rgba(1, 1, 1, 0.2);
+				p {
+					margin-bottom: 10px;
+				}
+
+				&::before {
+					content: "";
+					position: absolute;
+					bottom: 0;
+					left: 0;
+					height: 2px;
+					width: 80px;
+					background-color: #45d8bb;
+				}
+			}
+
+			.table {
+				margin-top: 4%;
+				font-size: 1rem;
+				tbody tr {
+					td:nth-child(1) {
+						width: 30%;
+					}
+					td:nth-child(2) {
+						width: 70%;
+					}
+				}
+			}
+		}
+		.descDetailProduct {
+			.title {
+				padding-top: 30px;
+				position: relative;
+				font-size: 1.3rem;
+
+				border-bottom: 0.5px solid rgba(1, 1, 1, 0.2);
+				p {
+					margin-bottom: 10px;
+				}
+
+				&::before {
+					content: "";
+					position: absolute;
+					bottom: 0;
+					left: 0;
+					height: 2px;
+					width: 80px;
+					background-color: #45d8bb;
+				}
+			}
+			.box {
+				margin-top: 4%;
+				p {
+					font-size: 1rem;
+				}
+			}
+		}
+	}
+}

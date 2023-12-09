@@ -1,0 +1,70 @@
+@use "./../base/font.scss";
+@use "./../base/typography.scss";
+@use "./../base/color-theming.scss";
+@use "./../base/global.scss";
+
+.CartEmptyWeb,
+.OrderSuccessWeb {
+  min-width: 1230px;
+  background-color: color-theming.$bgTertiary;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .contentItem {
+    .box {
+      width: 1200px;
+      min-width: 420px;
+      background-color: color-theming.$bgPrimary;
+      border-radius: 8px;
+      padding: 24px 24px 24px 24px;
+
+      margin-bottom: 40px;
+      &__title {
+        @extend %displayMedium;
+        height: 36px;
+        vertical-align: middle;
+        color: color-theming.$contentPrimary;
+        padding-left: 24px;
+        border-left: 4px solid #d10101;
+        text-transform: uppercase;
+      }
+      &__content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 40px 0 54px 0;
+
+        &-image {
+          width: 120px;
+          height: 120px;
+          margin-bottom: 12px;
+          img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+          }
+        }
+        &-title {
+          @extend %displaySmall;
+          color: color-theming.$contentPrimary;
+          margin-bottom: 4px;
+        }
+        &-note {
+          @extend %bodyMedium;
+          color: color-theming.$contentSecondary;
+          margin-bottom: 24px;
+        }
+        &-btn {
+          button.btn {
+            @extend %headingMedium;
+            width: 198px;
+            height: 48px;
+            background: color-theming.$ducvietComputer;
+            color: color-theming.$lineInversePrimary;
+          }
+        }
+      }
+    }
+  }
+}

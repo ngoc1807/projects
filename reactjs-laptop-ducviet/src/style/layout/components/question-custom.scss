@@ -1,0 +1,64 @@
+@use "./../../base/font.scss";
+@use "./../../base/typography.scss";
+@use "./../../base/color-theming.scss";
+@use "./../../base/global.scss";
+
+.QuestionCustom {
+  width: 100%;
+  background-color: color-theming.$bgPrimary;
+  padding: 24px;
+  border-radius: 8px;
+  .title {
+    @extend %displayMedium;
+
+    min-height: 36px;
+    vertical-align: middle;
+    color: color-theming.$contentPrimary;
+    padding-left: 24px;
+    border-left: 4px solid #d10101;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+
+  #accordion {
+    .card:not(:last-child) {
+      margin-bottom: 24px;
+    }
+    .card {
+      border: 1px solid color-theming.$linePrimary;
+      //   border-radius: 8px;
+      &-header {
+        background: color-theming.$bgTertiary;
+        border: none;
+        border-radius: 8px;
+        padding: 0 16px;
+        > div span {
+          svg {
+            transform: translateY(-2px);
+            margin-right: 12px;
+            path {
+              fill: color-theming.$contentAccent;
+            }
+          }
+        }
+        > div button.btn {
+          @extend %headingLarge;
+          color: color-theming.$contentPrimary;
+          display: flex;
+          align-items: center;
+          width: 100%;
+          text-align: left;
+          padding: 0;
+          height: 64px;
+          span {
+            flex: 1;
+          }
+        }
+      }
+      &-body {
+        @extend %bodyMedium;
+        color: color-theming.$contentPrimary;
+      }
+    }
+  }
+}

@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: "Roboto", sans-serif;
+  // font-size: 16px;
+  // font-family: $font-main;
+}
+
+.btn:focus {
+  box-shadow: unset;
+}
+
+.form-control:focus {
+  box-shadow: none;
+}
+// |– abstracts/
+// |   |– _variables.scss    // Variables
+// |   |– _functions.scss    // Functions
+// |   |– _mixins.scss       // Mixins
+
+// Import library from node_modules
+
+// @import "node_modules/bootstrap/scss/bootstrap.scss";
+
+// |– base/
+// |   |– _animation.scss    // Animation
+// |   |– _global.scss       // Global define
+// |   |– _fonts.scss        // Fonts define
+// |   |– _reset.scss        // Reset/normalize
+// |   |– _utilities.scss    // utilities
+
+@import "./base/color-theming.scss";
+@import "./base/font.scss";
+@import "./base/typography.scss";
+@import "./base/global.scss";
+@import "./base/animation.scss";
+// // |
+
+// // |– components/
+// @import "./layout/components/ListProducts.scss";
+// @import "./layout/components/header.scss";
+// @import "./layout/components/search.scss";
+// @import "./layout/components/footer.scss";
+// @import "./layout/components/breadcrumb.scss";
+// =========================================================
+// @import "./layout/components/pagination.scss";
+// @import "./layout/components/check-box-custom.scss";
+// @import "./layout/components/radio-custom.scss";
+// @import "./layout/components/list-blog-custom.scss";
+
+// ==========================================================
+// @import "./layout/components/CommentCustom.scss";
+// @import "./layout/components/question-custom.scss";
+// //============================================
+@import "./Mobile/components/header.scss";
+@import "./Mobile/components/footer.scss";
+@import "./Mobile/components/comment.scss";
+@import "./Mobile/components/item-blog-custom.scss";
+
+//  =============================================
+// @import "./layout/home.scss";
+// @import "./layout/detail-product.scss";
+// @import "./layout/list-product.scss";
+// @import "./layout/cart.scss";
+// @import "./layout/OrderSuccess.scss";
+// @import "./layout/about-us.scss";
+// @import "./layout/support.scss";
+// @import "./layout/news-list.scss";
+// @import "./layout/news.scss";
+// @import "./layout/news-detail.scss";
+
+// ==============================================
+
+// @import "./Mobile/account-mobile.scss";
+// @import "./Mobile/home-mobile.scss";
+@import "./Mobile/detail-product-mobile.scss";
+// @import "./Mobile/list-product-mobile.scss";
+// @import "./Mobile/cart-mobile.scss";
+// @import "./Mobile/order-mobile.scss";
+// @import "./Mobile/news-mobile.scss";
+// @import "./Mobile/introduce-mobile.scss";

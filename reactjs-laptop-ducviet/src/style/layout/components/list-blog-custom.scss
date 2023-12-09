@@ -1,0 +1,126 @@
+@use "./../../base/font.scss";
+@use "./../../base/typography.scss";
+@use "./../../base/color-theming.scss";
+@use "./../../base/global.scss";
+
+.boxBlog {
+  width: 1200px;
+  background-color: color-theming.$bgPrimary;
+  border-radius: 8px;
+  padding: 24px 24px 0 24px;
+}
+
+.boxBlogAll__title,
+.boxBlogSummary__title {
+  display: flex;
+  // padding: 16px 0;
+  padding-bottom: 24px;
+  justify-content: space-between;
+  &-left {
+    @extend %displayMedium;
+
+    vertical-align: middle;
+    color: color-theming.$contentPrimary;
+    padding-left: 24px;
+    border-left: 4px solid #d10101;
+    text-transform: uppercase;
+  }
+
+  &-right {
+    display: flex;
+    align-items: center;
+    a.boxBlogSummary__title-link {
+      @extend %bodyLarge;
+
+      margin-left: 12px;
+      text-decoration: none;
+      text-transform: uppercase;
+      color: color-theming.$contentPrimary;
+      text-transform: uppercase;
+      &.active {
+        color: color-theming.$contentAccent;
+      }
+      &:hover {
+        color: color-theming.$contentAccent;
+      }
+    }
+
+    button.btn {
+      width: 32px;
+      height: 32px;
+      border: 1px solid color-theming.$lineTertiary;
+      box-sizing: border-box;
+      border-radius: 8px;
+      margin-left: 16px;
+      padding: 0;
+
+      &:hover,
+      &:focus,
+      &:active {
+        background-color: color-theming.$bgAccentPrimary;
+        svg path {
+          fill: color-theming.$bgPrimary;
+        }
+      }
+    }
+  }
+}
+
+.boxSummaryBlog__content {
+  display: flex;
+  flex-wrap: nowrap;
+
+  overflow-x: hidden;
+  padding-bottom: 24px;
+  a.boxSummaryBlog__content-item {
+    text-decoration: none;
+    color: unset;
+
+    margin-right: 24px;
+    .box {
+      width: 326px;
+      min-height: 303px;
+      &__image {
+        width: 326px;
+        height: 163px;
+        border-radius: 8px;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: 8px;
+        }
+      }
+      &__title {
+        margin-top: 16px;
+        @extend %headingMedium;
+        color: color-theming.$contentPrimary;
+        &:hover {
+          color: $contentAccent;
+        }
+      }
+      &__summary {
+        @extend %bodyMedium;
+
+        width: 326px;
+        color: color-theming.$contentSecondary;
+        height: 40px;
+        margin-top: 4px;
+        overflow: hidden;
+      }
+      &__option {
+        display: flex;
+        color: color-theming.$contentSecondary;
+        height: 32px;
+        justify-content: space-between;
+        @extend %bodySmall;
+        align-items: center;
+        flex-wrap: nowrap;
+        overflow: hidden;
+        div span {
+          padding-left: 2px;
+        }
+      }
+    }
+  }
+}

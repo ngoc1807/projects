@@ -1,0 +1,210 @@
+@use "./../../../style/base/typography.scss";
+@use "./../../../style/base/color-theming.scss" as c;
+
+.OrderMobile .FormCartItem {
+  // width: 1200px;
+
+  input {
+    @extend %bodyMedium;
+  }
+  .right {
+    background-color: c.$bgPrimary;
+
+    border-radius: 8px;
+    padding: 12px 12px 12px 12px;
+
+    &__title {
+      @extend %headingLarge;
+      font-weight: 500;
+      vertical-align: middle;
+      color: c.$contentPrimary;
+
+      text-transform: uppercase;
+    }
+
+    .box {
+      &-title {
+        padding-top: 14px;
+
+        &-text {
+          flex: 1;
+          span {
+            @extend %headingLarge;
+            font-weight: 500;
+            color: c.$contentPrimary;
+          }
+        }
+        &-option {
+          padding-top: 12px;
+          display: flex;
+          align-items: center;
+
+          .RadioCustom {
+            @extend %bodyLarge;
+            color: c.$contentPrimary;
+            .checkmark {
+              top: 50%;
+              left: 0px;
+              transform: translateY(-11px);
+              height: 18px;
+              width: 18px;
+            }
+            .checkmark:after {
+              width: 10px;
+              height: 10px;
+            }
+          }
+        }
+      }
+
+      &-formOne {
+        padding-top: 12px;
+
+        input {
+          @extend %bodyMedium;
+          margin-bottom: 12px;
+        }
+      }
+
+      &-formTwo {
+        padding-top: 12px;
+        padding-bottom: 12px;
+
+        .CheckBoxCustom ~ .content {
+          display: none;
+          // transition: all 0.3s ease;
+          // animation: fadeUp 0.3s ease;
+
+          transition: all 0.5s ease;
+        }
+        .CheckBoxCustom.active ~ .content {
+          display: block;
+          transition: all 0.5s ease;
+
+          // transition: all 0.3s ease;
+          // animation: fadeDown 0.3s ease;
+        }
+        .content {
+          overflow: hidden;
+          transition: all 0.5s ease;
+          animation: fadeDown 0.5s ease;
+          position: relative;
+          background-color: c.$bgTertiary;
+          padding: 12px;
+          border-radius: 8px;
+          height: auto;
+          margin-top: 8px;
+          &-one {
+            padding-top: 20px;
+
+            input {
+              margin-bottom: 12px;
+            }
+          }
+          &-three {
+            // display: flex;
+
+            justify-content: space-between;
+            padding-top: 16px;
+            padding-bottom: 4px;
+            .RadioCustom {
+              margin-bottom: 8px;
+            }
+          }
+          &-four {
+            margin-bottom: 12px;
+
+            padding-top: 16px;
+            .RadioCustom {
+              margin-bottom: 8px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .left {
+    width: 100%;
+    background-color: c.$bgPrimary;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    &__title {
+      width: 288px;
+      height: 48px;
+      padding: 10px 15px;
+      border-bottom: 1px solid c.$linePrimary;
+      span {
+        @extend %headingLarge;
+
+        height: 48px;
+
+        vertical-align: middle;
+
+        color: c.$contentPrimary;
+
+        text-transform: uppercase;
+      }
+    }
+
+    &__content {
+      padding: 16px 16px 0 16px;
+      flex: 1;
+      .notify {
+        @extend %bodySmall;
+        margin-bottom: 16px;
+        color: c.$contentNegative;
+      }
+      .group-input {
+        .title {
+          @extend %bodyMedium;
+          color: c.$contentPrimary;
+        }
+        input.form-control {
+          height: 40px;
+        }
+
+        button.btn {
+          background-color: c.$bgAccentPrimary;
+          color: c.$lineInversePrimary;
+        }
+      }
+
+      .item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 16px;
+        .title {
+          @extend %bodyMedium;
+          color: c.$contentSecondary;
+        }
+        .text.trans,
+        .text.money {
+          @extend %headingSmall;
+          color: c.$contentPrimary;
+        }
+
+        .text.sale {
+          @extend %headingSmall;
+          color: c.$contentPositive;
+        }
+        .text.total {
+          @extend %headingXLarge;
+          color: c.$contentAccent;
+        }
+      }
+    }
+
+    &__btn {
+      padding: 16px;
+      button.btn {
+        @extend %headingMedium;
+        width: 100%;
+        height: 48px;
+        background: c.$ducvietComputer;
+        color: c.$lineInversePrimary;
+      }
+    }
+  }
+}

@@ -1,0 +1,47 @@
+.ConfigCounter {
+	position: relative;
+	// $heightCounter: 30vh;
+	background-color: #1e272e;
+	// height: $heightCounter;
+
+	.body {
+		.content {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			// color: white;
+			background-color: transparent;
+			height: 30vh;
+			flex-direction: column;
+			h3 {
+				color: rgb(255, 255, 255);
+				font-weight: 800;
+				font-size: 3rem;
+				letter-spacing: 3px;
+			}
+			p {
+				color: rgba(255, 255, 255, 0.7);
+				margin: 0;
+				font-size: 1.2rem;
+				font-weight: 500;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 736px) {
+	.ConfigCounter {
+		.body {
+			.content {
+				width: 50%;
+				height: 20vh;
+				h3 {
+					font-size: 1.8rem;
+				}
+				p {
+					font-size: 0.8rem;
+				}
+			}
+		}
+	}
+}
